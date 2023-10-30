@@ -62,8 +62,7 @@ footer {
     background-repeat: no-repeat;
     padding-top: 50px;
     padding-bottom: 50px;
-    position: fixed;
-    bottom: 0;
+    position:relative;
     right: 0;
     left: 0;
 }
@@ -113,7 +112,7 @@ h3 {
     content: '';
     position: absolute;
     transform: translate(-50%, -50%);
-    left:20%;
+    left:26%;
     top: 100%;
     width: 0;
     height: 2px;
@@ -157,5 +156,5 @@ h3 {
     width: 300px;
 }
 body{
-    padding-top: 86px;
+    padding-top: 92px;
 }
