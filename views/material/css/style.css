@@ -5,7 +5,6 @@
 .container {
     margin: 0;
     padding: 0;
-
 }
 
 header {
@@ -18,6 +17,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
+    z-index: 2;
 }
 
 li .nav-link {
@@ -42,13 +42,12 @@ li .nav-link:hover {
     transition: background-color 0.75s opacity 0.75s;
 }
 
-li .nav-link:focus {
+.container  .nav-link:focus {
     color: #0000FF;
     border: 1px solid white;
     background-color: aliceblue;
     opacity: 0.5;
 }
-
 
 footer {
     margin:0;
@@ -157,4 +156,7 @@ h3 {
 }
 body{
     padding-top: 92px;
+}
+.right-content svg{
+    color: rgba(17, 162, 252, 0.726);
 }
