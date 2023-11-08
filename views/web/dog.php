@@ -3,7 +3,7 @@ include("../layout/header.php");
 ?>
 
 <div class="row dog-content">
-    <div class="col-sm-2 ">
+    <div class="col-sm-2 dog-content-category ">
         <h3 class="dog-category">Danh mục</h3>
         <div class="list-group" id="list-tab" role="tablist">
             <ul class="list-group list-category">
@@ -186,6 +186,17 @@ include("../layout/header.php");
         </div>
 
     </div>
+
+    <div class="home-content-2">
+            <h2 style="padding-top: 50px;
+            margin:0;">FEEDBACK </h2>
+
+            <?php
+            include_once("../web/comment.php");
+            ?>
+
+        </div>
+
 </div>
 
 
