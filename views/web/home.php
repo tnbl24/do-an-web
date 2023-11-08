@@ -53,6 +53,7 @@ include_once("../layout/header.php");
         </div>
     </div>
     <div class="home-content">
+
         <div class="home-content-1">
             <h2>LASTEST</h2>
             <div class="home-content-1-shop justify-content-evenly ">
