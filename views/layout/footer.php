@@ -10,7 +10,7 @@
                         <a href="../web/about.php">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="#">Thú cưng</a>
+                        <a href="../web/dog.php">Thú cưng</a>
                     </li>
                     <li><a href="#">Liên hệ</a></li>
                 </ul>

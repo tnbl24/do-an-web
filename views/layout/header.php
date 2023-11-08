@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../material/css/about.css" />
     <link rel="stylesheet" href="../material/css/home.css" />
     <link rel="stylesheet" href="../material/css/comment.css" />
+    <link rel="stylesheet" href="../material/css/dog.css" />
 </head>
 
 <body>
@@ -22,7 +23,7 @@
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                 <li><a href="../web/home.php" class="nav-link px-2 ">Trang chủ</a></li>
                 <li><a href="../web/about.php" class="nav-link px-2 ">Giới thiệu</a></li>
-                <li><a href="#" class="nav-link px-2 ">Thú cưng</a></li>
+                <li><a href="../web/dog.php" class="nav-link px-2 ">Thú cưng</a></li>
                 <li><a href="#" class="nav-link px-2 ">Liên hệ</a></li>
             </ul>
 

@@ -17,7 +17,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 2;
+    z-index: 5;
 }
 
 li .nav-link {
@@ -160,3 +160,9 @@ body{
 .right-content svg{
     color: rgba(17, 162, 252, 0.726);
 }
+
+
+.col-md-3.text-end a {
+    text-decoration: none;
+}
+
