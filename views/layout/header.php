@@ -12,6 +12,10 @@
     <link rel="stylesheet" href="../material/css/home.css" />
     <link rel="stylesheet" href="../material/css/comment.css" />
     <link rel="stylesheet" href="../material/css/dog.css" />
+    <link rel="stylesheet" href="../material/css/account.css" />
+    <link rel="stylesheet" href="../material/css/cart.css" />
+    <link rel="stylesheet" href="../material/css/contact.css" />
+    <link rel="stylesheet" href="../material/css/product-detail.css" />
 </head>
 
 <body>
@@ -24,11 +28,12 @@
                 <li><a href="../web/home.php" class="nav-link px-2 ">Trang chủ</a></li>
                 <li><a href="../web/about.php" class="nav-link px-2 ">Giới thiệu</a></li>
                 <li><a href="../web/dog.php" class="nav-link px-2 ">Thú cưng</a></li>
-                <li><a href="#" class="nav-link px-2 ">Liên hệ</a></li>
+                <li><a href="../web/contact.php" class="nav-link px-2 ">Liên hệ</a></li>
+                <li><a href="#" class="nav-link px-2 ">Đơn Hàng</a></li>
             </ul>
 
             <div class="col-md-3 text-end">
-                <a href="#" class="item me-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
+                <a href="../web/cart.php" class="item me-2"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-bag" viewBox="0 0 16 16">
                         <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
                     </svg></a>
                 <a href="#" class="item"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">

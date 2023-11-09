@@ -62,13 +62,13 @@ include_once("../layout/header.php");
                         <div class="col home-col">
                             <div class="hover01 column">
                                 <div>
-                                    <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
+                                    <figure><a href="#"><img class="home-img" src="../material/img/ala nâu đỏ.jpg" /></a></figure>
                                 </div>
                             </div>
                             <div class="home-text">
                                 <p class="home-dog-category">alaska</p>
-                                <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                <p class="home-dog-price">10 tỷ bery</p>
+                                <p><a href="../web/ala nâu đỏ.php" class="home-dog-name">alaska nâu đỏ</a></p>
+                                <p class="home-dog-price">18.000.000 VND</p>
                             </div>
                         </div>
 
