@@ -1,0 +1,271 @@
+.slide-show-1 .w-100 {
+    filter: brightness(0.5);
+    height: 654px;
+    position: relative;
+}
+
+.button-home {
+    --width: 100px;
+    --height: 35px;
+    --tooltip-height: 35px;
+    --tooltip-width: 90px;
+    --gap-between-tooltip-to-button: 18px;
+    --button-color: linear-gradient(90deg, rgba(10, 10, 48, 1) 0%, rgba(1, 35, 92, 1) 53%, rgba(14, 12, 42, 1) 100%);
+    opacity: 0.8;
+    width: var(--width);
+    height: var(--height);
+    background: var(--button-color);
+    position: relative;
+    text-align: center;
+    border-radius: 0.45em;
+    font-family: "Arial";
+    transition: background 0.3s;
+}
+
+.button-home::before {
+    position: absolute;
+    content: attr(data-tooltip);
+    width: var(--tooltip-width);
+    height: var(--tooltip-height);
+    font-size: 0.9rem;
+    color: #fff;
+    border-radius: .25em;
+    line-height: var(--tooltip-height);
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+    left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button-home::after {
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    left: calc(50% - 10px);
+    bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button-home::after,
+.button-home::before {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+}
+
+.button-home .text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-home .button-wrapper,
+.button-home .text,
+.button-home .icon {
+    overflow: hidden;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    color: #fff;
+    text-transform: none;
+}
+
+.button-home .text {
+    top: 0
+}
+
+.button-home .text,
+.button-home .icon {
+    transition: top 0.5s;
+}
+
+.button-home .icon {
+    color: #fff;
+    top: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-home .icon svg {
+    width: 24px;
+    height: 24px;
+}
+
+.button-home:hover {
+    background: linear-gradient(90deg, rgba(10, 10, 48, 1) 0%, rgba(1, 35, 92, 1) 53%, rgba(14, 12, 42, 1) 100%);
+}
+
+.button-home:hover .text {
+    top: -100%;
+}
+
+.button-home:hover .icon {
+    top: 0;
+}
+
+.button-home:hover:before,
+.button-home:hover:after {
+    opacity: 1;
+    visibility: visible;
+}
+
+.button-home:hover:after {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button-home:hover:before {
+    bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+.text-home h1,
+.text-home p {
+    text-align: center;
+    color: white;
+}
+
+.text-home p {
+    font-size: larger;
+}
+
+.button-home {
+    margin: auto;
+}
+
+.home-slide-content {
+    position: absolute;
+    bottom: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+
+}
+
+.home-content-1-btn {
+    padding: 0.8em 1.3em;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    font-weight: 500;
+    color: #000;
+    background-color: rgba(17, 162, 252, 0.6);
+    border: none;
+    border-radius: 45px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+    opacity: 0.8;
+    outline: none;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.home-content-1-btn:hover {
+    background: rgba(17, 162, 252, 0.2);
+
+    box-shadow: 0px 15px 20px rgba(17, 162, 252, 0.6);
+    color: rgb(0, 0, 66);
+    transform: translateY(-7px);
+}
+
+.home-content-1-btn:active {
+    transform: translateY(-1px);
+    background-color: rgba(17, 162, 252, 0.6);
+    color: #fff;
+}
+
+.home-content-1,
+.home-content-2 {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.home-content-2 {
+    background-color: #F0F8FF;
+    padding-bottom: 50px;
+}
+
+.home-content-1 h2 {
+    margin-bottom: 30px;
+    color: rgb(8, 63, 182);
+    text-shadow: -5px 5px 7px ;
+}
+
+.home-col {
+    padding: 0 15px 30px 15px;
+    width: 300px;
+
+}
+
+.container-home {
+    max-width: 80%;
+    margin: auto;
+}
+
+.home-img {
+    width: 270px;
+    height: 300px;
+}
+
+.home-text {
+    padding: 10px 10px 20px 10px;
+    background-color: #f3f3f3;
+}
+
+.home-text p {
+    margin: 0;
+    padding: 0;
+}
+
+.home-dog-name {
+    margin-bottom: 10px !important;
+    text-decoration: none;
+    text-transform: none;
+    color: #000;
+    text-align: center;
+    padding: 0;
+}
+
+.home-dog-name:hover {
+    color: rgba(17, 162, 252, 1);
+
+}
+
+.home-dog-price {
+    font-weight: bold;
+}
+
+.home-dog-category {
+    opacity: 0.7;
+}
+
+figure:hover+span {
+    bottom: -36px;
+    opacity: 1;
+}
+
+figure {
+    /* width: 300px;
+    height: 200px; */
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    overflow: hidden;
+}
+
+.hover01 figure img {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.hover01 figure:hover img {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    width: 270px;
+    height: 300px;
+}
+
+figure {
+    margin: 0;
+}

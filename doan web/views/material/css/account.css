@@ -1,0 +1,57 @@
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+.profile-container h1 {
+    text-align: center;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.profile-info label {
+    font-weight: bold;
+}
+
+.profile-info input {
+    padding: 5px;
+}
+
+.profile-gender-input {
+    display: flex;
+    gap: 10px;
+}
+
+.profile-gender-input label {
+    margin-right: 10px;
+}
+
+.profile-submit-button{
+    margin-top: 10px;
+    text-align: center;
+
+}
+
+.profile-submit-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+    margin-top: 15px;
+    margin-left: 200px;
+}
+
+.profile-submit-button button:hover {
+    background-color: #0056b3;
+}
