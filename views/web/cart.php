@@ -17,7 +17,7 @@ include_once("../layout/header.php");
                             <tr>
                                 <td><img src="../material/img/ala hồng phấn.jpg" alt=""></td>
                                 <td>
-                                    <p>Alaska hồng phân</p>
+                                    <p>Alaska hồng phấn</p>
                                 </td>
                                 <td>
                                     <p>hồng phấn</p>
@@ -74,7 +74,7 @@ include_once("../layout/header.php");
                         </table>
                         <div class="cart-content-right-button">
                             <a href="../web/home.php"><button> Quay lại trang chủ</button></a>
-                            <a href="#"><button> Thanh toán</button></a>
+                            <a href="../web/delivery.php"><button> Thanh toán</button></a>
                         </div>
                         
                     </div>

@@ -1,0 +1,93 @@
+.thanhtoan {
+    padding: 20px 0;
+}
+.thanhtoan-content {
+    display: grid;
+    grid-template-columns: 40% 35%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    justify-content: center;
+    margin-top: 20px;
+}
+.thanhtoan-content-right {
+    border-left: 2px solid #dddddd;
+    padding: 10px;
+    padding-left: 20px;
+    height: 500px;
+    font-size: 18px;
+    justify-content: center;
+}
+.thanhtoan-stk {
+    margin: 10px;
+    margin-left: 18px;
+}
+.thanhtoan-stk-input {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+}
+.vnpay img {
+    height: 60px;
+    width: 80px;
+    margin-left: 60px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.thanhtoan-content-right {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25px;
+    padding-left: 20px;
+    height: 500px;
+    font-size: 18px;
+    background-color: white;
+}
+.thanhtoan-content-right table {
+    width: 100%;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 2px solid #dddddd ;
+}
+.thanhtoan-content-right table tr th:first-child {
+    text-align: left;
+}
+.thanhtoan-content-right table tr th {
+    padding-bottom: 12px;
+    border-bottom: 2px solid #dddddd;
+}
+.thanhtoan-content-right table tr th:last-child {
+    text-align: right;
+}
+.thanhtoan-content-right table tr td {
+    padding: 6px 0;
+}
+.thanhtoan-content-right table tr:nth-child(4) {
+    border-top: 2px solid #dddddd;
+}
+.thanhtoan-content-right table tr td:last-child {
+    text-align: right;
+}
+.thanhtoan-content-right table tr td:first-child {
+    text-align: left;
+
+}
+.thanhtoan-button p {
+    display: inline-block;
+    font-size: 12px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.thanhtoan-button {
+    padding-top: 40px ;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.thanhtoan-button a {
+    text-decoration: none;
+}
+.thanhtoan-button button {
+    border-color: #dddddd;
+    background-color: rgb(210, 220, 230);
+}
+.thanhtoan-button button:hover {
+    background-color:rgb(145, 183, 217) ;
+    color: white; 
+}

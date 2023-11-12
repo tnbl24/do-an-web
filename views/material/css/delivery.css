@@ -1,0 +1,111 @@
+.dathang {
+    background-color: #e0edf8;
+    padding: 20px 0;
+}
+.dathang-trolai {
+    margin-left: 20px;
+    background-color: rgb(210, 220, 230);
+
+}
+.dathang-trolai button {
+    background-color: white;
+    border-color: white;
+}
+.dathang-content {
+    display: grid;
+    grid-template-columns: 55% 35%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 18px;
+    justify-content: center;
+}
+.dathang-content-left-input {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    width: 92%;
+    height: 45px;
+    padding: 0 20px;
+    margin: 10px 0;
+    transition: 0.25s ease;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.dathang-content-left-input:focus {
+    border-color: blue;
+}
+.dathang-content-left-ghichu textarea {
+    border: 1px solid #eee;
+    border-radius: 4px;
+    width: 92%;
+    height: 100px;
+    padding: 0 20px;
+    transition: 0.25s ease;
+    font-size: 15px;
+    margin-top: 10px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 50px;
+}
+.dathang-content-right {
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 25px;
+    padding-left: 20px;
+    height: 500px;
+    font-size: 18px;
+    background-color: white;
+}
+.dathang-content-right table {
+    width: 90%;
+    margin:auto;
+    font-size: 15px;
+    text-align: center;
+    border-bottom: 2px solid #dddddd ;
+    margin-top: 20px;
+}
+.dathang-content-right table tr th:first-child {
+    text-align: left;
+}
+.dathang-content-right table tr th {
+    padding-bottom: 12px;
+    border-bottom: 2px solid #dddddd;
+}
+.dathang-content-right table tr th:last-child {
+    text-align: right;
+}
+.dathang-content-right table tr td {
+    padding: 6px 0;
+}
+.dathang-content-right table tr:nth-child(4) {
+    border-top: 2px solid #dddddd;
+}
+.dathang-content-right table tr td:last-child {
+    text-align: right;
+}
+.dathang-content-right table tr td:first-child {
+    text-align: left;
+
+}
+.dathang-content-right-button {
+    align-items: center;
+    display: flex;
+    position: absolute;
+}
+.dathang-content-right-button a{
+    text-decoration: none;
+    text-align: right;
+}
+.dathang-content-right-button button {
+    border-color: #dddddd;
+    background-color: rgba(17, 162, 252, 0.6);
+    font-size: 15px;
+    color:black;
+}
+.dathang-content-right-button button:hover {
+    background-color:#2da9fb ;
+    color:black;
+}
+
+.dathang-2 {
+    margin-top: 40px;
+    display: flex;
+    justify-content: flex-end;
+}

@@ -18,6 +18,8 @@ header {
     left: 0;
     right: 0;
     z-index: 5;
+    font-family: 'Times New Roman', Times, serif;
+
 }
 
 li .nav-link {
@@ -25,6 +27,7 @@ li .nav-link {
     padding-left: 15px !important;
     padding-right: 20px !important;
     border-radius: 30px;
+    font-family: 'Times New Roman', Times, serif;
 
 }
 
@@ -32,6 +35,7 @@ a {
     color: #0d19fd;
     padding-right: 30px;
     text-transform: uppercase;
+
 }
 
 li .nav-link:hover {
@@ -40,6 +44,7 @@ li .nav-link:hover {
     opacity: 0.5;
     color: #0000FF;
     transition: background-color 0.75s opacity 0.75s;
+
 }
 
 .container  .nav-link:focus {
@@ -47,6 +52,7 @@ li .nav-link:hover {
     border: 1px solid white;
     background-color: aliceblue;
     opacity: 0.5;
+
 }
 
 footer {

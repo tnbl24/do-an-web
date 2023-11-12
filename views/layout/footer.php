@@ -12,7 +12,7 @@
                     <li>
                         <a href="../web/dog.php">Thú cưng</a>
                     </li>
-                    <li><a href="#">Liên hệ</a></li>
+                    <li><a href="../web/contact.php">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="footer-content middle">
