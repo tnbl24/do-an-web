@@ -51,7 +51,7 @@ include_once("../layout/header.php");
                     padding:0;
                     margin:0;
                     font-size:26px;">Thông tin chi tiết</h3>
-                    <h4> Ngày sinh: 04/09/2023 <br>
+                    <h4 > Ngày sinh: 04/09/2023 <br>
                         Giới tính: Đực <br>
                         Màu sắc: Nâu Đỏ <br>
                         Cân nặng: 13kg <br>

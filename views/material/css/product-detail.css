@@ -29,6 +29,7 @@
 .product-detail h4 {
     font-size: 19px;
     color: #696969;
+    line-height: 1.5;
 }
 
 .product-detail-container{
@@ -37,6 +38,8 @@
 
 .py-4 {
     padding-top: 0 !important;
+    padding-bottom: 1rem!important;
+
 }
 
 .chinhh{
