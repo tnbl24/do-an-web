@@ -39,7 +39,7 @@ include_once("../layout/header.php");
                 <p>shop chó đến từ nhóm 5</p>
             </div>
             <div class="button-home">
-                <a href="#">
+                <a href="../web/dog.php">
                     <div class="button-wrapper">
                         <div class="text">Shop Now</div>
                         <span class="icon">
@@ -167,13 +167,14 @@ include_once("../layout/header.php");
                     </div>
                 </div>
             </div>
-
+            <a href="../web/dog.php" style="text-decoration:none;">
             <button class="home-content-1-btn">Xem thêm</button>
+            </a>
         </div>
         
         <div class="home-content-2">
             <h2 style="padding-top: 50px;
-            margin:0;">FEEDBACK </h2>
+            margin:0;"> WHAT OUR CUSTOMER SAY</h2>
 
             <?php
             include_once("../web/comment.php");

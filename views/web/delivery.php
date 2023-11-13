@@ -6,7 +6,7 @@ include_once("../layout/header.php");
         <div class="dathang-content-left">
             <p style="font-weight: bold;">THÔNG TIN ĐẶT HÀNG</p>
             <div class="dathang-content-left-field">
-                <label for="ten" class="dathang-content-left-ten">Họ tên<span style="color: red;">*</span></label>
+                <label for="ten" class="dathang-content-left-ten">Họ tên<span style="color: red;">*</span></label><br>
                 <input type="text" class="dathang-content-left-input">
             </div>
             <div class="dathang-content-left-field">
@@ -22,7 +22,7 @@ include_once("../layout/header.php");
                 <input type="text" class="dathang-content-left-input">
             </div>
             <div class="dathang-content-left-ghichu">
-                <label for="">Ghi chú</label>
+                <label for="">Ghi chú</label><br>
                 <textarea name="ghichu" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
             </div>
         </div>
@@ -60,7 +60,7 @@ include_once("../layout/header.php");
             </table>
             <div class="dathang-2">
                 <div class="dathang-content-right-button">
-                    <a href="cart.php"><button>Quay lại</button></a>
+                    <a href="../web/cart.php"><button>Quay lại</button></a>
                     <a href="payment.php"><button>Đặt hàng</button></a>
                 </div>
             </div>

@@ -152,3 +152,11 @@ span.small {
     height: 100%;
     cursor:pointer;
 }
+
+a.me-3{
+    padding-right: 10px;
+}
+
+img.rounded-circle.shadow-1-strong {
+    cursor: default;
+}

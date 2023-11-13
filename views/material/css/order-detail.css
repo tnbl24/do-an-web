@@ -8,8 +8,9 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    background-color: #F0F8FF;
     border-bottom: 1px solid #dddddd;
-    background-color: rgb(210, 220, 230);
+
 }
 .mdh span{
     text-align: right;
@@ -184,9 +185,10 @@
 }
 
 .dathang-2 {
-    margin-bottom: 100px;
+    margin-bottom: 80px;
     display: flex;
     justify-content: flex-end;
+    margin-top: 20px;
 }
 .alaska-naudo{
     font-size: 15px;

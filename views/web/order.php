@@ -50,7 +50,9 @@ include_once("../layout/header.php");
                     </div>
                 </div>
                 <div class="donmua-thanhtien">
-                    <div>Thành tiền: 38.000.000<sup>đ</sup></div>
+                <div class="donmua-soluong"><p>số lượng :2</p>
+                        <p>Thành tiền: 38.000.000<sup>đ</sup>
+                    </div>
                 </div>
                 <div class="dathang-2">
                     <div class="dathang-content-right-button">
@@ -74,7 +76,9 @@ include_once("../layout/header.php");
                         <div class="tienhang"><span>18.000.000<sup>đ</sup></span></div>
                     </div>
                     <div class="donmua-thanhtien">
-                        <div>Thành tiền: 18.000.000<sup>đ</sup></div>
+                    <div class="donmua-soluong"><p>số lượng :2</p>
+                        <p>Thành tiền: 38.000.000<sup>đ</sup>
+                    </div>
                     </div>
                     <div class="dathang-2">
                         <div class="dathang-content-right-button">
@@ -84,7 +88,7 @@ include_once("../layout/header.php");
                         </div>
                     </div>
                 </div>
-                <div class="pagination dog-list" style="margin-left: 300px;">
+                <div class="pagination dog-list" style="margin-left: 300px; margin-top:30px">
                             <a href="#">&laquo;</a>
                             <a href="#">1</a>
                             <a href="#">2</a>
@@ -118,7 +122,9 @@ include_once("../layout/header.php");
                         </div>
                     </div>
                     <div class="donmua-thanhtien">
-                        <div>Thành tiền: 38.000.000<sup>đ</sup></div>
+                        <div class="donmua-soluong"><p>số lượng :2</p>
+                        <p>Thành tiền: 38.000.000<sup>đ</sup>
+                    </div>
                     </div>
                     <div class="dathang-2">
                         <div class="dathang-content-right-button">
@@ -152,7 +158,9 @@ include_once("../layout/header.php");
                         <div class="tienhang"><span>18.000.000<sup>đ</sup></span></div>
                     </div>
                     <div class="donmua-thanhtien">
-                        <div>Thành tiền: 18.000.000<sup>đ</sup></div>
+                    <div class="donmua-soluong"><p>số lượng :2</p>
+                        <p>Thành tiền: 38.000.000<sup>đ</sup>
+                    </div>
                     </div>
                     <div class="dathang-2">
                         <div class="dathang-content-right-button">
@@ -165,17 +173,6 @@ include_once("../layout/header.php");
             </div>
         </div>
     </div>
-
-    <div class="home-content-2">
-            <h2 style="padding-top: 50px;
-            margin:0;">FEEDBACK </h2>
-
-            <?php
-            include_once("../web/comment.php");
-            ?>
-
-        </div>
-
 </div>
 <?php
 include_once("../layout/footer.php");

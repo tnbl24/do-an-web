@@ -1,6 +1,8 @@
 <?php
 include_once("../layout/header.php");
 ?>
+<div class="profile-bg">
+
 
 <div class="profile-container">
         <h1>Tài Khoản Của Tôi</h1>
@@ -12,8 +14,9 @@ include_once("../layout/header.php");
                 <label for="birthdate">Ngày Sinh:</label> 
                 <input type="date" id="birthdate" name="birthdate" value="" >
 
-                <label>Giới Tính:</label>
+                
                 <div class="profile-gender-input">
+                <label>Giới Tính:</label>
                     <label for="male"><input type="radio" id="male" name="gender" value="male" checked> Nam</label>
                     <label for="female"><input type="radio" id="female" name="gender" value="female"> Nữ</label>
                 </div>
@@ -42,7 +45,7 @@ include_once("../layout/header.php");
             </div>
         </form>
     </div>
-
+    </div>
 <?php
 include_once("../layout/footer.php");
 ?>
