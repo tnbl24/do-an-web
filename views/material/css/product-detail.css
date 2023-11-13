@@ -20,8 +20,10 @@
     background-color: #0b4b8f;
 }
 .product-detail {
-    display: block;
-    margin-left: 300px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 130px;
+
 }
 
 .product-detail h4 {
@@ -39,8 +41,13 @@
 
 .chinhh{
     color:#0056b3;
-    margin-left: 45px;
+    margin-left: 265px;
+
 }
 .col-12 {
     padding-left: 50px;
+}
+
+.col-lg-6.col-md-12.col-12{
+    width: 300px;
 }

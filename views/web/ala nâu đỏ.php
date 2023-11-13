@@ -7,7 +7,34 @@ include_once("../layout/header.php");
             <div class="chinhh">
             <h6>Trang chủ/ Thú cưng/ Danh mục</h6>
             </div>
+            
             <div class="row mt-5">
+            <div class="col-sm-2 dog-content-category ">
+        <h3 class="dog-category">Danh mục</h3>
+        <div class="list-group" id="list-tab" role="tablist">
+            <ul class="list-group list-category">
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a class="list-group-item list-group-item-action active " id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">alaska <span class="badge bg-primary rounded-pill">14</span></a>
+
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">husky<span class="badge bg-primary rounded-pill">2</span></a>
+
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">gâu đần<span class="badge bg-primary rounded-pill">1</span></a>
+
+
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">shiba <span class="badge bg-primary rounded-pill">1</span></a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
                 <div class="col-lg-5 col-md-12 col-12">
                     <img class="img-fluid w-100" src="../material/img/ala nâu đỏ.jpg">
                 </div>
@@ -96,7 +123,9 @@ include_once("../layout/header.php");
                     </div>
                 </div>
             </div>
+            <a href="../web/dog.php" style="text-decoration:none;">
             <button class="home-content-1-btn">Xem thêm</button>
+            </a>
         </div>
     </div>
     </div>

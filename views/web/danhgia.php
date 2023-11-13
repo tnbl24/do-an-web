@@ -98,7 +98,7 @@
             cursor: pointer;
             margin-right: 10px;
             margin-left: 25px;
-            padding-left: 45px;
+            padding-left: 40px;
         }
 
         #submit-dg:hover {
@@ -165,14 +165,20 @@
                 </div>
             </form>
             <div class="btn-feedback">
+            <a href="../web/order.php" style="text-decoration:none;">
                 <button id="submit-dg">
                     Return
-                    <i class="bi bi-arrow-counterclockwise"></i>
+                    <i class="bi bi-arrow-counterclockwise" style="margin-left: 10px;"></i>
                 </button>
+                </a>
+
+                <a href="../web/order.php" style="text-decoration:none;">
                 <button id="submit-dg">
                     submit
                     <i class="bi bi-check" style="margin-left: 10px;"></i>
                 </button>
+                </a>
+            
                 <footer class="modal-footer-dg">
 
 
