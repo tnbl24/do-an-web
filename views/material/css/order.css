@@ -46,6 +46,7 @@
     border: 1px solid #dddddd;
     font-family: 'Times New Roman', Times, serif;
     margin-top: 20px;
+    
 }
 .alaska-naudo img{
     margin-top: 10px;
@@ -112,4 +113,8 @@
 
 .row.donmua-content {
     margin-bottom: 30px;
+}
+
+.donmua-mdh {
+    color: #276eae;
 }
