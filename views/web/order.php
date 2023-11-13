@@ -54,12 +54,6 @@ include_once("../layout/header.php");
                         <p>Thành tiền: 38.000.000<sup>đ</sup>
                     </div>
                 </div>
-                <div class="dathang-2">
-                    <div class="dathang-content-right-button">
-                        <a href="#"><button>Đã nhận</button></a>
-                            <a href="contact.php"><button>Liên hệ</button></a>
-                    </div>
-                </div>
             </div>
             <div class="donmua-donhang">
                 <div class="donmua-trangthai">
@@ -82,8 +76,7 @@ include_once("../layout/header.php");
                     </div>
                     <div class="dathang-2">
                         <div class="dathang-content-right-button">
-                            <a href="#"><button>Đã nhận</button></a>
-                            <a href="contact.php"><button>Liên hệ</button></a>
+                            <a href="contact.php"><button>Đã nhận</button></a>
                             <a href="danhgia.php"><button>Đánh giá</button></a>
                         </div>
                     </div>
@@ -126,12 +119,7 @@ include_once("../layout/header.php");
                         <p>Thành tiền: 38.000.000<sup>đ</sup>
                     </div>
                     </div>
-                    <div class="dathang-2">
-                        <div class="dathang-content-right-button">
-                            <a href="#"><button>Đã nhận</button></a>
-                            <a href="contact.php"><button>Liên hệ</button></a>
-                        </div>
-                    </div>
+                
                 </div>
             </div>
             <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
@@ -164,8 +152,7 @@ include_once("../layout/header.php");
                     </div>
                     <div class="dathang-2">
                         <div class="dathang-content-right-button">
-                            <a href="#"><button>Đã nhận</button></a>
-                            <a href="contact.php"><button>Liên hệ</button></a>
+                            <a href="contact.php"><button>Đã nhận</button></a>
                             <a href="danhgia.php"><button>Đánh giá</button></a>
                         </div>
                     </div>

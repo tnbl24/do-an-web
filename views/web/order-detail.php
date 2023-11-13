@@ -102,7 +102,6 @@ include_once("../layout/header.php");
         </div>
         <div class="dathang-2">
             <div class="donhang-button">
-                <a href="#"><button>Hủy đặt hàng</button></a>
                 <a href="contact.php"><button>Liên hệ người bán</button></a>
                 <a href="home.php"><button>Quay lại trang chủ</button></a>
             </div>

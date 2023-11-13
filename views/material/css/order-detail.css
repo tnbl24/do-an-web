@@ -169,6 +169,7 @@
     align-items: center;
     display: flex;
     position: absolute;
+    margin-right: 55px;
 }
 .donhang-button a{
     text-decoration: none;

@@ -160,3 +160,7 @@ a.me-3{
 img.rounded-circle.shadow-1-strong {
     cursor: default;
 }
+
+.btn-feedback{
+    margin: auto;
+}

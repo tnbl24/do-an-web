@@ -25,5 +25,22 @@
 }
 
 .product-detail h4 {
-    font-size: 20px;
+    font-size: 19px;
+    color: #696969;
+}
+
+.product-detail-container{
+    margin-bottom: 50px;
+}
+
+.py-4 {
+    padding-top: 0 !important;
+}
+
+.chinhh{
+    color:#0056b3;
+    margin-left: 45px;
+}
+.col-12 {
+    padding-left: 50px;
 }

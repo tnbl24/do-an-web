@@ -41,7 +41,9 @@ include_once("../layout/header.php");
                 <button type="button" id="editButton">Sửa</button>
                 <button type="submit" id="saveButton">Lưu</button>
                 <button type="button" id="deleteButton">Xóa Tài Khoản</button>
+                <a href="../web/forgot.php" style="text-decoration:none;">
                 <button type="button" id="changePasswordButton">Đổi Mật Khẩu</button>
+                </a>
             </div>
         </form>
     </div>

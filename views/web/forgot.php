@@ -13,7 +13,7 @@
     <div id="wrapper">
         <form action="" id="form-login">
             <h1 class="form-heading">KHÔI PHỤC MẬT KHẨU</h1>
-            <p>Xin vui lòng điền thông tin phía dưới để khôi phục mật khẩu của bạn mật khẩu!</p>
+            <p>Xin vui lòng điền thông tin phía dưới để khôi phục mật khẩu của bạn!</p>
             <div class="form-group1">
                 <input type="text" class="form-input" placeholder="Nhập số điện thoại hoặc email của bạn">
             </div>

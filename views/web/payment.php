@@ -54,7 +54,7 @@ include_once("../layout/header.php");
             </table>
             <div class="dathang-2">
                 <div class="dathang-content-right-button">
-                    <a href="payment.php"><button>Quay lại</button></a>
+                    <a href="../web/cart.php"><button>Quay lại</button></a>
                     <a href="order-detail.php"><button>Thanh toán</button></a>
                 </div>
             </div>
