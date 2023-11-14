@@ -57,8 +57,17 @@ include_once("../layout/header.php");
                         </form>
                     </div>
                 </div>
-            </div>
-
+            <div class="contact-share-button" onclick="sendMessage()">
+                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
+                </div>
+</div>
+<!--
+ <script>
+    function sendMessage() {
+      alert("Tin nhắn");
+    }
+  </script>
+  -->
 <?php
 include_once("../layout/footer.php");
 ?>

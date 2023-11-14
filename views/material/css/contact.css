@@ -118,3 +118,14 @@
     padding-top: 20px;
     color:#fff;
 }
+.contact-share-button {
+    position: fixed;
+    z-index: 9999;
+    right: 0;
+    float: right;
+    top: 30%;
+    margin-top: -25px;
+    cursor: pointer;
+    width: 55px;
+    height: 55px;
+}

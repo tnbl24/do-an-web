@@ -1,5 +1,6 @@
 .thanhtoan {
     padding: 20px 0;
+    padding-bottom: 0;
 }
 .thanhtoan-content {
     display: grid;
@@ -90,4 +91,13 @@
 .thanhtoan-button button:hover {
     background-color:rgb(145, 183, 217) ;
     color: white; 
+}
+
+.thanhtoan-vnp{
+    display: flex;
+}
+
+.thanhtoantienmat {
+    margin: auto;
+    margin-top: 0;
 }

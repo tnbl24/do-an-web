@@ -106,6 +106,9 @@ include_once("../layout/header.php");
                 <a href="home.php"><button>Quay lại trang chủ</button></a>
             </div>
         </div>
+        <div class="contact-share-button" onclick="sendMessage()">
+                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
+                </div>
     </div>
 </section>
 <?php

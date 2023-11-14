@@ -160,6 +160,9 @@ include_once("../layout/header.php");
             </div>
         </div>
     </div>
+    <div class="contact-share-button" onclick="sendMessage()">
+                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
+                </div>
 </div>
 <?php
 include_once("../layout/footer.php");

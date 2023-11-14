@@ -196,7 +196,9 @@ include("../layout/header.php");
             ?>
 
         </div>
-
+<div class="contact-share-button" onclick="sendMessage()">
+                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
+                </div>
 </div>
 
 

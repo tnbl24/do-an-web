@@ -7,20 +7,20 @@ include_once("../layout/header.php");
             <p style="font-weight: bold;">THÔNG TIN ĐẶT HÀNG</p>
             <div class="dathang-content-left-field">
                 <label for="ten" class="dathang-content-left-ten">Họ tên<span style="color: red;">*</span></label><br>
-                <input type="text" class="dathang-content-left-input">
+                <input type="text" class="dathang-content-left-input" value="" readonly>
             </div>
             <div class="dathang-content-left-field">
                 <label for="dt" class="dathang-content-left-dt">Điện thoại<span style="color: red;">*</span></label>
                 <input type="text" class="dathang-content-left-input">
             </div>
-            <div class="dathang-content-left-field">
-                <label for="email" class="dathang-content-left-email">Địa chỉ email</label>
-                <input type="text" class="dathang-content-left-input">
-            </div>
+
             <div class="dathang-content-left-field">
                 <label for="dc" class="dathang-content-left-dc">Địa chỉ<span style="color: red;">*</span></label>
                 <input type="text" class="dathang-content-left-input">
             </div>
+            <?php
+include_once("../web/payment.php");
+?>
             <div class="dathang-content-left-ghichu">
                 <label for="">Ghi chú</label><br>
                 <textarea name="ghichu" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
@@ -61,11 +61,13 @@ include_once("../layout/header.php");
             <div class="dathang-2">
                 <div class="dathang-content-right-button">
                     <a href="../web/cart.php"><button>Quay lại</button></a>
-                    <a href="payment.php"><button>Đặt hàng</button></a>
+                    <a href="../web/order-detail.php"><button>Đặt hàng</button></a>
                 </div>
             </div>
         </div>
-
+<div class="contact-share-button" onclick="sendMessage()">
+                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
+                </div>
     </div>
     
 </section>
