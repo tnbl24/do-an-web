@@ -249,6 +249,8 @@ span.cart-notice:hover {
     top: -8px;
     left: -22px;
     background-color: #93a8d7;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .dropdown.account {
