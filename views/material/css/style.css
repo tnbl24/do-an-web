@@ -36,7 +36,6 @@ li .nav-link {
 
 a {
     color: #0d19fd;
-    padding-right: 20px;
     text-transform: uppercase;
 }
 
@@ -186,9 +185,9 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    min-width: 184px;
+    min-width: 185px;
     z-index: 1;
-    right: -11%;
+    right: -113%;
     top:152%;
     text-align: center;
     height: 100px;
@@ -214,11 +213,11 @@ body {
 }
 
 .dr-content {
-    right: -26%;
+    right: -21%;
     position: relative;
     color: #f9f9f9;
     width: 100px;
-    top: -24px;
+    top: -23px;
     height: 33px;
 }
 
@@ -233,6 +232,26 @@ svg.bi.bi-person {
     height: 32px;
 }
 
-.item-cart:hover{
-color: #05f3ff;
+
+
+a.item.cart-color:hover {
+    color: #05f3ff;
 }
+
+span.cart-notice:hover {
+    border: 1px solid #05f3ff;
+}
+.cart-notice {
+    border: 1px solid blue;
+    border-radius: 30px;
+    padding: 0 3px 0 3px;
+    position: relative;
+    top: -8px;
+    left: -22px;
+    background-color: #93a8d7;
+}
+
+.dropdown.account {
+    margin-right: 30px;
+}
+
