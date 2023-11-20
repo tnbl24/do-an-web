@@ -121,9 +121,9 @@
 .contact-share-button {
     position: fixed;
     z-index: 9999;
-    right: 0;
+    right: 2%;
+    bottom: 4%;
     float: right;
-    top: 30%;
     margin-top: -25px;
     cursor: pointer;
     width: 55px;

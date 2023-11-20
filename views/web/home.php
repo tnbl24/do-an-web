@@ -168,10 +168,10 @@ include_once("../layout/header.php");
                 </div>
             </div>
             <a href="../web/dog.php" style="text-decoration:none;">
-            <button class="home-content-1-btn">Xem thêm</button>
+                <button class="home-content-1-btn">Xem thêm</button>
             </a>
         </div>
-        
+
         <div class="home-content-2">
             <h2 style="padding-top: 50px;
             margin:0;"> WHAT OUR CUSTOMER SAY</h2>
@@ -179,9 +179,9 @@ include_once("../layout/header.php");
             <?php
             include_once("../web/comment.php");
             ?>
-<div class="contact-share-button" onclick="sendMessage()">
-                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
-                </div>
+            <div class="contact-share-button" onclick="sendMessage()">
+                <img src="../material/img/fb-messenger.png" alt="Message Icon">
+            </div>
         </div>
         <?php
         include_once("../layout/footer.php");

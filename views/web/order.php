@@ -76,7 +76,7 @@ include_once("../layout/header.php");
                     </div>
                     <div class="dathang-2">
                         <div class="dathang-content-right-button">
-                            <a href="contact.php"><button>Đã nhận</button></a>
+                            <a href="#"><button>Đã nhận</button></a>
                             <a href="danhgia.php"><button>Đánh giá</button></a>
                         </div>
                     </div>
@@ -152,7 +152,7 @@ include_once("../layout/header.php");
                     </div>
                     <div class="dathang-2">
                         <div class="dathang-content-right-button">
-                            <a href="contact.php"><button>Đã nhận</button></a>
+                            <a href="#"><button>Đã nhận</button></a>
                             <a href="danhgia.php"><button>Đánh giá</button></a>
                         </div>
                     </div>
