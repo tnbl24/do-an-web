@@ -98,6 +98,7 @@
     background-color: rgba(17, 162, 252, 0.6);
     font-size: 15px;
     color:black;
+    margin-right: 19px;
 }
 .dathang-content-right-button button:hover {
     background-color:#2da9fb ;

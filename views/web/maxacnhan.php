@@ -101,5 +101,5 @@ body {
     </div>
 
 </body>
-<script src="js/app.js"></script>
+<script src="../material/js/app.js"></script>
 </html>

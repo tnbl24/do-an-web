@@ -17,7 +17,7 @@ include_once("../layout/header.php");
 
                 </div>
                 <div class="xacnhan text-dh">
-                    <p>Xác nhận</p>
+                    <p>Đang chuẩn bị hàng</p>
 
                 </div>
                 <div class="donhang-vanchuyen donhang-item">
