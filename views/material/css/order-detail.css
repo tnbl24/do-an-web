@@ -58,24 +58,27 @@
     border: 1px solid #0DB7EA;
 }
 .donhang-trangthai {
-    display: grid;
-    grid-template-columns: 45% 55%;
+    display: flex;
     margin-bottom: 20px;
+    margin-left: 6%;
 }
 .donhang-xacnhan i{
     color: #0DB7EA;
 }
 .donhang-diachi {
     height: 150px;
+    flex: 1;
 }
 .donhang-diachi p {
     margin-left: 30px;
+    margin-bottom: 0;
 }
 .tenkh {
-    margin-left: 60px;
+    margin-left: 50px;
 }
 .donhang-quatrinh {
     border-left: 1px solid #dddddd;
+    flex: 1;
 }
 .rqUx-N {
     position: relative;
@@ -119,11 +122,11 @@
     z-index: 2;
 }
 .B3MLEe {
-    width: 120px;
     margin-top: 3px;
     flex-shrink: 0;
     color: rgba(0,0,0,.8);
     padding: 0 12px;
+    margin-right: 20px;
 }
 .u4VSsO p._0P1byN {
     font-weight: 700;
@@ -167,10 +170,10 @@
     border-bottom: 1px solid #dddddd;
 }
 .donhang-button {
-    align-items: center;
     display: flex;
     position: absolute;
-    margin-right: 55px;
+    margin-right: 33px;
+    margin-top: 10px;
 }
 .donhang-button a{
     text-decoration: none;
@@ -180,6 +183,7 @@
     background-color: rgba(17, 162, 252, 0.6);
     font-size: 15px;
     color:black;
+    margin-right: 20px;
 }
 .donhang-button button:hover {
     background-color:#2da9fb ;
@@ -192,20 +196,26 @@
     justify-content: flex-end;
     margin-top: 20px;
 }
-.alaska-naudo{
-    font-size: 15px;
-}
-.tienhang{
-    text-align: right;
-    margin-bottom: 20px;
-}
-.alaska-hongphan{
-    border-top: 1px solid #dddddd;
-}
-.alaska-hongphan img {
-    margin-top: 10px;
+.alaska-naudo-dh{
+    margin-left: 100px;
 }
 
-    
+i.fa-solid.fa-location-dot {
+    margin-right: 5px;
+}
+
+.donhang-imgsp {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tienhang {
+    margin-right: 60px;
+    display: flex;
+    align-items: center;
+}
 
 
+.alaska-naudo-dh img {
+    margin-right: 20px;
+}

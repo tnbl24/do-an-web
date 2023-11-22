@@ -39,11 +39,12 @@ include_once("../layout/header.php");
 
             <div class="profile-button-container">
                 <button type="button" id="editButton">Sửa</button>
-                <button type="submit" id="saveButton">Lưu</button>
-                <button type="button" id="deleteButton">Xóa Tài Khoản</button>
+                <!-- <button type="submit" id="saveButton">Lưu</button> -->
                 <a href="../web/forgot.php" style="text-decoration:none;">
                 <button type="button" id="changePasswordButton">Đổi Mật Khẩu</button>
                 </a>
+                <button type="button" id="deleteButton">Xóa Tài Khoản</button>
+                
             </div>
         </form>
     </div>

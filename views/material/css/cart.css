@@ -1,138 +1,4 @@
 
-/* 
-.cart-container {
-    display: flex;
-    padding:40px
-  }
-  .cart-content-left {
-    flex: 2;
-    padding-right: 20px;
-  }
-  .cart-content-left table {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .cart-content-left table th {
-    padding-bottom: 30px;
-    font-family: var(--main-text-font);
-    font-size: 15px;
-    text-transform: uppercase;
-    color: #333;
-    border-collapse: collapse;
-    border-bottom: 2px solid #dddddd;
-  }
-  .cart-content-left table p {
-    font-family: var(--main-text-font);
-    font-size: 15px;
-    color: #333;
-  }
-  
-   .cart-content-left table input {
-    width: 30px;
-  
-  }
-  .cart-content-left table span {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    background-color: #808080; 
-    color: #fff; 
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    border-radius: 50%; 
-    cursor: pointer;
-  }
-  .cart-content-left table span:hover {
-    background-color: #A0A0A0; 
-}
-  .cart-content-left table td {
-    padding: 20px 0;
-    border-bottom: 2px solid #dddddd;
-  }
-  .cart-content-left td:first-child img {
-    width:130px;
-  }
-  
-  .cart-content-left td:nth-child(2){
-    max-width: 130px;
-  }
-  
-  .cart-content-right {
-    flex: 1;
-    padding-left: 20px;
-    border-left: 2px solid #dddddd;
-  }
-  .cart-content-right table {
-    width: 100%;
-  }
-  .cart-content-right table th {
-    padding-bottom: 30px;
-    font-family: var(--main-text-font);
-    font-size: 20px;
-    color: #333;
-    border-collapse: collapse;
-    border-bottom: 2px solid #dddddd;
-  }
-  
-  .cart-content-right table td {
-    font-family: var(--main-text-font);
-    font-size: 15px;
-    color: #333;
-    padding: 6px 0;
-  }
-  
-  .cart-content-right tr:nth-child(4) td {
-    border-bottom: 2px solid #dddddd;
-  }
-  .cart-content-right tr td:last-child {
-    text-align: right;
-  }
-  
-  .cart-content-right-button {
-    text-align: center;
-    align-items: center;
-    display: flex;
-    position:absolute;
-  }
-  .cart-content-right-button button {
-    padding: 0 18px;
-    height: 35px;
-    cursor: pointer;
-    margin-right: 20px;
-    margin-top: 10px;
-    font-size: 15px;
-  }
-  .cart-content-right-button a {
-    text-decoration: none;
-  }
-
-  .cart-content-right-button button:first-child {
-    background-color: #3498db; 
-    color: #fff;
-    border: 1px solid #3498db;
-    margin-right: 20px;
-    transition: background-color 0.3s; 
-  }
-  
-  .cart-content-right-button button:first-child:hover {
-    background-color: #2077c9; 
-  }
-  
-  .cart-content-right-button button:last-child {
-    background-color: #3498db; 
-    color: #fff;
-    border: 1px solid #3498db;
-    margin-right: 0;
-    transition: background-color 0.3s;
-  }
-  
-  .cart-content-right-button button:last-child:hover {
-    background-color: #2077c9;
-  }
-  
-    */
     /* -----cart----- */
 .cart-container {
   display: flex;
@@ -157,7 +23,7 @@
 }
 
 .cart-content-left table th {
-  background-color: #f2f2f2;
+  background-color: rgba(17, 162, 252, 0.1);
 }
 
 .cart-content-left table img {
@@ -181,7 +47,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-color: #808080;
+  background-color: #ff6767;
   color: #fff;
   font-size: 14px;
   font-weight: bold;
@@ -191,7 +57,7 @@
 }
 
 .cart-content-left table span:hover {
-  background-color: #A0A0A0;
+  background-color: #a10000;
 }
 
 .cart-content-right {
@@ -211,7 +77,7 @@
 }
 
 .cart-content-right table th {
-  background-color: #f2f2f2;
+  background-color: rgba(17, 162, 252, 0.1);
   text-align: center;
 }
 
@@ -223,10 +89,10 @@
 }
 
 .cart-content-right-button {
-  text-align: center;
-  margin-top: 20px;
+  margin-top: 27px;
   display: flex;
-  margin-left: 75px;
+  justify-content: center;
+  margin-left: 28px;
 }
 
 .cart-content-right-button button {
@@ -243,21 +109,22 @@
 }
 
 .cart-content-right-button button:first-child {
-  background-color: #3498db;
-  color: #fff;
+  background-color: rgba(17, 162, 252, 0.6);
+  margin-left: 10px;
   transition: background-color 0.3s;
 }
 
 .cart-content-right-button button:first-child:hover {
-  background-color: #2077c9;
+  background-color: #2da9fb;
 }
 
 .cart-content-right-button button:last-child {
-  background-color: #3498db;
-  color: #fff;
+  background-color: rgba(17, 162, 252, 0.6);
+  color: black;
   transition: background-color 0.3s;
 }
 
 .cart-content-right-button button:last-child:hover {
-  background-color: #2077c9;
+  background-color: #2da9fb;
+  color: black;
 }

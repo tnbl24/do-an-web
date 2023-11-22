@@ -48,14 +48,8 @@
     margin-top: 20px;
     
 }
-.alaska-naudo img{
+.alaska-naudo-order img{
     margin-top: 10px;
-    margin-left: 20px;
-}
-.alaska-hongphan {
-    border-bottom: 1px solid #dddddd;
-}
-.alaska-hongphan img {
     margin-left: 20px;
 }
 .donmua-trangthai-1{
@@ -63,7 +57,6 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: right;
     padding: 15px;
-    justify-content: center;
 }
 .donmua-trangthai-1 a{
     text-decoration: none;
@@ -84,8 +77,11 @@
     font-family: 'Times New Roman', Times, serif;
     text-align: center;
 }
-.donhang-imgsp-1 {
+.donhang-imgsp.order {
     border-bottom: 1px solid #dddddd;
+}
+.donhang-imgsp.order img{
+    margin-right: 20px;
 }
 .donmua-mhd {
     display: flex;
@@ -117,4 +113,16 @@
 
 .donmua-mdh {
     color: #276eae;
+}
+.alaska-naudo-order {
+    margin-bottom: 10px;
+}
+
+.tienhang.order{
+    margin-right: 27px;
+}
+
+.dathang-2.order {
+    margin-top: -4px;
+    margin-bottom: 60px;
 }

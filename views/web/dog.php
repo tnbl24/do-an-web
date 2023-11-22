@@ -31,17 +31,20 @@ include("../layout/header.php");
     </div>
     <div class="col-sm-10">
         <div class="tab-content" id="nav-tabContent">
+            <div class="dog-content-search-box">
+                <form class="form-inline my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                        </svg>
+                    </button>
+                </form>
+            </div>
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                 <div class="home-content-1 dog-contant-2">
                     <div class="dog-content-search">
-                        <div class="dog-content-search-box">
-                            <form class="form-inline my-lg-0">
-                                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                                <button class="btn btn-outline-success my-2 my-sm-0" type="submit"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
-                                    </svg></button>
-                            </form>
-                        </div>
+
                     </div>
 
 
@@ -159,16 +162,7 @@ include("../layout/header.php");
                             </div>
 
                         </div>
-                        <div class="pagination dog-list">
-                            <a href="#">&laquo;</a>
-                            <a href="#">1</a>
-                            <a href="#">2</a>
-                            <a href="#">3</a>
-                            <a href="#">4</a>
-                            <a href="#">5</a>
-                            <a href="#">6</a>
-                            <a href="#">&raquo;</a>
-                        </div>
+
                     </div>
 
                 </div>
@@ -183,22 +177,32 @@ include("../layout/header.php");
             <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
                 <h3>shiba</h3>
             </div>
+            <div class="pagination dog-list">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+            </div>
         </div>
 
     </div>
 
     <div class="home-content-2">
-            <h2 style="padding-top: 50px;
+        <h2 style="padding-top: 50px;
             margin:0;">FEEDBACK </h2>
 
-            <?php
-            include_once("../web/comment.php");
-            ?>
+        <?php
+        include_once("../web/comment.php");
+        ?>
 
-        </div>
-<div class="contact-share-button" onclick="sendMessage()">
-                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
-                </div>
+    </div>
+    <div class="contact-share-button" onclick="sendMessage()">
+        <img src="../material/img/fb-messenger.png" alt="Message Icon">
+    </div>
 </div>
 
 

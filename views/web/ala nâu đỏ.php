@@ -45,7 +45,7 @@ include_once("../layout/header.php");
                     font-size:26px;">Chó Alaska nâu đỏ</h3>
                     <h2 style="color:red;">15.000.000 VND</h2>
                     <div class="product-detail-button">
-                        <button class="submit">Thêm vào giỏ hàng</button>
+                        <button class="submit"> + Thêm vào giỏ hàng</button>
                     </div>
                     <h3 class="mt-4 mb-4" style="text-align:left;
                     padding:0;

@@ -95,9 +95,26 @@
 
 .thanhtoan-vnp{
     display: flex;
+    border: 1px solid grey;
+    position: relative;
+    top: -11px;
+    width: 93%;
+    border-radius: 5px;
+    padding-top: 15px;
+    margin-left: -5px;
+    padding-left: 7px;
 }
 
 .thanhtoantienmat {
     margin: auto;
     margin-top: 0;
+}
+
+label.pttt {
+    position: relative;
+    z-index: 1;
+    background-color: #e0edf8;
+}
+.thanhtoanvnpay {
+    margin-right: 30px;
 }
