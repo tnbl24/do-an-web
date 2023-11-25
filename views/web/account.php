@@ -39,10 +39,10 @@ include_once("../layout/header.php");
 
             <div class="profile-button-container">
                 <button type="button" id="editButton">Sửa</button>
-
+                <!-- <button type="submit" id="saveButton">Lưu</button> -->
                 <a href="../web/forgot.php" style="text-decoration:none;">
                 <button type="button" id="changePasswordButton">Đổi Mật Khẩu</button>
-                </a>
+                <!-- </a> -->
                 <button type="button" id="deleteButton">Xóa Tài Khoản</button>
             </div>
             <div class="profile-button-2-container" >
@@ -52,51 +52,9 @@ include_once("../layout/header.php");
         </form>
     </div>
     <div class="contact-share-button" onclick="sendMessage()">
-                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
-                </div>
+        <img src="../material/img/fb-messenger.png" alt="Message Icon">   
     </div>
-
- <script>
-        const editButton = document.getElementById("editButton");
-        const saveButton = document.getElementById("saveButton");
-        const goBackButton = document.getElementById("goBackButton");
-        const deleteButton = document.getElementById("deleteButton");
-        const changePasswordButton = document.getElementById("changePasswordButton");
-
-        const editableInputs = document.querySelectorAll(".profile-info input[readonly]");
-
-
-        saveButton.style.display = "none";
-        goBackButton.style.display = "none";
-
-        editButton.addEventListener("click", function () {
-            editableInputs.forEach(input => input.removeAttribute("readonly"));
-            editButton.style.display = "none";
-            saveButton.style.display = "block";
-            goBackButton.style.display = "block";
-            changePasswordButton.style.display = "none";
-            deleteButton.style.display = "none";
-        });
-
-        saveButton.addEventListener("click", function () {
-            editableInputs.forEach(input => input.setAttribute("readonly", "readonly"));
-            editButton.style.display = "block";
-            saveButton.style.display = "none";
-            goBackButton.style.display = "none";
-            changePasswordButton.style.display = "block";
-            deleteButton.style.display = "block";
-        });
-
-        goBackButton.addEventListener("click", function () {
-            editableInputs.forEach(input => input.setAttribute("readonly", "readonly"));
-            editButton.style.display = "block";
-            saveButton.style.display = "none";
-            goBackButton.style.display = "none";
-            changePasswordButton.style.display = "block";
-            deleteButton.style.display = "block";
-        });
-
-    </script>
+    </div>
 <?php
 include_once("../layout/footer.php");
 ?>

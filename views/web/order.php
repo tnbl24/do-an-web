@@ -44,7 +44,8 @@ include_once("../layout/header.php");
                             <span>Alaska nâu đỏ</span>
                             <span class="small"> x1</span><br>
                         </div>
-                        <div class="tienhang order"><span>18.000.000<sup>đ</sup></span></div>
+                        <div class="tienhang order"><span>18.000.000<sup>đ</sup></span>
+                        </div>
                     </div>
                     <!-- sản phẩm 2 -->
                     <div class="donhang-imgsp order">
@@ -54,12 +55,14 @@ include_once("../layout/header.php");
                             <span class="small"> x1</span><br>
                         </div>
                         <div class="tienhang order"><span>18.000.000<sup>đ</sup></span></div>
+
                     </div>
                     <!-- tổng tiền đơn hàng -->
                     <div class="donmua-thanhtien">
                         <div class="donmua-soluong">
                             <p>số lượng :2</p>
                             <p>Thành tiền: 38.000.000<sup>đ</sup>
+
                         </div>
                     </div>
                 </div>
@@ -76,9 +79,20 @@ include_once("../layout/header.php");
                             <span>Alaska nâu đỏ</span>
                             <span class="small"> x1</span><br>
                         </div>
-                        <div class="tienhang order"><span>18.000.000<sup>đ</sup></span></div>
+                        <div class="tienhang order dhtc"><span>18.000.000<sup>đ</sup></span>
+                            <button class="danhgia-modal danhgia-dg">Đánh giá</button>
+                        </div>
                     </div>
-
+                    <div class="donhang-imgsp order">
+                        <div class="alaska-naudo-order">
+                            <img src="../material/img/ala nâu đỏ.jpg">
+                            <span>Alaska nâu đỏ</span>
+                            <span class="small"> x1</span><br>
+                        </div>
+                        <div class="tienhang order dhtc"><span>18.000.000<sup>đ</sup></span>
+                            <button class="danhgia-modal danhgia-dg">Đánh giá</button>
+                        </div>
+                    </div>
                     <div class="donmua-thanhtien">
                         <div class="donmua-soluong">
                             <p>số lượng :2</p>
@@ -88,8 +102,8 @@ include_once("../layout/header.php");
                     <!-- button -->
                     <div class="dathang-2 order">
                         <div class="dathang-content-right-button">
-                            <a href="#"><button>Đã nhận</button></a>
-                            <a href="danhgia.php"><button>Đánh giá</button></a>
+                            <a href="#"><button class="dg-danhan">Đã nhận</button></a>
+                            <!-- <button class="danhgia-dg">Đánh giá</button> -->
                         </div>
                     </div>
                 </div>
@@ -156,7 +170,9 @@ include_once("../layout/header.php");
                             <span>Alaska nâu đỏ</span>
                             <span class="small"> x1</span><br>
                         </div>
-                        <div class="tienhang order"><span>18.000.000<sup>đ</sup></span>
+                        <div class="tienhang order dhtc"><span>18.000.000<sup>đ</sup></span>
+                        <button class="danhgia-modal danhgia-dg">Đánh giá</button>
+
                         </div>
                     </div>
 
@@ -168,8 +184,7 @@ include_once("../layout/header.php");
                     </div>
                     <div class="dathang-2 order">
                         <div class="dathang-content-right-button">
-                            <a href="#"><button>Đã nhận</button></a>
-                            <a href="danhgia.php"><button>Đánh giá</button></a>
+                            <button class="dg-danhan">Đã nhận</button>
                         </div>
                     </div>
                 </div>
@@ -180,6 +195,11 @@ include_once("../layout/header.php");
         <img src="../material/img/fb-messenger.png" alt="Message Icon">
     </div>
 </div>
+
+<?php
+include_once("../web/danhgia.php")
+?>
+
 <?php
 include_once("../layout/footer.php");
 ?>

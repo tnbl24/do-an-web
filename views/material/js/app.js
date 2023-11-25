@@ -22,5 +22,11 @@ $(document).ready(function(){
         $(this).prev().attr('type', 'password');
     }
   });
-
 });
+
+$(document).ready(function(){
+  $('#changePasswordButton').on(click,function(){
+    $('#wrapper2').addClass('open-account');
+  })
+})
+
