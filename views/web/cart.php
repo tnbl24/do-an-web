@@ -19,6 +19,7 @@ include_once("../layout/header.php");
                                
                         
                             </tr>
+                         
                             <tr>
                                 <td><input type="checkbox" class="productCheckbox"></td>
                                 <td><img src="../material/img/ala hồng phấn.jpg" alt=""></td>
@@ -55,6 +56,7 @@ include_once("../layout/header.php");
                                 </td>
                                 <td> <span>X</span> </td>
                             </tr>
+                      
                         </table>
                     </div>
                     <div class="cart-content-right">
@@ -64,12 +66,12 @@ include_once("../layout/header.php");
                             </tr>
                             <tr>
                                 <td style="color: black; font-weight: bold">Tổng sản phẩm</td>
-                                <td style="">2</td>
+                                <td style=""></td>
                             </tr>
                             <tr>
                                 <td style="color: black; font-weight: bold">Tổng thanh toán</td>
                                 <td>
-                                    <p>38.000.000 VND</p>
+                                   <p></p>
                                 </td>
                             </tr>
                             
@@ -85,7 +87,112 @@ include_once("../layout/header.php");
                 </div>
                 </div>
             </section>
+<script>
+    document.getElementById('selectAll').addEventListener('change', function () {
+        var checkboxes = document.querySelectorAll('.productCheckbox');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+    });
 
+
+ 
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('selectAll').addEventListener('change', function () {
+        toggleAllCheckboxes(this.checked);
+        calculateSelectedProducts();
+    });
+
+
+    var productCheckboxes = document.querySelectorAll('.productCheckbox');
+    productCheckboxes.forEach(function (checkbox) {
+        checkbox.addEventListener('change', function () {
+            calculateSelectedProducts();
+        });
+    });
+
+
+    var deleteButtons = document.querySelectorAll('.cart-content-left table tr:not(:first-child) td:last-child span');
+    deleteButtons.forEach(function (deleteButton) {
+        deleteButton.addEventListener('click', function () {
+            var row = this.closest('tr');
+            row.remove();
+            calculateTotalPrice();
+            calculateSelectedProducts(); 
+        });
+    });
+});
+
+
+function toggleAllCheckboxes(checked) {
+    var productCheckboxes = document.querySelectorAll('.productCheckbox');
+    productCheckboxes.forEach(function (checkbox) {
+        checkbox.checked = checked;
+    });
+}
+
+
+function calculateSelectedProducts() {
+    var selectedCheckboxes = document.querySelectorAll('.productCheckbox:checked');
+    var selectedProductsCount = selectedCheckboxes.length;
+
+    var totalPrice = 0;
+    selectedCheckboxes.forEach(function (checkbox) {
+        var row = checkbox.closest('tr');
+        var priceElement = row.querySelector('td:nth-child(5) p');
+        var price = parseFloat(priceElement.innerText.replace(' VND', '').replace('.', '').replace('.', ''));
+        totalPrice += price;
+    });
+
+
+    var selectedProductsCountElement = document.querySelector('.cart-content-right table tr:nth-child(2) td:last-child');
+    selectedProductsCountElement.innerText = selectedProductsCount;
+
+
+    var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
+    totalPriceElement.innerText = formatCurrency(totalPrice) + ' VND';
+
+    var tempTotalElement = document.querySelector('.cart-content-right table tr:nth-child(4) td p');
+    tempTotalElement.innerText = formatCurrency(totalPrice) + ' VND';
+}
+
+
+function calculateTotalPrice() {
+    var totalPrice = 0;
+
+    // Iterate through all product rows
+    var productRows = document.querySelectorAll('.cart-content-left table tr:not(:first-child)');
+    productRows.forEach(function (row) {
+        var checkbox = row.querySelector('.productCheckbox:checked');
+        if (checkbox) {
+            var priceElement = row.querySelector('td:nth-child(5) p');
+            var price = parseFloat(priceElement.innerText.replace(' VND', '').replace('.', '').replace('.', ''));
+            totalPrice += price;
+        }
+    });
+
+    var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
+    totalPriceElement.innerText = formatCurrency(totalPrice) + ' VND';
+
+ 
+    var tempTotalElement = document.querySelector('.cart-content-right table tr:nth-child(4) td p');
+    tempTotalElement.innerText = formatCurrency(totalPrice) + ' VND';
+}
+
+
+function formatCurrency(amount) {
+    return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+}
+
+
+function sendMessage() {
+    // Add your logic for opening Facebook Messenger or sending a message here
+    alert('Sending a message...');
+}
+
+</script>
 
 <?php
 include_once("../layout/footer.php");

@@ -5,7 +5,10 @@ include_once("../layout/header.php");
     <div class="product-detail">
         <div class="container sproduct my-6 pt-lg-5">
             <div class="chinhh">
-            <h6>Trang chủ/ Thú cưng/ Danh mục</h6>
+            <h6>
+            <span onclick="redirectToHome()" style="cursor: pointer; color: #4189be;" >Trang chủ</span> >
+            <span onclick="redirectToDog()" style="cursor: pointer; color: #4189be;">Chó</span> > Alaska Nâu Đỏ
+            </h6>
             </div>
             
             <div class="row mt-5">
@@ -94,7 +97,7 @@ include_once("../layout/header.php");
                                 <p class="home-dog-price">10 tỷ bery</p>
                             </div>
                         </div>
-
+            
                         <div class="col home-col">
                             <div class="hover01 column">
                                 <div>
@@ -133,6 +136,16 @@ include_once("../layout/header.php");
     </div>
     </div>
 
+
+<script>
+    function redirectToHome() {
+        window.location.href = "../web/home.php"; 
+    }
+
+    function redirectToDog() {
+        window.location.href = "../web/dog.php"; 
+    }
+</script>
 
 <?php
     include_once("../layout/footer.php");

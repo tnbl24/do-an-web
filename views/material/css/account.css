@@ -49,6 +49,12 @@
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+ 
+}
+.profile-button-2-container{
+    display: flex;
+    justify-content: space-around;
+    margin-left: -7px;
 }
 
 .profile-button-container button {
@@ -60,10 +66,22 @@
     font-size: 15px;
 }
 
+
 .profile-button-container button:hover {
     background-color: #2da9fb;
 }
 
+.profile-button-2-container button {
+    background-color: rgba(17, 162, 252, 0.6);
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+.profile-button-2-container button:hover {
+    background-color: #2da9fb;
+}
 .profile-bg {
     background-color: #F0F8FF;
     padding-top: 40px;
