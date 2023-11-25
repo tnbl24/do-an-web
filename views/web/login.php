@@ -14,7 +14,6 @@
         <div id="baophu">
         <form action="" id="form-login">
             <h1 class="form-heading">ĐĂNG NHẬP</h1>
-            <p>Đăng nhập để không bỏ lỡ bất kì khuyến mãi nào từ trang web của chúng tôi</p>
             <div class="form-group">
                 <i class="bi bi-person-circle"></i>
                 <input type="text" class="form-input" placeholder="Tên đăng nhập">
@@ -26,9 +25,9 @@
                     <i class="bi bi-eye"></i>
                 </div>
             </div>
-            <div> <a href="#" class="form-submit" >Đăng nhập</a> </div>
-            <div><a href="../web/Resign.php" class="form-submit" >Đăng ký</a> </div>
-            <p> Nếu bạn quên mật khẩu, bạn có thể sử dụng tính năng <a href="../web/forgot.php" class="form-forgot">Lấy mật khẩu</a> để lấy lại mật khẩu của mình. </p>
+            <div> <a href="../web/home.php" class="form-submit" >Đăng nhập</a> </div>
+            <div><a href="../web/signup.php" class="form-submit" >Đăng ký</a> </div>
+            <p> Nếu bạn quên mật khẩu, bạn có thể sử dụng tính năng <a href="../web/maxacnhan.php" class="form-forgot">Lấy mật khẩu</a> để lấy lại mật khẩu của mình. </p>
         </form>
         </div>
     </div>

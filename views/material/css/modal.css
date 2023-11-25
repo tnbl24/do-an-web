@@ -1,0 +1,235 @@
+.form-submit {
+    /* display: flex; */
+    background: transparent;
+    border: 1px solid #f5f5f5;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2% 38%;
+    transition: 0.25s ease-in-out;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 17px;
+}
+#wrapper2 {
+    /* background: linear-gradient(to bottom, #2980b9, #2c3e50); */
+    background: rgba(0,0,0,0.3);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    font-size: 16px;
+    margin: 0;
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    display: none;
+}
+
+#wrapper2.open-account{
+display: flex;
+}
+#form-login {
+    margin-top: 200px;
+    max-width: 400px;
+    background: rgba(0,0,0,0.8);
+    flex-grow: 1;
+    padding: 30px 30px 40px;
+    box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.8);
+}
+#form-resign {
+    margin-top: 125px;
+    max-width: 450px;
+    max-height: 600px;
+    background: rgba(0,0,0,1);
+    flex-grow: 1;
+    padding: 30px 30px 40px;
+    box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.8);
+    text-align: center;
+    animation: modalfadein ease .4s;
+}
+
+.form-heading{
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 30px;
+}
+.form-group1 {
+    border: 1px solid #fff;
+    border-radius: 5px;
+    padding: 5px 5px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    display: flex;
+}
+.form-group1 i {
+    color: #fff;
+    font-size: 16px;
+    padding-right: 8px;
+
+}
+.form-input {
+    background: transparent;
+    border: 0;
+    outline: 0;
+    color: #fff;
+    flex-grow: 1;
+}
+.form-input::placeholder{
+    color: rgba(255,255,255,0.4);
+}
+#eye i{
+    cursor: pointer;
+}
+
+p.form-forgot{
+    margin-top: 20px;
+}
+
+@keyframes modalfadein{
+    from{
+        opacity: 0;
+        transform: translateY(-100px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-dg {
+    position: fixed;
+    background: rgba(0,0,0,0.3);
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 7;
+    display: none;
+}
+
+.modal-container-dg {
+    background: white;
+    width: 900px;
+    max-width: calc(100% - 32px);
+    min-height: 200px;
+    position: relative;
+    animation: modalfadein ease .4s;
+
+}
+
+.modal-header-dg {
+    background: rgba(17, 162, 252, 0.9);
+    width: 900px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    transform: translate(-16px, -16px);
+}
+
+.modal-close-dg {
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #fff;
+    padding: 12px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.modal-close-dg:hover {
+    opacity: 1;
+}
+
+.modal-body-dg {
+    padding-top: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.modal-label-dg {
+    display: block;
+    font-size: 15px;
+    color: #009688;
+    margin-bottom: 10px;
+}
+
+.modal-input-dg {
+    border: 1px solid #ccc;
+    width: 95%;
+    font-size: 15px;
+    padding: 10px;
+}
+
+#submit-dg {
+    background: rgba(17, 162, 252, 0.9);
+
+    border: none;
+    color: #fff;
+    width: 150px;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: 12px;
+    opacity: 1;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-left: 25px;
+    padding-left: 40px;
+}
+
+#submit-dg:hover {
+    opacity: 0.8;
+}
+
+.modal-footer-dg {
+    padding-top: 16px;
+    padding-right: 16px;
+    text-align: right;
+
+}
+
+.modal-footer-dg a {
+    color: #009688;
+}
+
+.mt-3.d-flex.flex-row.align-items-center.p-3.form-color.comment-1 {
+    display: flex;
+    margin-left: 20px;
+    margin-top: 15px;
+}
+.btn-feedback {
+margin: auto;
+display: flex;
+justify-content: flex-end;
+padding-bottom: 30px;
+}
+.tienhang.order.dhtc {
+    flex-direction: column;
+    justify-content: center;
+}
+
+button.danhgia-modal.danhgia-dg {
+    margin-top: 10px;
+    color: black;
+    width: 100px;
+    height: 40px;
+    font-size: 15px;
+    padding-left: 21px;
+}
+
+.open-account {
+    display: flex;
+}
+.close-account{
+    display: none;
+}

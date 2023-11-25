@@ -19,7 +19,7 @@
             </div>
             <div class="form-group1">
                 <input type="text" class="form-input" placeholder="Nhập số điện thoại của bạn" name="phone" required
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />>
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" />
             </div>
             <div class="form-group1">
                 <input type="text" class="form-input" placeholder="Tên đăng nhập">
@@ -36,7 +36,7 @@
                     <i class="bi bi-eye"></i>
                 </div>
             </div>
-            <div><a href="#" class="form-submit" >Đăng ký</a> </div>
+            <div><a href="../web/login.php" class="form-submit" >Đăng ký</a> </div>
             <p> Bạn đã có tài khoản? Quay lại trang <a href="../web/login.php" class="form-forgot">đăng nhập</a></p>
         </form>
     </div>

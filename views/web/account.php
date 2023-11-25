@@ -40,18 +40,23 @@ include_once("../layout/header.php");
             <div class="profile-button-container">
                 <button type="button" id="editButton">Sửa</button>
                 <!-- <button type="submit" id="saveButton">Lưu</button> -->
-                <a href="../web/forgot.php" style="text-decoration:none;">
+                <!-- <a href="../web/forgot.php" style="text-decoration:none;"> -->
                 <button type="button" id="changePasswordButton">Đổi Mật Khẩu</button>
-                </a>
+                <!-- </a> -->
                 <button type="button" id="deleteButton">Xóa Tài Khoản</button>
                 
             </div>
         </form>
     </div>
     <div class="contact-share-button" onclick="sendMessage()">
-                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
-                </div>
+        <img src="../material/img/fb-messenger.png" alt="Message Icon">   
     </div>
+    </div>
+
+<?php
+include_once("../web/forgot.php");
+?>
+
 <?php
 include_once("../layout/footer.php");
 ?>
