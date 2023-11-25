@@ -25,8 +25,9 @@ $(document).ready(function(){
 });
 
 $(document).ready(function(){
-  $('#changePasswordButton').on(click,function(){
+  $('#changePasswordButton').click(function(){
     $('#wrapper2').addClass('open-account');
   })
 })
+
 

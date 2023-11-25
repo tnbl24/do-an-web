@@ -32,12 +32,12 @@
                 </div>
             </form>
             <div class="btn-feedback">
-                <a href="../web/order.php" style="text-decoration:none;">
+                <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
                     <button id="submit-dg">
                         Return
                         <i class="bi bi-arrow-counterclockwise" style="margin-left: 10px;"></i>
                     </button>
-                </a>
+                <!-- </a> -->
                 <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
                 <button id="submit-dg" class="js-submit">
                     submit
@@ -99,6 +99,11 @@
             $('.dg-danhan').click(function() {
                 $(this).addClass('close-account');
                 return false;
+            })
+        })
+        $(document).ready(function() {
+            $('#submit-dg').click(function() {
+                $('.modal-dg').removeClass('open-account');
             })
         })
     })
