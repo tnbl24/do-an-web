@@ -33,10 +33,10 @@
             </form>
             <div class="btn-feedback">
                 <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
-                    <button id="submit-dg">
-                        Return
-                        <i class="bi bi-arrow-counterclockwise" style="margin-left: 10px;"></i>
-                    </button>
+                <button id="submit-dg">
+                    Return
+                    <i class="bi bi-arrow-counterclockwise" style="margin-left: 10px;"></i>
+                </button>
                 <!-- </a> -->
                 <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
                 <button id="submit-dg" class="js-submit">
@@ -83,28 +83,29 @@
     }
 </script>
 <script>
-    $(document).ready(function() {
-        $('.danhgia-dg').click(function() {
+    var btn = document.getElementsByClassName("danhgia-modal danhgia-dg");
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].addEventListener("click", function() {
             $('.modal-dg').addClass('open-account');
+        })
+        btn[i].addEventListener("click", function() {
+            for (let j = 0; j < btn.length; j++) {
+                if (j == i) {
+                    $('.js-submit').click(function() {
+                        $('.modal-dg').removeClass('open-account');
+                        btn[j].classList.add('close-account');
+                    })
+                }
+            }
+            return true;
+        })
 
+        $('.dg-danhan').click(function() {
+            $(this).addClass('close-account');
+            return false;
         })
-        $(document).ready(function() {
-            $('.js-submit').click(function() {
-                $('.modal-dg').removeClass('open-account');
-                $('.danhgia-dg').addClass('close-account');
-                return false;
-            })
+        $('#submit-dg').click(function() {
+            $('.modal-dg').removeClass('open-account');
         })
-        $(document).ready(function() {
-            $('.dg-danhan').click(function() {
-                $(this).addClass('close-account');
-                return false;
-            })
-        })
-        $(document).ready(function() {
-            $('#submit-dg').click(function() {
-                $('.modal-dg').removeClass('open-account');
-            })
-        })
-    })
+    }
 </script>
