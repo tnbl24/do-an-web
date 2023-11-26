@@ -35,10 +35,3 @@ $(document).ready(function(){
     }
   });
 });
-
-$(document).ready(function(){
-  $('#changePasswordButton').on(click,function(){
-    $('#wrapper2').addClass('open-account');
-  })
-})
-
