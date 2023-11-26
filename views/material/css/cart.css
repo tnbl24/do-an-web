@@ -3,6 +3,7 @@
 .cart-container {
   display: flex;
   padding: 40px;
+  padding-top: 10px;
 }
 
 .cart-content-left {
@@ -64,6 +65,7 @@
   flex: 1;
   padding-left: 20px;
   border-left: 2px solid #dddddd;
+  margin-top: 36px;
 }
 
 .cart-content-right table {

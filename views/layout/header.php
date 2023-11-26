@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="../material/css/payment.css" />
     <link rel="stylesheet" href="../material/css/order.css" />
     <link rel="stylesheet" href="../material/css/order-detail.css" />
-    <link rel="stylesheet" href="../material/css/modal.css"/>
+    <link rel="stylesheet" href="../material/css/modal.css" />
 </head>
 
 <body>
@@ -72,77 +72,61 @@
     </div>
 
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-   
-        var accountDropdown = document.querySelector('.account');
-        var accountLink = document.getElementById('account-link');
-        var logoutLink = document.getElementById('logout-link');
-        var loginLink = document.getElementById('login-link');
-        var signupLink = document.getElementById('signup-link');
-        var cartNotice = document.querySelector('.cart-notice');
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
 
+            var accountDropdown = document.querySelector('.account');
+            var accountLink = document.getElementById('account-link');
+            var logoutLink = document.getElementById('logout-link');
+            var loginLink = document.getElementById('login-link');
+            var signupLink = document.getElementById('signup-link');
+            var cartNotice = document.querySelector('.cart-notice');
 
-        var isLoggedIn = true; 
+            var isLoggedIn = true;
 
-       
-        var cartCount = 2; 
+            var cartCount = 2;
 
-        
-        function updateCartCount() {
-            cartNotice.textContent = cartCount;
-        }
-
-    
-        function toggleLinks() {
-            if (isLoggedIn) {
-                accountLink.style.display = 'block';
-                logoutLink.style.display = 'block';
-                loginLink.style.display = 'none';
-                signupLink.style.display = 'none';
-            } else {
-                accountLink.style.display = 'none';
-                logoutLink.style.display = 'none';
-                loginLink.style.display = 'block';
-                signupLink.style.display = 'block';
+            function updateCartCount() {
+                cartNotice.textContent = cartCount;
             }
-        }
+
+            function toggleLinks() {
+                if (isLoggedIn) {
+                    accountLink.style.display = 'block';
+                    logoutLink.style.display = 'block';
+                    loginLink.style.display = 'none';
+                    signupLink.style.display = 'none';
+                } else {
+                    accountLink.style.display = 'none';
+                    logoutLink.style.display = 'none';
+                    loginLink.style.display = 'block';
+                    signupLink.style.display = 'block';
+                }
+            }
 
 
-        toggleLinks();
-        updateCartCount();
-
-
-        accountDropdown.addEventListener('click', function () {
-        
-            var dropdownContent = accountDropdown.querySelector('.dropdown-content');
-            dropdownContent.classList.toggle('show');
-        });
-
-        logoutLink.addEventListener('click', function () {
-            
-            isLoggedIn = false;
-        
-            cartCount = 0;
             toggleLinks();
             updateCartCount();
+
+
+            accountDropdown.addEventListener('click', function() {
+
+                var dropdownContent = accountDropdown.querySelector('.dropdown-content');
+                dropdownContent.classList.toggle('show');
+            });
+
+            logoutLink.addEventListener('click', function() {
+                isLoggedIn = false;
+                cartCount = 0;
+                toggleLinks();
+                updateCartCount();
+            });
+
+            loginLink.addEventListener('click', function() {
+                window.location.href = "../web/login.php";
+            });
+            signupLink.addEventListener('click', function() {
+                window.location.href = "../web/signup.php";
+            });
         });
-
-      
-        loginLink.addEventListener('click', function () {
-          
-            window.location.href = "../web/login.php";
-        });
-
-    
-        signupLink.addEventListener('click', function () {
-         
-            window.location.href = "../web/signup.php";
-        });
-    });
-</script>
-
-
-
-</body
-</html>
+    </script>

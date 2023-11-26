@@ -19,8 +19,8 @@ include_once("../layout/header.php");
                 <input type="text" class="dathang-content-left-input">
             </div>
             <?php
-include_once("../web/payment.php");
-?>
+            include_once("../web/payment.php");
+            ?>
             <div class="dathang-content-left-ghichu">
                 <label for="">Ghi chú</label><br>
                 <textarea name="ghichu" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
@@ -65,11 +65,11 @@ include_once("../web/payment.php");
                 </div>
             </div>
         </div>
-<div class="contact-share-button" onclick="sendMessage()">
-                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
-                </div>
+        <div class="contact-share-button" onclick="sendMessage()">
+            <img src="../material/img/fb-messenger.png" alt="Message Icon">
+        </div>
     </div>
-    
+
 </section>
 <?php
 include_once("../layout/footer.php");
