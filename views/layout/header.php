@@ -45,7 +45,7 @@
                     <svg class="item-cart" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                     </svg>
-                    <span class="cart-notice">0</span>
+                    <span class="cart-notice">2</span>
                 </a>
 
                 <div class="dropdown account">
@@ -60,10 +60,89 @@
                             <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
                         </svg>
 
-                        <a href="../web/account.php">Tài khoản của tôi</a>
-                        <a href="../web/home.php"> Đăng xuất</a>
+                        <a href="../web/account.php" id="account-link">Tài khoản của tôi</a>
+                        <a href="#" id="logout-link">Đăng xuất</a>
+                        <a href="#" id="login-link">Đăng nhập</a>
+                        <a href="#" id="signup-link">Đăng ký</a>
+
                     </div>
                 </div>
             </div>
         </header>
     </div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+   
+        var accountDropdown = document.querySelector('.account');
+        var accountLink = document.getElementById('account-link');
+        var logoutLink = document.getElementById('logout-link');
+        var loginLink = document.getElementById('login-link');
+        var signupLink = document.getElementById('signup-link');
+        var cartNotice = document.querySelector('.cart-notice');
+
+
+        var isLoggedIn = true; 
+
+       
+        var cartCount = 2; 
+
+        
+        function updateCartCount() {
+            cartNotice.textContent = cartCount;
+        }
+
+    
+        function toggleLinks() {
+            if (isLoggedIn) {
+                accountLink.style.display = 'block';
+                logoutLink.style.display = 'block';
+                loginLink.style.display = 'none';
+                signupLink.style.display = 'none';
+            } else {
+                accountLink.style.display = 'none';
+                logoutLink.style.display = 'none';
+                loginLink.style.display = 'block';
+                signupLink.style.display = 'block';
+            }
+        }
+
+
+        toggleLinks();
+        updateCartCount();
+
+
+        accountDropdown.addEventListener('click', function () {
+        
+            var dropdownContent = accountDropdown.querySelector('.dropdown-content');
+            dropdownContent.classList.toggle('show');
+        });
+
+        logoutLink.addEventListener('click', function () {
+            
+            isLoggedIn = false;
+        
+            cartCount = 0;
+            toggleLinks();
+            updateCartCount();
+        });
+
+      
+        loginLink.addEventListener('click', function () {
+          
+            window.location.href = "../web/login.php";
+        });
+
+    
+        signupLink.addEventListener('click', function () {
+         
+            window.location.href = "../web/signup.php";
+        });
+    });
+</script>
+
+
+
+</body
+</html>

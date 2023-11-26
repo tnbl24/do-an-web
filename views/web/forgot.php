@@ -16,7 +16,7 @@
             </div>
             <div class="form-group1">
                 <input type="password" class="form-input" placeholder="Nhập lại mật khẩu mới">
-                <div id="eye2">
+                <div id="eye3">
                     <i class="bi bi-eye"></i>
                 </div>
             </div>

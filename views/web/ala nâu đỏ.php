@@ -48,7 +48,7 @@ include_once("../layout/header.php");
                     font-size:26px;">Chó Alaska nâu đỏ</h3>
                     <h2 style="color:red;">15.000.000 VND</h2>
                     <div class="product-detail-button">
-                        <button class="submit"> + Thêm vào giỏ hàng</button>
+                        <button class="submit" onclick="addToCart()"> + Thêm vào giỏ hàng</button>
                     </div>
                     <h3 class="mt-4 mb-4" style="text-align:left;
                     padding:0;
@@ -136,14 +136,26 @@ include_once("../layout/header.php");
     </div>
     </div>
 
-
 <script>
-    function redirectToHome() {
-        window.location.href = "../web/home.php"; 
-    }
+function addToCart() {
+    incrementCartCount();
+}
 
-    function redirectToDog() {
-        window.location.href = "../web/dog.php"; 
+function incrementCartCount() {
+
+    var currentCount = parseInt($(".cart-notice").text());
+
+    var newCount = currentCount + 1;
+
+ 
+    $(".cart-notice").text(newCount);
+}
+
+function redirectToHome() {
+    window.location.href = "../web/home.php";
+    }
+function redirectToDog() {
+    window.location.href = "../web/dog.php";
     }
 </script>
 

@@ -14,7 +14,6 @@ include_once("../layout/header.php");
                                 <th>Tên danh mục</th>
                                 <th>Màu sắc</th>
                                 <th>Giá</th>
-                                <th>Tổng cộng</th>
                                 <th>Xóa</th>
                                
                         
@@ -32,10 +31,6 @@ include_once("../layout/header.php");
                                 <td>
                                     <p>20.000.000 VND</p>
                                 </td>
-
-                                <td>
-                                    <p>20.000.000 VND</p>
-                                </td>
                                 <td> <span>X</span> </td>
                             </tr>
                             <tr>
@@ -47,10 +42,6 @@ include_once("../layout/header.php");
                                 <td>
                                     <p>nâu đỏ</p>
                                 </td>
-                                <td>
-                                    <p>18.000.000 VND</p>
-                                </td>
-
                                 <td>
                                     <p>18.000.000 VND</p>
                                 </td>

@@ -73,6 +73,7 @@ body {
 #eye i{
     cursor: pointer;
 }
+
 .form-submit{
     display: flex;
     background: transparent;
