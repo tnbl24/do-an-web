@@ -183,6 +183,10 @@ include_once("../layout/header.php");
                 <img src="../material/img/fb-messenger.png" alt="Message Icon">
             </div>
         </div>
+
+        <?php
+        include('../web/modal.php')
+        ?>
         <?php
         include_once("../layout/footer.php");
         ?>

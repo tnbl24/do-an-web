@@ -82,30 +82,3 @@
         }
     }
 </script>
-<script>
-    var btn = document.getElementsByClassName("danhgia-modal danhgia-dg");
-    for (let i = 0; i < btn.length; i++) {
-        btn[i].addEventListener("click", function() {
-            $('.modal-dg').addClass('open-account');
-        })
-        btn[i].addEventListener("click", function() {
-            for (let j = 0; j < btn.length; j++) {
-                if (j == i) {
-                    $('.js-submit').click(function() {
-                        $('.modal-dg').removeClass('open-account');
-                        btn[j].classList.add('close-account');
-                    })
-                }
-            }
-            return true;
-        })
-
-        $('.dg-danhan').click(function() {
-            $(this).addClass('close-account');
-            return false;
-        })
-        $('#submit-dg').click(function() {
-            $('.modal-dg').removeClass('open-account');
-        })
-    }
-</script>

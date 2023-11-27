@@ -139,7 +139,7 @@ include_once("../layout/header.php");
         var totalPrice = 0;
         selectedCheckboxes.forEach(function(checkbox) {
             var row = checkbox.closest('tr');
-            var priceElement = row.querySelector('td:nth-child(5) p');
+            var priceElement = row.querySelector('td:nth-child(6) p');
             var price = parseFloat(priceElement.innerText.replace(' VND', '').replace('.', '').replace('.', ''));
             totalPrice += price;
         });
