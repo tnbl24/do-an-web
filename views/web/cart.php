@@ -85,6 +85,7 @@ include_once("../layout/header.php");
         </div>
     </div>
 </section>
+
 <script>
     document.getElementById('selectAll').addEventListener('change', function() {
         var checkboxes = document.querySelectorAll('.productCheckbox');
@@ -93,16 +94,11 @@ include_once("../layout/header.php");
         }
     });
 
-
-
-
-
     document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('selectAll').addEventListener('change', function() {
             toggleAllCheckboxes(this.checked);
             calculateSelectedProducts();
         });
-
 
         var productCheckboxes = document.querySelectorAll('.productCheckbox');
         productCheckboxes.forEach(function(checkbox) {
@@ -110,7 +106,6 @@ include_once("../layout/header.php");
                 calculateSelectedProducts();
             });
         });
-
 
         var deleteButtons = document.querySelectorAll('.cart-content-left table tr:not(:first-child) td:last-child span');
         deleteButtons.forEach(function(deleteButton) {
@@ -123,7 +118,6 @@ include_once("../layout/header.php");
         });
     });
 
-
     function toggleAllCheckboxes(checked) {
         var productCheckboxes = document.querySelectorAll('.productCheckbox');
         productCheckboxes.forEach(function(checkbox) {
@@ -131,11 +125,9 @@ include_once("../layout/header.php");
         });
     }
 
-
     function calculateSelectedProducts() {
         var selectedCheckboxes = document.querySelectorAll('.productCheckbox:checked');
         var selectedProductsCount = selectedCheckboxes.length;
-
         var totalPrice = 0;
         selectedCheckboxes.forEach(function(checkbox) {
             var row = checkbox.closest('tr');
@@ -144,10 +136,8 @@ include_once("../layout/header.php");
             totalPrice += price;
         });
 
-
         var selectedProductsCountElement = document.querySelector('.cart-content-right table tr:nth-child(2) td:last-child');
         selectedProductsCountElement.innerText = selectedProductsCount;
-
 
         var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
         totalPriceElement.innerText = formatCurrency(totalPrice) + ' VND';
@@ -183,7 +173,6 @@ include_once("../layout/header.php");
     function formatCurrency(amount) {
         return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
     }
-
 
     function sendMessage() {
         // Add your logic for opening Facebook Messenger or sending a message here

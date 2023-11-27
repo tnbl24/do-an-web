@@ -185,8 +185,5 @@ include_once("../layout/header.php");
         </div>
 
         <?php
-        include('../web/modal.php')
-        ?>
-        <?php
         include_once("../layout/footer.php");
         ?>

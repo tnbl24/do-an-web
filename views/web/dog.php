@@ -9,22 +9,15 @@ include("../layout/header.php");
             <ul class="list-group list-category">
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <a class="list-group-item list-group-item-action active " id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">alaska <span class="badge bg-primary rounded-pill">14</span></a>
-
-
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">husky<span class="badge bg-primary rounded-pill">2</span></a>
-
-
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">gâu đần<span class="badge bg-primary rounded-pill">1</span></a>
-
-
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">shiba <span class="badge bg-primary rounded-pill">1</span></a>
-
                 </li>
             </ul>
         </div>
@@ -44,11 +37,7 @@ include("../layout/header.php");
             <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                 <div class="home-content-1 dog-contant-2">
                     <div class="dog-content-search">
-
                     </div>
-
-
-
                     <div class="home-content-1-shop justify-content-evenly ">
                         <div class="container-home text-center home-row container-dog-list ">
                             <div class="row home-row ">
@@ -156,15 +145,10 @@ include("../layout/header.php");
                                         <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
                                         <p class="home-dog-price">10 tỷ bery</p>
                                     </div>
-
                                 </div>
-
                             </div>
-
                         </div>
-
                     </div>
-
                 </div>
 
             </div>
@@ -206,8 +190,9 @@ include("../layout/header.php");
 </div>
 
 
-
-
+<?php
+        include('../web/modal.php')
+        ?>
 <?php
 include("../layout/footer.php");
 ?>

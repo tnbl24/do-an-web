@@ -11,12 +11,9 @@ include_once("../layout/header.php");
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Đang giao<span class="badge bg-primary rounded-pill">0</span></a>
-
-
                 </li>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Hoàn thành<span class="badge bg-primary rounded-pill">1</span></a>
-
                 </li>
             </ul>
         </div>

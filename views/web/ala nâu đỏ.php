@@ -18,22 +18,15 @@ include_once("../layout/header.php");
                         <ul class="list-group list-category">
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <a class="list-group-item list-group-item-action active " id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">alaska <span class="badge bg-primary rounded-pill">14</span></a>
-
-
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">husky<span class="badge bg-primary rounded-pill">2</span></a>
-
-
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">gâu đần<span class="badge bg-primary rounded-pill">1</span></a>
-
-
                             </li>
                             <li class="list-group-item d-flex justify-content-between align-items-center">
                                 <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">shiba <span class="badge bg-primary rounded-pill">1</span></a>
-
                             </li>
                         </ul>
                     </div>
@@ -135,26 +128,6 @@ include_once("../layout/header.php");
         </div>
     </div>
 </div>
-
-<script>
-    function addToCart() {
-        incrementCartCount();
-    }
-
-    function incrementCartCount() {
-        var currentCount = parseInt($(".cart-notice").text());
-        var newCount = currentCount + 1;
-        $(".cart-notice").text(newCount);
-    }
-
-    function redirectToHome() {
-        window.location.href = "../web/home.php";
-    }
-
-    function redirectToDog() {
-        window.location.href = "../web/dog.php";
-    }
-</script>
 
 <?php
 include_once("../layout/footer.php");

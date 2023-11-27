@@ -24,8 +24,7 @@
                                     </div>
                                 </div>
                             </div>
-
-
+                            
                             <div class="d-flex flex-start mt-4">
                                 <a class="me-3" href="#">
                                     <img class="rounded-circle shadow-1-strong" src="../material/img/logo.png" alt="avatar" width="65" height="65" />

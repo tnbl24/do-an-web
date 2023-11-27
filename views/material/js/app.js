@@ -1,4 +1,4 @@
-
+//  mắt
 $(document).ready(function(){
   $('#eye').click(function(){
     $(this).toggleClass('open');
@@ -37,18 +37,14 @@ $(document).ready(function(){
   });
 });
 
+//  đổi mật khẩu
 $(document).ready(function(){
   $('#changePasswordButton').click(function(){
     $('#wrapper2').addClass('open-account');
   })
 })
 
-
-
-$('.text').click(function(){
-  $(this).addClass('fade')
-})
-
+// hide/ show đánh giá
 var btn = document.getElementsByClassName("danhgia-modal danhgia-dg");
     for (let i = 0; i < btn.length; i++) {
         btn[i].addEventListener("click", function() {
@@ -74,3 +70,39 @@ var btn = document.getElementsByClassName("danhgia-modal danhgia-dg");
             $('.modal-dg').removeClass('open-account');
         })
     }
+
+
+    
+
+    // tăng số lượng giỏ hàng ở header
+    function addToCart() {
+        incrementCartCount();
+    }
+
+    function incrementCartCount() {
+        var currentCount = parseInt($(".cart-notice").text());
+        var newCount = currentCount + 1;
+        $(".cart-notice").text(newCount);
+    }
+
+    function redirectToHome() {
+        window.location.href = "../web/home.php";
+    }
+
+    function redirectToDog() {
+        window.location.href = "../web/dog.php";
+    }
+
+//modal success
+$('.btn-outline-success').click(function(){
+    $('.modal-success').addClass('open-modal')
+
+    $('.modal-success').click(function(){
+        $(this).removeClass('open-modal')
+    })
+
+    setTimeout(()=>{
+        $('.modal-success').removeClass('open-modal');
+    },2000)
+    return false;
+})
