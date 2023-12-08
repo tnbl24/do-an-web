@@ -75,8 +75,8 @@ include_once("../layout/header.php");
                 </tr>
             </table>
             <div class="cart-content-right-button">
-                <a href="../web/home.php"><button> Quay lại trang chủ</button></a>
-                <a href="../web/delivery.php"><button> Mua hàng</button></a>
+                <a href="../views/home.php"><button> Quay lại trang chủ</button></a>
+                <a href="../views/delivery.php"><button> Mua hàng</button></a>
             </div>
 
         </div>

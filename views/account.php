@@ -97,7 +97,7 @@ include_once("../layout/header.php");
 
     </script>
 <?php
-include_once("../web/forgot.php");
+include_once("../views/forgot.php");
 ?>
 
 <?php

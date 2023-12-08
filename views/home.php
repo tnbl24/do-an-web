@@ -39,7 +39,7 @@ include_once("../layout/header.php");
                 <p>shop chó đến từ nhóm 5</p>
             </div>
             <div class="button-home">
-                <a href="../web/dog.php">
+                <a href="../views/dog.php">
                     <div class="button-wrapper">
                         <div class="text">Shop Now</div>
                         <span class="icon">
@@ -67,7 +67,7 @@ include_once("../layout/header.php");
                             </div>
                             <div class="home-text">
                                 <p class="home-dog-category">alaska</p>
-                                <p><a href="../web/ala nâu đỏ.php" class="home-dog-name">alaska nâu đỏ</a></p>
+                                <p><a href="./ala nâu đỏ.php" class="home-dog-name">alaska nâu đỏ</a></p>
                                 <p class="home-dog-price">18.000.000 VND</p>
                             </div>
                         </div>
@@ -167,7 +167,7 @@ include_once("../layout/header.php");
                     </div>
                 </div>
             </div>
-            <a href="../web/dog.php" style="text-decoration:none;">
+            <a href="../views/dog.php" style="text-decoration:none;">
                 <button class="home-content-1-btn">Xem thêm</button>
             </a>
         </div>
@@ -177,7 +177,7 @@ include_once("../layout/header.php");
             margin:0;"> WHAT OUR CUSTOMER SAY</h2>
 
             <?php
-            include_once("../web/comment.php");
+            include_once("../views/comment.php");
             ?>
             <div class="contact-share-button" onclick="sendMessage()">
                 <img src="../material/img/fb-messenger.png" alt="Message Icon">

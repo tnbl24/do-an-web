@@ -180,7 +180,7 @@ include("../layout/header.php");
             margin:0;">FEEDBACK </h2>
 
         <?php
-        include_once("../web/comment.php");
+        include_once("../views/comment.php");
         ?>
 
     </div>
@@ -191,7 +191,7 @@ include("../layout/header.php");
 
 
 <?php
-        include('../web/modal.php')
+        include('../views/modal.php')
         ?>
 <?php
 include("../layout/footer.php");

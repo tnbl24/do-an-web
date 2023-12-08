@@ -115,7 +115,7 @@ include_once("../layout/header.php");
 </div>
 
 <?php
-include_once("../web/danhgia.php")
+include_once("../views/danhgia.php")
 ?>
 
 <?php
