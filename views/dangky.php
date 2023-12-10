@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../material/css/reset.css"> 
-    <link rel="stylesheet" href="../material/css/app.css">
+    <link rel="stylesheet" href="../material/css/dangnhap.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <title>Form Login dog.vn</title>
 </head>
@@ -36,8 +36,8 @@
                     <i class="bi bi-eye"></i>
                 </div>
             </div>
-            <div><a href="../web/login.php" class="form-submit" >Đăng ký</a> </div>
-            <p> Bạn đã có tài khoản? Quay lại trang <a href="../web/login.php" class="form-forgot">đăng nhập</a></p>
+            <div><a href="../views/dangky.php" class="form-submit" >Đăng ký</a> </div>
+            <p> Bạn đã có tài khoản? Quay lại trang <a href="../views/dangnhap.php" class="form-forgot">đăng nhập</a></p>
         </form>
     </div>
 

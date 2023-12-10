@@ -1,6 +1,6 @@
 <?php
 include("../layout/header.php");
-require_once("../model/danhmucmodel.php");
+require_once("../controller/danhmuccontroller.php");
 ?>
 
 
@@ -163,14 +163,9 @@ require_once("../model/danhmucmodel.php");
                 <h3>shiba</h3>
             </div>
             <div class="pagination dog-list">
-                <a href="#">&laquo;</a>
-                <a href="#">1</a>
-                <a href="#">2</a>
-                <a href="#">3</a>
-                <a href="#">4</a>
-                <a href="#">5</a>
-                <a href="#">6</a>
-                <a href="#">&raquo;</a>
+                <?php
+                    include("../views/phantrang.php")
+                ?>
             </div>
         </div>
 
@@ -181,7 +176,7 @@ require_once("../model/danhmucmodel.php");
             margin:0;">FEEDBACK </h2>
 
         <?php
-        include_once("../views/comment.php");
+        include_once("../views/binhluan.php");
         ?>
 
     </div>

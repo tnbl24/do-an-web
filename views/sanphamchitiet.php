@@ -119,7 +119,7 @@ include_once("../layout/header.php");
                     </div>
                 </div>
             </div>
-            <a href="../web/dog.php" style="text-decoration:none;">
+            <a href="../views/cho.php" style="text-decoration:none;">
                 <button class="home-content-1-btn">Xem thêm</button>
             </a>
         </div>

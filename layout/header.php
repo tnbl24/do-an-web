@@ -11,37 +11,37 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../material/css/style.css" />
-    <link rel="stylesheet" href="../material/css/about.css" />
-    <link rel="stylesheet" href="../material/css/home.css" />
-    <link rel="stylesheet" href="../material/css/comment.css" />
-    <link rel="stylesheet" href="../material/css/dog.css" />
-    <link rel="stylesheet" href="../material/css/account.css" />
-    <link rel="stylesheet" href="../material/css/cart.css" />
-    <link rel="stylesheet" href="../material/css/contact.css" />
-    <link rel="stylesheet" href="../material/css/product-detail.css" />
-    <link rel="stylesheet" href="../material/css/delivery.css" />
-    <link rel="stylesheet" href="../material/css/payment.css" />
-    <link rel="stylesheet" href="../material/css/order.css" />
-    <link rel="stylesheet" href="../material/css/order-detail.css" />
+    <link rel="stylesheet" href="../material/css/gioithieu.css" />
+    <link rel="stylesheet" href="../material/css/trangchu.css" />
+    <link rel="stylesheet" href="../material/css/binhluan.css" />
+    <link rel="stylesheet" href="../material/css/cho.css" />
+    <link rel="stylesheet" href="../material/css/taikhoankh.css" />
+    <link rel="stylesheet" href="../material/css/giohang.css" />
+    <link rel="stylesheet" href="../material/css/lienhe.css" />
+    <link rel="stylesheet" href="../material/css/sanphamchitiet.css" />
+    <link rel="stylesheet" href="../material/css/dathang.css" />
+    <link rel="stylesheet" href="../material/css/thanhtoan.css" />
+    <link rel="stylesheet" href="../material/css/donhang.css" />
+    <link rel="stylesheet" href="../material/css/donhangchitiet.css" />
     <link rel="stylesheet" href="../material/css/modal.css" />
 </head>
 
 <body>
     <div class="container">
         <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4">
-            <a href="../web/home.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none logo"><img src="../material/img/logo.png" width="150" height="60" />
+            <a href="../views/trangchu.php" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none logo"><img src="../material/img/logo.png" width="150" height="60" />
             </a>
 
             <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-                <li><a href="../views/home.php" class="nav-link px-2 ">Trang chủ</a></li>
-                <li><a href="../views/about.php" class="nav-link px-2 ">Giới thiệu</a></li>
-                <li><a href="../views/dog.php" class="nav-link px-2 ">Chó</a></li>
-                <li><a href="../views/contact.php" class="nav-link px-2 ">Liên hệ</a></li>
-                <li><a href="../views/order.php" class="nav-link px-2 ">Đơn Hàng</a></li>
+                <li><a href="../views/trangchu.php" class="nav-link px-2 ">Trang chủ</a></li>
+                <li><a href="../views/gioithieu.php" class="nav-link px-2 ">Giới thiệu</a></li>
+                <li><a href="../views/cho.php" class="nav-link px-2 ">Chó</a></li>
+                <li><a href="../views/lienhe.php" class="nav-link px-2 ">Liên hệ</a></li>
+                <li><a href="../views/donhang.php" class="nav-link px-2 ">Đơn Hàng</a></li>
             </ul>
 
             <div class="col-md-3 text-end">
-                <a href="../views/cart.php" class="item cart-color ">
+                <a href="../views/giohang.php" class="item cart-color ">
                     <svg class="item-cart" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart2" viewBox="0 0 16 16">
                         <path d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                     </svg>
@@ -60,7 +60,7 @@
                             <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z" />
                         </svg>
 
-                        <a href="../views/account.php" id="account-link">Tài khoản của tôi</a>
+                        <a href="../views/taikhoankh.php" id="account-link">Tài khoản của tôi</a>
                         <a href="#" id="logout-link">Đăng xuất</a>
                         <a href="#" id="login-link">Đăng nhập</a>
                         <a href="#" id="signup-link">Đăng ký</a>
@@ -123,10 +123,10 @@
             });
 
             loginLink.addEventListener('click', function() {
-                window.location.href = "../web/login.php";
+                window.location.href = "../views/dangnhap.php";
             });
             signupLink.addEventListener('click', function() {
-                window.location.href = "../web/signup.php";
+                window.location.href = "../views/dangky.php";
             });
         });
     </script>

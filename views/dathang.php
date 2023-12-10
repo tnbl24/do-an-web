@@ -19,7 +19,7 @@ include_once("../layout/header.php");
                 <input type="text" class="dathang-content-left-input">
             </div>
             <?php
-            include_once("../views/payment.php");
+            include_once("../views/thanhtoan.php");
             ?>
             <div class="dathang-content-left-ghichu">
                 <label for="">Ghi chú</label><br>
@@ -60,8 +60,8 @@ include_once("../layout/header.php");
             </table>
             <div class="dathang-2">
                 <div class="dathang-content-right-button">
-                    <a href="../views/cart.php"><button>Quay lại</button></a>
-                    <a href="../views/order-detail.php"><button>Đặt hàng</button></a>
+                    <a href="../views/giohang.php"><button>Quay lại</button></a>
+                    <a href="../views/donhangchitiet.php"><button>Đặt hàng</button></a>
                 </div>
             </div>
         </div>

@@ -104,8 +104,8 @@ body {
                     <i class="bi bi-eye"></i>
                 </div>
             </div>
-            <div><a href="../web/login.php" class="form-submit"  >XÁC NHẬN</a> </div>
-            <p>Quay lại trang <a href="../web/login.php" class="form-forgot">đăng nhập</a></p>
+            <div><a href="../views/dangnhap.php" class="form-submit"  >XÁC NHẬN</a> </div>
+            <p>Quay lại trang <a href="../views/dangnhap.php" class="form-forgot">đăng nhập</a></p>
         </form>
     </div>
 

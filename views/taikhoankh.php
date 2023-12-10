@@ -101,7 +101,7 @@ include_once("../layout/header.php");
 
     </script>
 <?php
-include_once("../views/forgot.php");
+include_once("../views/doimatkhau.php");
 ?>
 
 <?php

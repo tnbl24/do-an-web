@@ -7,12 +7,12 @@
                         <a href="../views/">Trang chủ</a>
                     </li>
                     <li>
-                        <a href="../views/about.php">Giới thiệu</a>
+                        <a href="../views/gioithieu.php">Giới thiệu</a>
                     </li>
                     <li>
-                        <a href="../views/dog.php">Thú cưng</a>
+                        <a href="../views/cho.php">Thú cưng</a>
                     </li>
-                    <li><a href="../views/contact.php">Liên hệ</a></li>
+                    <li><a href="../views/lienhe.php">Liên hệ</a></li>
                 </ul>
             </div>
             <div class="footer-content middle">

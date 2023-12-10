@@ -96,8 +96,8 @@ body {
             <div class="form-group1">
                 <input type="text" class="form-input" placeholder="Nhập mã xác nhận">
             </div>
-            <div> <a href="../web/Newpass.php" class="form-submit" >Gửi</a> </div>
-            <p> Trở về trang <a href="../web/login.php" class="form-forgot">đăng nhập</a></p>
+            <div> <a href="../views/matkhaumoi.php"class="form-submit" >Gửi</a> </div>
+            <p> Trở về trang <a href="../views/dangnhap.php" class="form-forgot">đăng nhập</a></p>
         </form>
     </div>
 

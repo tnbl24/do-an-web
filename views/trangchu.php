@@ -67,7 +67,7 @@ include_once("../layout/header.php");
                             </div>
                             <div class="home-text">
                                 <p class="home-dog-category">alaska</p>
-                                <p><a href="./ala nâu đỏ.php" class="home-dog-name">alaska nâu đỏ</a></p>
+                                <p><a href="./sanphamchitiet.php" class="home-dog-name">alaska nâu đỏ</a></p>
                                 <p class="home-dog-price">18.000.000 VND</p>
                             </div>
                         </div>
@@ -167,7 +167,7 @@ include_once("../layout/header.php");
                     </div>
                 </div>
             </div>
-            <a href="../views/dog.php" style="text-decoration:none;">
+            <a href="../views/cho.php" style="text-decoration:none;">
                 <button class="home-content-1-btn">Xem thêm</button>
             </a>
         </div>
@@ -177,7 +177,7 @@ include_once("../layout/header.php");
             margin:0;"> WHAT OUR CUSTOMER SAY</h2>
 
             <?php
-            include_once("../views/comment.php");
+            include_once("../views/binhluan.php");
             ?>
             <div class="contact-share-button" onclick="sendMessage()">
                 <img src="../material/img/fb-messenger.png" alt="Message Icon">

@@ -1,6 +1,6 @@
 <?php
 include_once("../layout/header.php");
-require_once("../model/tinhtrangdonhangmodel.php");
+require_once("../controller/tinhtrangdonhangcontroller.php");
 ?>
 <div class="row donmua-content">
     <div class="col-sm-2 donmua-content-category ">
@@ -114,7 +114,37 @@ require_once("../model/tinhtrangdonhangmodel.php");
         <img src="../material/img/fb-messenger.png" alt="Message Icon">
     </div>
 </div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        // ktra donmua-donhang có rỗng hay ko
+        function checkDonHangEmpty(tabId) {
+            var donHangElement = document.querySelector(tabId + ' .donmua-donhang');
+            var donHangTrongElement = document.querySelector(tabId + ' .donmua-donhangtrong');
 
+            if (donHangElement.children.length === 0) {
+                // rỗng
+                donHangTrongElement.style.display = 'block';
+            } else {
+                // khác rỗng
+                donHangTrongElement.style.display = 'none';
+            }
+        }
+
+        // gọi hàm cho từng tab
+        checkDonHangEmpty('#list-profile');
+        checkDonHangEmpty('#list-messages');
+        checkDonHangEmpty('#list-settings');
+
+        var tabs = document.querySelectorAll('[data-bs-toggle="list"]');
+        tabs.forEach(function(tab) {
+            tab.addEventListener('click', function() {
+                setTimeout(function() {
+                    checkDonHangEmpty(tab.getAttribute('href'));
+                }, 100);
+            });
+        });
+    });
+</script>
 <?php
 include_once("../views/danhgia.php")
 ?>

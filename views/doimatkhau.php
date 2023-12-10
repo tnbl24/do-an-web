@@ -20,10 +20,10 @@
             </div>
         </div>
         <div>
-            <a href="../views/account.php" class="form-submit" style=" width: 105px;"> XÁC NHẬN </a>
+            <a href="../views/taikhoankh.php" class="form-submit" style=" width: 105px;"> XÁC NHẬN </a>
         </div>
         <p style="margin-top:25px;">
-            <a href="../views/account.php" class="form-forgot" style="color: #5296c9;">Quay lại</a>
+            <a href="../views/taikhoankh.php" class="form-forgot" style="color: #5296c9;">Quay lại</a>
         </p>
     </form>
 </div>

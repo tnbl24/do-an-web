@@ -163,9 +163,9 @@ include_once("../layout/header.php");
                     </table>
                     <div class="dathang-2">
                 <div class="donhang-button">
-                    <a href="home.php"><button>Quay lại trang chủ</button></a>
+                    <a href="trangchu.php"><button>Quay lại trang chủ</button></a>
 
-                    <a href="contact.php"><button>Liên hệ người bán</button></a>
+                    <a href="lienhe.php"><button>Liên hệ người bán</button></a>
                 </div>
             </div>
                 </div>
