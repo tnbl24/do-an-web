@@ -138,12 +138,12 @@
     margin: 1px 0 8px;
 }
 .donhang-sanpham {
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: nowrap;
     color: rgba(0,0,0,.87);
     padding: 10px 24px;
-    justify-content: center;
     border-top: 1px solid #dddddd;
+    display: flex;
 }
 .donhang-sp {
     display: flex;
@@ -156,11 +156,8 @@
 .donhang-hoadon{
     display: flex;
     justify-content: flex-end;
+    flex-direction: column;
     margin-right: 20px;
-}
-.donhang-hoadon table {
-    width: 30%;
-    margin-left: 100px;
 }
 .donhang-hoadon table, td {
     border-collapse: collapse;
@@ -171,9 +168,7 @@
 }
 .donhang-button {
     display: flex;
-    position: absolute;
-    margin-right: 33px;
-    margin-top: 10px;
+    margin-right: 23px;
 }
 .donhang-button a{
     text-decoration: none;

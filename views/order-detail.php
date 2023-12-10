@@ -69,59 +69,115 @@ include_once("../layout/header.php");
                     </div>
                 </div>
             </div>
-            <div class="donhang-sanpham">
-                <div class="donhang-imgsp">
-                    <div class="alaska-naudo-dh">
-                        <img src="../material/img/ala nâu đỏ.jpg">
-                        <span>Alaska nâu đỏ</span>
-                        <span class="small"> x1</span><br>
-                    </div>
-                    <div class="tienhang">
-                        <span>18.000.000<sup>đ</sup></span>
+            <div>
 
-                    </div>
-                </div>
-                <hr>
-
-                <div class="donhang-imgsp">
-                    <div class="alaska-naudo-dh">
-                        <img src="../material/img/ala nâu đỏ.jpg">
-                        <span>Alaska nâu đỏ</span>
-                        <span class="small"> x1</span><br>
-                    </div>
-                    <div class="tienhang">
-                        <span>18.000.000<sup>đ</sup></span>
-                    </div>
-                </div>
-                <hr>
             </div>
+            <div class="donhang-sanpham">
+                <div style="width: 70%;">
+                    <div style="width: 95%;">
+                        <div class="donhang-imgsp">
+                            <div class="alaska-naudo-dh">
+                                <img src="../material/img/ala nâu đỏ.jpg">
+                                <span>Alaska nâu đỏ</span>
+                                <span class="small"> x1</span><br>
+                            </div>
+                            <div class="tienhang">
+                                <span>18.000.000<sup>đ</sup></span>
+
+                            </div>
+                        </div>
+                        <hr>
+
+                        <div class="donhang-imgsp">
+                            <div class="alaska-naudo-dh">
+                                <img src="../material/img/ala nâu đỏ.jpg">
+                                <span>Alaska nâu đỏ</span>
+                                <span class="small"> x1</span><br>
+                            </div>
+                            <div class="tienhang">
+                                <span>18.000.000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="donhang-imgsp">
+                            <div class="alaska-naudo-dh">
+                                <img src="../material/img/ala nâu đỏ.jpg">
+                                <span>Alaska nâu đỏ</span>
+                                <span class="small"> x1</span><br>
+                            </div>
+                            <div class="tienhang">
+                                <span>18.000.000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="donhang-imgsp">
+                            <div class="alaska-naudo-dh">
+                                <img src="../material/img/ala nâu đỏ.jpg">
+                                <span>Alaska nâu đỏ</span>
+                                <span class="small"> x1</span><br>
+                            </div>
+                            <div class="tienhang">
+                                <span>18.000.000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="donhang-imgsp">
+                            <div class="alaska-naudo-dh">
+                                <img src="../material/img/ala nâu đỏ.jpg">
+                                <span>Alaska nâu đỏ</span>
+                                <span class="small"> x1</span><br>
+                            </div>
+                            <div class="tienhang">
+                                <span>18.000.000<sup>đ</sup></span>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="donhang-hoadon">
+
+                    <table>
+                        <tr>
+                            <td>Số lượng: </td>
+                            <td>
+                                <p style="margin-left: 100px; margin-bottom: 0px;">x</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Tổng tiền hàng</td>
+                            <td>
+                                <p style="margin-left: 100px;margin-bottom: 0px;">38.000.000<sup>đ</sup></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Phương thức thanh toán</td>
+                            <td>
+                                <p style="margin-left: 100px;margin-bottom: 0px;"> Tiền mặt</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Ghi chú:</td>
+                            <td></td>
+                        </tr>
+                    </table>
+                    <div class="dathang-2">
+                <div class="donhang-button">
+                    <a href="home.php"><button>Quay lại trang chủ</button></a>
+
+                    <a href="contact.php"><button>Liên hệ người bán</button></a>
+                </div>
+            </div>
+                </div>
+
+            </div>
+      
         </div>
     </div>
 
-    <div class="donhang-hoadon">
-        <table>
-            <tr>
-                <td>Tổng tiền hàng</td>
-                <td>
-                    <p style="margin-left: 100px;">38.000.000<sup>đ</sup></p>
-                </td>
-            </tr>
-            <tr>
-                <td>Phương thức thanh toán</td>
-                <td>
-                    <p style="margin-left: 100px;"> Tiền mặt</p>
-                </td>
-            </tr>
-        </table>
-    </div>
-    </div>
-    <div class="dathang-2">
-        <div class="donhang-button">
-            <a href="home.php"><button>Quay lại trang chủ</button></a>
 
-            <a href="contact.php"><button>Liên hệ người bán</button></a>
-        </div>
     </div>
+
     <div class="contact-share-button" onclick="sendMessage()">
         <img src="../material/img/fb-messenger.png" alt="Message Icon">
     </div>

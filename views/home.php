@@ -184,6 +184,12 @@ include_once("../layout/header.php");
             </div>
         </div>
 
+        <div class = "quotes">
+            <q><i>
+            Một chú chó không quan tâm bạn giàu hay nghèo, có học thức hay không có học thức, thông minh hay ngốc nghếch. Hãy trao cho nó trái tim của bạn, nó cũng sẽ trao lại cho bạn trái tim của mình.
+            </i>
+            </q>
+        </div>
         <?php
         include_once("../layout/footer.php");
         ?>

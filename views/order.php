@@ -1,20 +1,21 @@
 <?php
 include_once("../layout/header.php");
+require_once("../model/tinhtrangdonhangmodel.php");
 ?>
 <div class="row donmua-content">
     <div class="col-sm-2 donmua-content-category ">
         <div class="donmua-list-group" id="list-tab" role="tablist">
             <h2 style="text-align: center;"> Trạng thái</h2>
             <ul class="list-group list-category">
+                <?php
+                foreach($tinhtranghoadons as $tinhtrang => $soluong){
+                ?>
                 <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a class="list-group-item list-group-item-action active" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">Chờ giao hàng<span class="badge bg-primary rounded-pill">2</span></a>
+                    <a class="list-group-item list-group-item-action <?php if($tinhtrang == array_key_first($tinhtranghoadons)) echo "active" ?>" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings"><?=$tinhtrang?><span class="badge bg-primary rounded-pill"><?=$soluong?></span></a>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">Đang giao<span class="badge bg-primary rounded-pill">0</span></a>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">Hoàn thành<span class="badge bg-primary rounded-pill">1</span></a>
-                </li>
+                <?php
+                }
+                ?>
             </ul>
         </div>
     </div>

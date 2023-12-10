@@ -268,3 +268,11 @@ figure {
     margin: 0;
 }
 
+.quotes {
+    height: 200px;
+    width: 48%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}

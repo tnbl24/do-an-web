@@ -8,6 +8,10 @@ include_once("../layout/header.php");
         <h1>Tài Khoản Của Tôi</h1>
         <form id="profile-form">
             <div class="profile-info">
+                <div>
+                    <label>ảnh</label>
+                    <input type="file">
+                </div>
                 <label for="name">Tên:</label>
                 <input type="text" id="name" name="name" value="" readonly>
 
