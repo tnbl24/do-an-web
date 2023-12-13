@@ -1,8 +1,7 @@
 <?php
 include("../layout/header.php");
-require_once("../controller/danhmuccontroller.php");
+require_once("../controller/chocontroller.php");
 ?>
-
 
 <div class="row dog-content">
     <div class="col-sm-2 dog-content-category ">
@@ -10,11 +9,13 @@ require_once("../controller/danhmuccontroller.php");
         <div class="list-group" id="list-tab" role="tablist">
             <ul class="list-group list-category">
                 <?php
-                foreach ($danhmucs as $danhmuc => $value) {
+                foreach ($bdanhmucs as $bdanhmuc => $bvalue) {
                 ?>
-                    <li class="list-group-item d-flex justify-content-between align-items-center">
-                        <a class="list-group-item list-group-item-action <?php if($danhmuc == array_key_first($danhmucs) )  echo "active" ?>" id="list-profile-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-profile"><?= $danhmuc  ?><span class="badge bg-primary rounded-pill"><?= $value  ?></span></a>
-
+                    <li class="list-group-item d-flex justify-content-between align-items-center" >
+                        <a class="list-group-item list-group-item-action 
+                        <?php if($bdanhmuc == array_key_first($bdanhmucs) )  echo "active" ?>" name="bdanhmuccho"
+                        id="list-profile-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-profile"><?= $bdanhmuc  ?>
+                        <span class="badge bg-primary rounded-pill"><?= $bvalue  ?></span></a>
                     </li>
                 <?php
                 }
@@ -35,133 +36,48 @@ require_once("../controller/danhmuccontroller.php");
                     </button>
                 </form>
             </div>
-            <div class="tab-pane fade show " id="list-home" role="tabpanel" aria-labelledby="list-home-list">
+            <div class="tab-pane fade show active" id="list-home" role="tabpanel" aria-labelledby="list-home-list">
                 <div class="home-content-1 dog-contant-2">
                     <div class="dog-content-search">
                     </div>
                     <div class="home-content-1-shop justify-content-evenly ">
                         <div class="container-home text-center home-row container-dog-list ">
                             <div class="row home-row ">
+                                <?php
+                                $bcount =0;
+                                foreach($bdanhsachcho as $bcode){
+                                    foreach($bcode as $bcho => $bvalue){
+                                        if($bcount % 4 ==0){
+                                            echo '</div><div class="row home-row">';
+                                        }
+                                    ?>                                                                
                                 <div class="col home-col">
                                     <div class="hover01 column">
                                         <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
+                                            <figure><a href="#"> <?php echo '<img class="home-img" src="data:image/jpeg;base64,' . base64_encode($bcode['hinhanhc']) .'">'?> </a></figure>
                                         </div>
                                     </div>
                                     <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
+                                        <p class="home-dog-category"><?=$bcode['danhmucc']?></p>
+                                        <p><a href="#" class="home-dog-name">
+                                            <?=$bcode['codec'] ." ".$bcode['danhmucc']." ". $bcode['mausacc'] ?>
+                                        </a></p>
+                                        <p class="home-dog-price"><?=$bcode['giatienc']?></p>
                                     </div>
                                 </div>
-
-                                <div class="col home-col">
-                                    <div class="hover01 column">
-                                        <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                        </div>
-                                    </div>
-                                    <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
-                                    </div>
-                                </div>
-
-                                <div class="col home-col">
-                                    <div class="hover01 column">
-                                        <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                        </div>
-                                    </div>
-                                    <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
-                                    </div>
-                                </div>
-
-                                <div class="col home-col">
-                                    <div class="hover01 column">
-                                        <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                        </div>
-                                    </div>
-                                    <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="row home-row ">
-                                <div class="col home-col">
-                                    <div class="hover01 column">
-                                        <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                        </div>
-                                    </div>
-                                    <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
-                                    </div>
-                                </div>
-
-                                <div class="col home-col">
-                                    <div class="hover01 column">
-                                        <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                        </div>
-                                    </div>
-                                    <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
-                                    </div>
-                                </div>
-
-                                <div class="col home-col">
-                                    <div class="hover01 column">
-                                        <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                        </div>
-                                    </div>
-                                    <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
-                                    </div>
-                                </div>
-
-                                <div class="col home-col">
-                                    <div class="hover01 column">
-                                        <div>
-                                            <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                        </div>
-                                    </div>
-                                    <div class="home-text">
-                                        <p class="home-dog-category">alaska</p>
-                                        <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                        <p class="home-dog-price">10 tỷ bery</p>
-                                    </div>
-                                </div>
+                                        <?php
+                                        $bcount ++;
+                                        break;
+                                    }
+                                }
+                                ?>
                             </div>
                         </div>
                     </div>
                 </div>
 
             </div>
-            <div class="tab-pane fade show active" id="list-profile" role="tabpanel" aria-labelledby="list-profile-list">
-                <h3>husky</h3>
-            </div>
-            <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
-                <h3>gâu đần</h3>
-            </div>
-            <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                <h3>shiba</h3>
-            </div>
+
             <div class="pagination dog-list">
                 <?php
                     include("../views/phantrang.php")

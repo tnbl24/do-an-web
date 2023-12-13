@@ -101,3 +101,15 @@ transform: none;
 .btn-outline-success:active:focus {
     box-shadow: 0 0 0 0.25rem rgba(17, 162, 252, 0.6);
 }
+
+.home-row{
+    margin: 0;
+    width: fit-content;
+}
+.home-col{
+    width: 25%;
+}
+
+.container-home.text-center{
+    margin: auto;
+}
