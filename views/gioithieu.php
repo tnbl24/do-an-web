@@ -23,9 +23,9 @@ include_once("../layout/header.php");
             <p>In the new era of technology we look in the future with certainty life.</p>
         </div>
     </div>
-                <div class="contact-share-button">
-                <img src="../material/img/fb-messenger.png" alt="Message Icon">   
-                </div>
+    <?php
+    include_once("../views/messenger.php");
+    ?>
 </div>
 <?php
 include_once("../layout/footer.php");

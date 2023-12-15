@@ -8,11 +8,11 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
             <h2 style="text-align: center;"> Trạng thái</h2>
             <ul class="list-group list-category">
                 <?php
-                foreach($tinhtranghoadons as $tinhtrang => $soluong){
+                foreach ($tinhtranghoadons as $tinhtrang => $soluong) {
                 ?>
-                <li class="list-group-item d-flex justify-content-between align-items-center">
-                    <a class="list-group-item list-group-item-action <?php if($tinhtrang == array_key_first($tinhtranghoadons)) echo "active" ?>" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings"><?=$tinhtrang?><span class="badge bg-primary rounded-pill"><?=$soluong?></span></a>
-                </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        <a class="list-group-item list-group-item-action <?php if ($tinhtrang == array_key_first($tinhtranghoadons)) echo "active" ?>" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings"><?= $tinhtrang ?><span class="badge bg-primary rounded-pill"><?= $soluong ?></span></a>
+                    </li>
                 <?php
                 }
                 ?>
@@ -82,7 +82,7 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
                             <span class="small"> x1</span><br>
                         </div>
                         <div class="tienhang order dhtc"><span>18.000.000<sup>đ</sup></span>
-                        <button class="danhgia-modal danhgia-dg">Đánh giá</button>
+                            <button class="danhgia-modal danhgia-dg">Đánh giá</button>
                         </div>
                     </div>
                     <div class="donhang-imgsp order">
@@ -110,9 +110,9 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
             </div>
         </div>
     </div>
-    <div class="contact-share-button" onclick="sendMessage()">
-        <img src="../material/img/fb-messenger.png" alt="Message Icon">
-    </div>
+    <?php
+    include_once("../views/messenger.php");
+    ?>
 </div>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -148,7 +148,9 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
 <?php
 include_once("../views/danhgia.php")
 ?>
-
+<?php
+include('../views/modal.php')
+?>
 <?php
 include_once("../layout/footer.php");
 ?>

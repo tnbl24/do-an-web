@@ -23,7 +23,7 @@ include_once("../layout/header.php");
                 </tr>
             </table>
         </div>
-        <div class="contact-right">
+        <!-- <div class="contact-right">
             <form>
                 <div class="contact-right-input-row">
                     <div class="contact-right-input-group">
@@ -55,11 +55,11 @@ include_once("../layout/header.php");
                     </button>
                 </div>
             </form>
-        </div>
+        </div> -->
     </div>
-    <div class="contact-share-button" onclick="sendMessage()">
-        <img src="../material/img/fb-messenger.png" alt="Message Icon">
-    </div>
+    <?php
+    include_once("../views/messenger.php");
+    ?>
 </div>
 <?php
 include_once("../layout/footer.php");

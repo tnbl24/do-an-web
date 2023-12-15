@@ -54,5 +54,5 @@
 }
 
 .col-lg-6.col-md-12.col-12{
-    width: 300px;
+    width: fit-content;
 }

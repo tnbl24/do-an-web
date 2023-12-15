@@ -19,6 +19,7 @@
 .pagination {
     display: inline-block;
     margin-top: 30px;
+    margin-bottom: 20px;
 }
 
 .pagination a {
@@ -163,4 +164,10 @@ img.rounded-circle.shadow-1-strong {
 
 .btn-feedback{
     margin: auto;
+}
+
+.active2 {
+    background-color: rgba(17, 162, 252, 0.2);
+    color: black;
+    border-radius: 16px;
 }

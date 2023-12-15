@@ -1,5 +1,6 @@
 <?php
 include_once("../layout/header.php");
+require_once("../controller/chitietchocontroller.php");
 ?>
 <div class="product-detail-container">
     <div class="product-detail">
@@ -7,7 +8,8 @@ include_once("../layout/header.php");
             <div class="chinhh">
                 <h6>
                     <span onclick="redirectToHome()" style="cursor: pointer; color: #4189be;">Trang chủ</span> >
-                    <span onclick="redirectToDog()" style="cursor: pointer; color: #4189be;">Chó</span> > Alaska Nâu Đỏ
+                    <span onclick="redirectToDog()" style="cursor: pointer; color: #4189be;">Chó</span> >
+                    <?= $bcho['codec'] . " " . $bcho['tendm'] . " " . $bcho['mausacc'] ?>
                 </h6>
             </div>
 
@@ -32,14 +34,14 @@ include_once("../layout/header.php");
                     </div>
                 </div>
                 <div class="col-lg-5 col-md-12 col-12">
-                    <img class="img-fluid w-100" src="../material/img/ala nâu đỏ.jpg">
+                    <img class="img-fluid w-100" src="data:image/jpeg;base64, <?= base64_encode($bcho['hinhanhc']) ?>">
                 </div>
                 <div class="col-lg-6 col-md-12 col-12">
                     <h3 class="py-4" style="text-align:left;
                     padding:0;
                     margin:0;
-                    font-size:26px;">Chó Alaska nâu đỏ</h3>
-                    <h2 style="color:red;">15.000.000 VND</h2>
+                    font-size:26px;"><?= $bcho['codec'] . " " . $bcho['tendm'] . " " . $bcho['mausacc'] ?></h3>
+                    <h2 style="color:red;"><?= $bcho['giatienc'] ?></h2>
                     <div class="product-detail-button">
                         <button class="submit" onclick="addToCart()"> + Thêm vào giỏ hàng</button>
                     </div>
@@ -47,13 +49,13 @@ include_once("../layout/header.php");
                     padding:0;
                     margin:0;
                     font-size:26px;">Thông tin chi tiết</h3>
-                    <h4> Ngày sinh: 04/09/2023 <br>
-                        Giới tính: Đực <br>
-                        Màu sắc: Nâu Đỏ <br>
-                        Cân nặng: 13kg <br>
-                        Đặc điểm: Thuần Chủng <br>
-                        Đã tiêm một mũi <br>
-                        Tình trạng sức khỏe: Tốt <br>
+                    <h4> Ngày sinh: <?= $bcho['ngaysinhc'] ?><br>
+                        Giới tính: <?= $bcho['gioitinhc'] ?> <br>
+                        Màu sắc: <?= $bcho['mausacc'] ?> <br>
+                        Cân nặng: <?= $bcho['cannangc'] ?> <br>
+                        Đặc điểm: <?= $bcho['motac'] ?><br>
+                        <?= $bcho['tinhtrangtiemchungc'] ?> <br>
+                        Tình trạng sức khỏe:<?= $bcho['tinhtrangsuckhoec'] ?> <br>
                     </h4>
                 </div>
             </div>
@@ -65,57 +67,34 @@ include_once("../layout/header.php");
             <div class="home-content-1-shop justify-content-evenly ">
                 <div class="container-home text-center home-row ">
                     <div class="row home-row ">
-                        <div class="col home-col">
-                            <div class="hover01 column">
-                                <div>
-                                    <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
+                        <?php
+                        $bcount = 0;
+                        foreach ($bdanhsachcho as $bcode) {
+                            foreach ($bcode as $bcho => $bvalue) {
+                                if ($bcount % 4 == 0) {
+                                    echo '</div><div class="row home-row">';
+                                }
+                        ?>
+                                <div class="col home-col">
+                                    <div class="hover01 column">
+                                        <div>
+                                            <figure><a href="#"> <?php echo '<img class="home-img" src="data:image/jpeg;base64,' . base64_encode($bcode['hinhanhc']) . '">' ?> </a></figure>
+                                        </div>
+                                    </div>
+                                    <div class="home-text">
+                                        <p class="home-dog-category"><?= $bcode['danhmucc'] ?></p>
+                                        <p><a href="./sanphamchitiet.php?mac= <?= $bcode['mac'] ?>" class="home-dog-name">
+                                                <?= $bcode['codec'] . " " . $bcode['danhmucc'] . " " . $bcode['mausacc'] ?>
+                                            </a></p>
+                                        <p class="home-dog-price"><?= $bcode['giatienc'] ?></p>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="home-text">
-                                <p class="home-dog-category">alaska</p>
-                                <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                <p class="home-dog-price">10 tỷ bery</p>
-                            </div>
-                        </div>
-
-                        <div class="col home-col">
-                            <div class="hover01 column">
-                                <div>
-                                    <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                </div>
-                            </div>
-                            <div class="home-text">
-                                <p class="home-dog-category">alaska</p>
-                                <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                <p class="home-dog-price">10 tỷ bery</p>
-                            </div>
-                        </div>
-
-                        <div class="col home-col">
-                            <div class="hover01 column">
-                                <div>
-                                    <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                </div>
-                            </div>
-                            <div class="home-text">
-                                <p class="home-dog-category">alaska</p>
-                                <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                <p class="home-dog-price">10 tỷ bery</p>
-                            </div>
-                        </div>
-
-                        <div class="col home-col">
-                            <div class="hover01 column">
-                                <div>
-                                    <figure><a href="#"><img class="home-img" src="../material/img/2.jpg" /></a></figure>
-                                </div>
-                            </div>
-                            <div class="home-text">
-                                <p class="home-dog-category">alaska</p>
-                                <p><a href="#" class="home-dog-name">alaska trắng thuần chủng</a></p>
-                                <p class="home-dog-price">10 tỷ bery</p>
-                            </div>
-                        </div>
+                        <?php
+                                $bcount++;
+                                break;
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -123,9 +102,9 @@ include_once("../layout/header.php");
                 <button class="home-content-1-btn">Xem thêm</button>
             </a>
         </div>
-        <div class="contact-share-button" onclick="sendMessage()">
-            <img src="../material/img/fb-messenger.png" alt="Message Icon">
-        </div>
+        <?php
+        include_once("../views/messenger.php");
+        ?>
     </div>
 </div>
 

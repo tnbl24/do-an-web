@@ -6,7 +6,7 @@ include_once("../layout/header.php");
 
     <div class="profile-container">
         <h1>Tài Khoản Của Tôi</h1>
-        <form id="profile-form">
+        <form id="profile-form" method="POST">
             <div class="profile-info">
                 <div class="profile-picture-container">
                     <!-- <label for="profilePicture">Ảnh Đại Diện</label> -->
@@ -18,15 +18,11 @@ include_once("../layout/header.php");
                         <img src="../material/img/default-profile-picture.jpg" alt="" id="profilePicture">
                     </div>
                 </div>
-
-
-
                 <label for="name">Tên:</label>
                 <input type="text" id="name" name="name" value="" readonly>
 
                 <label for="birthdate">Ngày Sinh:</label>
                 <input type="date" id="birthdate" name="birthdate" value="">
-
 
                 <div class="profile-gender-input">
                     <label>Giới Tính:</label>
@@ -63,9 +59,9 @@ include_once("../layout/header.php");
             </div>
         </form>
     </div>
-    <div class="contact-share-button" onclick="sendMessage()">
-        <img src="../material/img/fb-messenger.png" alt="Message Icon">
-    </div>
+    <?php
+    include_once("../views/messenger.php");
+    ?>
 </div>
 
 <script>
@@ -107,8 +103,6 @@ include_once("../layout/header.php");
         changePasswordButton.style.display = "block";
         deleteButton.style.display = "block";
     });
-
-  
 </script>
 <?php
 include_once("../views/doimatkhau.php");

@@ -4,7 +4,7 @@
                 <h3>CHÚNG TÔI CÓ</h3>
                 <ul class="list">
                     <li>
-                        <a href="../views/">Trang chủ</a>
+                        <a href="../views/trangchu.php">Trang chủ</a>
                     </li>
                     <li>
                         <a href="../views/gioithieu.php">Giới thiệu</a>

@@ -63,7 +63,7 @@ include_once("../layout/header.php");
                 <tr>
                     <td style="color: black; font-weight: bold">Tổng sản phẩm</td>
                     <td>
-                        
+
                     </td>
                 </tr>
                 <tr>
@@ -80,9 +80,9 @@ include_once("../layout/header.php");
             </div>
 
         </div>
-        <div class="contact-share-button" onclick="sendMessage()">
-            <img src="../material/img/fb-messenger.png" alt="Message Icon">
-        </div>
+        <?php
+        include_once("../views/messenger.php");
+        ?>
     </div>
 </section>
 

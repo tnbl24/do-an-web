@@ -86,15 +86,15 @@ var btn = document.getElementsByClassName("danhgia-modal danhgia-dg");
     }
 
     function redirectToHome() {
-        window.location.href = "../web/home.php";
+        window.location.href = "../views/trangchu.php";
     }
 
     function redirectToDog() {
-        window.location.href = "../web/dog.php";
+        window.location.href = "../views/cho.php";
     }
 
 //modal success
-$('.btn-outline-success').click(function(){
+$('.dg-danhan').click(function(){
     $('.modal-success').addClass('open-modal')
 
     $('.modal-success').click(function(){
