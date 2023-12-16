@@ -124,13 +124,3 @@ mysqli_free_result($result3);
 mysqli_free_result($result2);
 
 mysqli_close($connect);
-
-$search = $_REQUEST['search'];
-
-// tìm kiếm
-if(isset($_REQUEST['submit'])){
-    echo $search;
-}else{
-    echo "không nhận được dữ liệu";
-}
-echo $search;
