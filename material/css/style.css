@@ -232,8 +232,6 @@ svg.bi.bi-person {
     height: 32px;
 }
 
-
-
 a.item.cart-color:hover {
     color: #05f3ff;
 }
@@ -244,7 +242,7 @@ span.cart-notice:hover {
 .cart-notice {
     border: 1px solid blue;
     border-radius: 30px;
-    padding: 0 5px 0 5px;
+    padding: 0 3px 0 5px;
     position: relative;
     top: -8px;
     left: -22px;

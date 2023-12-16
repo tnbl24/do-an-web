@@ -1,7 +1,10 @@
 <?php
 require_once("../config/connect.php");
 
-$sql = "SELECT count(donhang.mattdh) as soluong, tinhtrangdonhang.tenttdh FROM donhang INNER JOIN tinhtrangdonhang on donhang.mattdh = tinhtrangdonhang.mattdh GROUP by donhang.mattdh;";
+$sql = "SELECT count(donhang.mattdh) as soluong, tinhtrangdonhang.tenttdh FROM donhang 
+INNER JOIN tinhtrangdonhang on donhang.mattdh = tinhtrangdonhang.mattdh 
+WHERE donhang.makh=1
+GROUP by donhang.mattdh;";
 $result = mysqli_query($connect, $sql);
 $tinhtranghoadons=[];
 if(mysqli_num_rows($result)>0){
