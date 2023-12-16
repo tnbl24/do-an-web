@@ -17,7 +17,7 @@ if (isset($_POST['dangnhap'])) {
         if ($result && mysqli_num_rows($result) == 1) {
             // Nếu đăng nhập thành công, bắt đầu session và chuyển hướng đến trang chủ
             session_start();
-            $_SESSION['Dangnhap'] = $username;
+            $_SESSION['dangnhap'] = $username;
             header("location: trangchu.php");
         } else {
             // Nếu đăng nhập không thành công, hiển thị thông báo
