@@ -1,11 +1,13 @@
 <?php
-include_once("../layout/header.php");
+require_once("../controller/taikhoankhcontroller.php");
+require_once("../layout/header.php");
 ?>
 <div class="profile-bg">
 
 
     <div class="profile-container">
         <h1>Tài Khoản Của Tôi</h1>
+
         <form id="profile-form" method="POST">
             <div class="profile-info">
                 <div class="profile-picture-container">
@@ -14,36 +16,43 @@ include_once("../layout/header.php");
                         <div class="overlay">
                             <label for="profilePictureInput" class="choose-image-button">Chọn Ảnh</label>
                             <input type="file" id="profilePictureInput" name="profilePictureInput" accept="image/*" style="display: none;">
+
                         </div>
-                        <img src="../material/img/default-profile-picture.jpg" alt="" id="profilePicture">
+                        <img src="data:image/jpeg;base64, <?= base64_encode($value['hinhanhkh']) ?>" alt="" id="profilePicture">
                     </div>
                 </div>
                 <label for="name">Tên:</label>
-                <input type="text" id="name" name="name" value="" readonly>
+                <input type="text" id="name" name="name" value="<?php echo $name; ?>" readonly>
 
                 <label for="birthdate">Ngày Sinh:</label>
-                <input type="date" id="birthdate" name="birthdate" value="">
+                <input type="date" id="birthdate" name="birthdate" value="<?php echo $birthdate; ?>">
 
                 <div class="profile-gender-input">
                     <label>Giới Tính:</label>
-                    <label for="male"><input type="radio" id="male" name="gender" value="male" checked> Nam</label>
-                    <label for="female"><input type="radio" id="female" name="gender" value="female"> Nữ</label>
+                    <label for="Nam">
+                        <input type="radio" id="Nam" name="gender" value="Nam" <?php echo ($gender === 'Nam') ? 'checked' : ''; ?>>
+                        Nam
+                    </label>
+                    <label for="Nữ">
+                        <input type="radio" id="Nữ" name="gender" value="Nữ" <?php echo ($gender === 'Nữ') ? 'checked' : ''; ?>>
+                        Nữ
+                    </label>
                 </div>
 
                 <label for="phone">Số Điện Thoại:</label>
-                <input type="tel" id="phone" name="phone" value="" readonly>
+                <input type="tel" id="phone" name="phone" value="<?php echo $phone; ?>" readonly>
 
                 <label for="mail">Email:</label>
-                <input type="email" id="email" name="email" value="" readonly>
+                <input type="email" id="email" name="email" value="<?php echo $email; ?>" readonly>
 
                 <label for="address">Địa Chỉ:</label>
-                <input type="text" id="address" name="address" value="" readonly>
+                <input type="text" id="address" name="address" value="<?php echo $address; ?>" readonly>
 
                 <label for="bankName">Tên Ngân Hàng:</label>
-                <input type="text" id="bankName" name="bankName" value="" readonly>
+                <input type="text" id="bankName" name="bankName" value="<?php echo $bankName; ?>" readonly>
 
                 <label for="accountNumber">Số Tài Khoản:</label>
-                <input type="text" id="accountNumber" name="accountNumber" value="" readonly>
+                <input type="text" id="accountNumber" name="accountNumber" value="<?php echo $accountNumber; ?>" readonly>
             </div>
 
             <div class="profile-button-container">
@@ -51,10 +60,10 @@ include_once("../layout/header.php");
 
                 <button type="button" id="changePasswordButton">Đổi Mật Khẩu</button>
 
-                <button type="button" id="deleteButton">Xóa Tài Khoản</button>
+                <button type="button" id="deleteButton" onclick="confirmDelete()">Xóa Tài Khoản</button>
             </div>
             <div class="profile-button-2-container">
-                <button type="submit" id="saveButton">Lưu</button>
+                <button type="submit" id="saveButton" name="saveButton">Lưu</button>
                 <button type="button" id="goBackButton">Quay Lại</button>
             </div>
         </form>
