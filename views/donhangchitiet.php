@@ -1,13 +1,14 @@
 <?php
 include_once("../layout/header.php");
+require_once("../controller/chitietdonhangcontroller.php");
 ?>
 <section class="donhang">
     <div class="donhang-container">
         <div class="madonhang">
             <div class="madh">
-                <span>MÃ ĐƠN HÀNG. 231103JR30FSXM</span>
+                <span>MÃ ĐƠN HÀNG: <?= $madhct ?></span>
                 <span class="">|</span>
-                <span style="color: red;">Đơn hàng đang chờ vận chuyển</span>
+                <span style="color: red;"><?= $dh1['tenttdh'] ?></span>
             </div>
         </div>
         <div class="donhang-top-wrap">
@@ -44,10 +45,10 @@ include_once("../layout/header.php");
             <div class="donhang-trangthai">
                 <div class="donhang-diachi">
                     <p style="font-weight: bold;"><i class="fa-solid fa-location-dot" style="color: red;"></i> Địa chỉ nhận hàng</p>
-                    <div class="tenkh" tabindex="0">Trần Linh
+                    <div class="tenkh" tabindex="0"><?= $kh['tenkh'] ?>
                         <div class="ttkh">
-                            <span tabindex="0">(+84) 981923182</span><br>
-                            <span tabindex="0">48 Ngõ 101 Thanh Nhàn, Phường Thanh Nhàn, Quận Hai Bà Trưng, Hà Nội</span>
+                            <span tabindex="0">(+84) <?= $kh['sdtkh'] ?></span><br>
+                            <span tabindex="0"><?= $kh['diachikh'] ?></span>
                         </div>
                     </div>
                 </div>
@@ -75,63 +76,38 @@ include_once("../layout/header.php");
             <div class="donhang-sanpham">
                 <div style="width: 70%;">
                     <div style="width: 95%;">
-                        <div class="donhang-imgsp">
-                            <div class="alaska-naudo-dh">
-                                <img src="../material/img/ala nâu đỏ.jpg">
-                                <span>Alaska nâu đỏ</span>
-                                <span class="small"> x1</span><br>
-                            </div>
-                            <div class="tienhang">
-                                <span>18.000.000<sup>đ</sup></span>
-
-                            </div>
-                        </div>
-                        <hr>
-
-                        <div class="donhang-imgsp">
-                            <div class="alaska-naudo-dh">
-                                <img src="../material/img/ala nâu đỏ.jpg">
-                                <span>Alaska nâu đỏ</span>
-                                <span class="small"> x1</span><br>
-                            </div>
-                            <div class="tienhang">
-                                <span>18.000.000<sup>đ</sup></span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="donhang-imgsp">
-                            <div class="alaska-naudo-dh">
-                                <img src="../material/img/ala nâu đỏ.jpg">
-                                <span>Alaska nâu đỏ</span>
-                                <span class="small"> x1</span><br>
-                            </div>
-                            <div class="tienhang">
-                                <span>18.000.000<sup>đ</sup></span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="donhang-imgsp">
-                            <div class="alaska-naudo-dh">
-                                <img src="../material/img/ala nâu đỏ.jpg">
-                                <span>Alaska nâu đỏ</span>
-                                <span class="small"> x1</span><br>
-                            </div>
-                            <div class="tienhang">
-                                <span>18.000.000<sup>đ</sup></span>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="donhang-imgsp">
-                            <div class="alaska-naudo-dh">
-                                <img src="../material/img/ala nâu đỏ.jpg">
-                                <span>Alaska nâu đỏ</span>
-                                <span class="small"> x1</span><br>
-                            </div>
-                            <div class="tienhang">
-                                <span>18.000.000<sup>đ</sup></span>
-                            </div>
-                        </div>
-                        <hr>
+                        <?php
+                        $countdh = 0;
+                        $tongtiendh = 0;
+                        foreach ($bchodh as $bcode) {
+                            foreach ($bcode as $bcho => $bvalue) {
+                                
+                                    $countdh++;
+                                    $bcode['giatienc'] = str_replace([".", "VND"], "", $bcode['giatienc']);
+                                    $tongtiendh += intval($bcode['giatienc']);
+                        ?>
+                                    <div class="donhang-imgsp">
+                                        <div class="alaska-naudo-dh">
+                                            <img src="../material/img/ala nâu đỏ.jpg">
+                                            <span><a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                                        <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
+                                                    </a></span>
+                                            <span class="small"> x1</span><br>
+                                        </div>
+                                        <div class="tienhang">
+                                            <span><?php
+                                                    $bcode['giatienc'] = number_format($bcode['giatienc'], 0, ',', '.');
+                                                    echo $bcode['giatienc'] ?><sup>đ</sup></span>
+                                        </div>
+                                    </div>
+                                    <hr>
+                        <?php
+                                
+                                break;
+                            }
+                        }
+                        $tongtiendh = number_format($tongtiendh, 0, ',', '.');
+                        ?>
                     </div>
                 </div>
 
@@ -141,24 +117,24 @@ include_once("../layout/header.php");
                         <tr>
                             <td>Số lượng: </td>
                             <td>
-                                <p style="margin-left: 100px; margin-bottom: 0px;">x</p>
+                                <p style="margin-left: 100px; margin-bottom: 0px;"><?= $countdh ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td>Tổng tiền hàng</td>
                             <td>
-                                <p style="margin-left: 100px;margin-bottom: 0px;">38.000.000<sup>đ</sup></p>
+                                <p style="margin-left: 100px;margin-bottom: 0px;"><?= $tongtiendh ?><sup>đ</sup></p>
                             </td>
                         </tr>
                         <tr>
                             <td>Phương thức thanh toán</td>
                             <td>
-                                <p style="margin-left: 100px;margin-bottom: 0px;"> Tiền mặt</p>
+                                <p style="margin-left: 100px;margin-bottom: 0px;"><?= $dh1['pttt'] ?></p>
                             </td>
                         </tr>
                         <tr>
                             <td>Ghi chú:</td>
-                            <td></td>
+                            <td><?= $dh1['ghichu'] ?></td>
                         </tr>
                     </table>
                     <div class="dathang-2">

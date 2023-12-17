@@ -1,6 +1,5 @@
 <?php
 session_start();
-// require_once("../controller/dangnhapcontroller.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">

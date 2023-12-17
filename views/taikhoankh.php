@@ -2,8 +2,6 @@
 include_once("../layout/header.php");
 ?>
 <div class="profile-bg">
-
-
     <div class="profile-container">
         <h1>Tài Khoản Của Tôi</h1>
         <form id="profile-form" method="POST">

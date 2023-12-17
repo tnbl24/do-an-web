@@ -1,7 +1,7 @@
 <?php
 include_once("../layout/header.php");
+require_once("../controller/giohangcontroller.php");
 ?>
-
 <section class="cart">
     <div class="cart-container">
         <div class="cart-content-left">
@@ -11,48 +11,44 @@ include_once("../layout/header.php");
                         <input type="checkbox" id="selectAll">
                     </th>
                     <th>Hình ảnh</th>
+                    <th>Mã chó</th>
                     <th>Chủng loại</th>
                     <th>Giới tính</th>
                     <th>Màu sắc</th>
                     <th>Giá</th>
                     <th>Xóa</th>
                 </tr>
-                <tr>
-                    <td><input type="checkbox" class="productCheckbox"></td>
-                    <td><img src="../material/img/ala hồng phấn.jpg" alt=""></td>
-                    <td>
-                        <p>Alaska</p>
-                    </td>
-                    <td>
-                        Đực
-                    </td>
-                    <td>
-                        <p>hồng phấn</p>
-                    </td>
-                    <td>
-                        <p>20.000.000 VND</p>
-                    </td>
-                    <td> <span>X</span> </td>
-                </tr>
-                <tr>
-                    <td><input type="checkbox" class="productCheckbox"></td>
-                    <td><img src="../material/img/ala nâu đỏ.jpg" alt=""></td>
-                    <td>
-                        <p>Husky</p>
-                    </td>
-                    <td>
-                        Null
-                    </td>
-                    <td>
-                        <p>nâu đỏ</p>
-                    </td>
-                    <td>
-                        <p>18.000.000 VND</p>
-                    </td>
-                    <td> <span>X</span> </td>
-                </tr>
-                <h4>Tổng số lượng : x</h4>
-
+                <?php
+                $count =0;
+                foreach ($bchogh as $bcode) {
+                    foreach ($bcode as $bcho => $bvalue) {
+                ?>
+                        <tr>
+                            <td><input type="checkbox" class="productCheckbox"></td>
+                            <td><img class="home-img" src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>"></td>
+                            <td><?=$bcode['mac']?></td>
+                            <td>
+                                <p><?=$bcode['tendm']?></p>
+                            </td>
+                            <td>
+                            <?=$bcode['gioitinhc']?>
+                            </td>
+                            <td>
+                                <p><?=$bcode['mausacc']?></p>
+                            </td>
+                            <td>
+                                <p><?=$bcode['giatienc']?></p>
+                            </td>
+                            <td> <span>X</span> </td>
+                        </tr>
+                <?php
+                $count ++;
+                break;
+                    }
+                    
+                }
+                ?>
+                <h4>Tổng số lượng : <?=$count?></h4>
             </table>
         </div>
         <div class="cart-content-right">
@@ -131,7 +127,7 @@ include_once("../layout/header.php");
         var totalPrice = 0;
         selectedCheckboxes.forEach(function(checkbox) {
             var row = checkbox.closest('tr');
-            var priceElement = row.querySelector('td:nth-child(6) p');
+            var priceElement = row.querySelector('td:nth-child(7) p');
             var price = parseFloat(priceElement.innerText.replace(' VND', '').replace('.', '').replace('.', ''));
             totalPrice += price;
         });
