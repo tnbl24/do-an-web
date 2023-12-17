@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+// require_once("../controller/dangnhapcontroller.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -79,7 +82,7 @@ session_start();
                         <?php
                         if (isset($_SESSION['dangnhap'])) {
                             echo '<a href="../views/taikhoankh.php" id="account-link">Tài khoản của tôi</a>
-                                    <a href="../views/trangchu.php" id="logout-link">Đăng xuất</a>';
+                                    <a href="../controller/dangxuatcontroller.php" id="logout-link">Đăng xuất</a>';
                         } else {
                             echo '<a href="../views/dangnhap.php" id="login-link">Đăng nhập</a>
                             <a href="../views/dangky.php" id="signup-link">Đăng ký</a>';

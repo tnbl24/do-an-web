@@ -1,17 +1,6 @@
 <?php
-$sever="localhost";
-$username= "root";
-$password= "";
-$database= "doanweb";
-$connect = mysqli_connect($sever,$username,$password,$database);
-
-if($connect){
-    mysqli_query($connect,"SET NAMES 'utf8'");
-}
-else{
-    echo "ket noi that bai".mysqli_connect_error();
-}
-
+require_once("../config/connect.php");
+require_once("../controller/dangkycontroller.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,54 +17,17 @@ else{
 <body>
 
     <div id="wrapper2">
-        <?php
-       if (isset($_POST['dangky'])) {
-        $name = $_POST['name'];
-        $phone = $_POST['phone'];
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        $rpassword = $_POST['rpassword'];
-    
-        if (empty($name) || empty($phone) || empty($username) || empty($password) || empty($rpassword)) {
-            echo "<script>alert('Tên đăng nhập và mật khẩu không được để trống!');</script>";
-        } else {
-            // Kiểm tra xem username đã tồn tại hay chưa
-            $checkUsernameQuery = "SELECT * FROM dangnhap WHERE tendn = '$username'";
-            $checkUsernameResult = mysqli_query($connect, $checkUsernameQuery);
-    
-            if (mysqli_num_rows($checkUsernameResult) > 0) {
-                echo "<script>alert('Tên đăng nhập đã tồn tại!');</script>";
-            } else {
-                // Thực hiện INSERT vào bảng khachhang
-                $sql1 = "INSERT INTO khachhang(tenkh, sdtkh) VALUES ('$name', '$phone')";
-                $result1 = mysqli_query($connect, $sql1);
-    
-                // Lấy ID của bản ghi vừa được thêm vào bảng khachhang
-                $id_khachhang = mysqli_insert_id($connect);
-    
-                // Thực hiện INSERT vào bảng dangnhap với ID của bảng khachhang
-                $sql2 = "INSERT INTO dangnhap(madn,tendn,matkhau) VALUES ('$id_khachhang','$username','$password')";
-                $result2 = mysqli_query($connect, $sql2);
-    
-                if ($result1 && $result2) {
-                    // Redirect đến trang đăng nhập
-                    header("location: dangnhap.php");
-                    exit;
-                } else {
-                    echo "<script>alert('Có lỗi khi đăng ký!');</script>";
-                }
-            }
-        }
-    }
-    ?>
         <form action="" id="form-resign" method="POST">
             <h1 class="form-heading">ĐĂNG KÝ</h1>
             <p>Đăng ký tài khoản để truy cập vào trang web của chúng tôi</p>
+            <?php if (!empty($message)) : ?>
+                <div class="messagee"><?php echo $message; ?></div>
+            <?php endif; ?>
             <div class="form-group1">
-                <input type="text" class="form-input" placeholder="Nhập họ và tên của bạn" name="name" minlength="3" maxlength="100">
+                <input type="text" class="form-input" placeholder="Nhập họ và tên của bạnz" name="name" minlength="3" maxlength="100">
             </div>
             <div class="form-group1">
-                <input type="text" class="form-input" placeholder="Nhập số điện thoại của bạn" name="phone"/>
+                <input type="text" class="form-input" placeholder="Nhập số điện thoại của bạn" name="phone" />
             </div>
             <div class="form-group1">
                 <input type="text" class="form-input" placeholder="Tên đăng nhập" name="username">

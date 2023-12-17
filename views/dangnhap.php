@@ -19,9 +19,12 @@ require_once("../controller/dangnhapcontroller.php");
         <div id="baophu">
             <form name="form" id="form-login" method="POST">
                 <h1 class="form-heading">ĐĂNG NHẬP</h1>
+                <?php if (!empty($message)) : ?>
+                    <div class="messagee"><?php echo $message; ?></div>
+                <?php endif; ?>
                 <div class="form-group">
                     <i class="bi bi-person-circle"></i>
-                    <input type="text" name="username" class="form-input" placeholder="Tên đăng nhập">
+                    <input type="text" name="username" class="form-input" placeholder="Tên đăng nhậpzz">
                 </div>
                 <div class="form-group">
                     <i class="bi bi-key-fill"></i>
