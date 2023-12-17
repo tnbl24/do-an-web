@@ -2,7 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-// require_once("../controller/dangnhapcontroller.php");
+require_once("../controller/headercontroller.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -62,7 +62,7 @@ if (session_status() == PHP_SESSION_NONE) {
                 <span class="cart-notice">
                     <?php
                     if (isset($_SESSION['dangnhap'])) {
-                        echo '2';
+                        echo $rghh;
                     } else echo '0';
                     ?>
                 </span>
