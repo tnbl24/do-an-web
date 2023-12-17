@@ -18,6 +18,7 @@ if(mysqli_num_rows($result)){
         $giatienc=$c['giatienc'];
         $motac=$c['motac'];
         $hinhanhc=$c['hinhanhc'];
+        $soluongc=$c['soluongc'];
 
         $bcho = [
             'mac' => $mac,
@@ -31,7 +32,8 @@ if(mysqli_num_rows($result)){
             'tinhtrangsuckhoec' => $tinhtrangsuckhoec,
             'giatienc' => $giatienc,
             'motac' => $motac,
-            'hinhanhc' => $hinhanhc
+            'hinhanhc' => $hinhanhc,
+            'soluongc'=>$soluongc
         ];
     }
 }

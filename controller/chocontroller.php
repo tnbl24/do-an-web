@@ -2,7 +2,9 @@
 require_once('../config/connect.php');
 
 // danh mục
-$bsqlsoluongdanhmuc = "SELECT COUNT(cho.madm) as soluong, danhmuc.tendm FROM cho INNER JOIN danhmuc WHERE danhmuc.madm = cho.madm GROUP by cho.madm;";
+$bsqlsoluongdanhmuc = "SELECT COUNT(cho.madm) as soluong, danhmuc.tendm FROM cho INNER JOIN danhmuc 
+WHERE danhmuc.madm = cho.madm and soluongc=1
+GROUP by cho.madm;";
 $bresultsoluongdm = mysqli_query($connect, $bsqlsoluongdanhmuc) or die("can't get record");
 $bdanhmucs = [];
 if (mysqli_num_rows($bresultsoluongdm) > 0) {
@@ -42,7 +44,7 @@ else{
 }
 
 
-$bsqlcho = "SELECT cho.mac, cho.codec,cho.giatienc,cho.mausacc,cho.hinhanhc,danhmuc.tendm from 
+$bsqlcho = "SELECT cho.mac, cho.codec,cho.giatienc,cho.mausacc,cho.hinhanhc,danhmuc.tendm,cho.soluongc from 
 cho INNER join danhmuc on cho.madm = danhmuc.madm WHERE danhmuc.tendm='$bdanhmuccho' limit ". ($pagec -1)*$totalrowc .",$totalrowc";
 $bresultcho = mysqli_query($connect, $bsqlcho) or die('cant get record');
 $bdanhsachcho=[];
@@ -54,13 +56,15 @@ if (mysqli_num_rows($bresultcho)) {
         $bmausacc = $browcho['mausacc'];
         $bhinhanh = $browcho['hinhanhc'];
         $bmac=$browcho['mac'];
+        $soluongc=$browcho['soluongc'];
         $bcho = [
             'mac'=> $bmac,
             'codec' =>$bcodec,
             'giatienc' => $bgiatienc,
             'mausacc'=>$bmausacc,
             'hinhanhc'=>$bhinhanh,
-            'danhmucc' => $bdanhmuccho
+            'danhmucc' => $bdanhmuccho,
+            'soluongc'=>$soluongc
         ];
         $bdanhsachcho[$bcodec] = $bcho;
     }

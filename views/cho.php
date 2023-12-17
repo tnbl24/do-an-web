@@ -54,6 +54,9 @@ require_once("../controller/chocontroller.php");
                                         if ($bcount % 4 == 0) {
                                             echo '</div><div class="row home-row">';
                                         }
+                                        if($bcode['soluongc']==1){
+
+                                        
                                 ?>
                                         <div class="col home-col">
                                             <div class="hover01 column">
@@ -74,6 +77,7 @@ require_once("../controller/chocontroller.php");
                                         break;
                                     }
                                 }
+                            }
                                 ?>
                             </div>
                         </div>

@@ -43,6 +43,7 @@ require_once("../controller/chitietchocontroller.php");
                     font-size:26px;"><?= $bcho['codec'] . " " . $bcho['tendm'] . " " . $bcho['mausacc'] ?></h3>
                     <h2 style="color:red;"><?= $bcho['giatienc'] ?></h2>
                     <div class="product-detail-button">
+                        <h4>số lượng : <?= $bcho['soluongc'] ?></h4>
                         <button class="submit" onclick="addToCart()"> + Thêm vào giỏ hàng</button>
                     </div>
                     <h3 class="mt-4 mb-4" style="text-align:left;
