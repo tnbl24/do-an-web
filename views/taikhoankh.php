@@ -6,7 +6,7 @@ require_once("../layout/header.php");
     <div class="profile-container">
         <h1>Tài Khoản Của Tôi</h1>
 
-        <form id="profile-form" method="POST">
+        <form id="profile-form" method="POST" >
             <div class="profile-info">
                 <div class="profile-picture-container">
                     <!-- <label for="profilePicture">Ảnh Đại Diện</label> -->
@@ -14,7 +14,6 @@ require_once("../layout/header.php");
                         <div class="overlay">
                             <label for="profilePictureInput" class="choose-image-button">Chọn Ảnh</label>
                             <input type="file" id="profilePictureInput" name="profilePictureInput" accept="image/*" style="display: none;">
-
                         </div>
                         <img src="data:image/jpeg;base64, <?= base64_encode($user['hinhanhkh']) ?>" alt="" id="profilePicture">
                     </div>

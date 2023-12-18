@@ -1,3 +1,44 @@
+<?php
+session_start();
+require_once("../config/connect.php");
+
+$message = "";
+
+if (isset($_POST['matkhau'])) {
+    $verificationCode = $_POST['maxacnhan'];
+    $newPassword = $_POST['matkhaumoi'];
+    $confirmedPassword = $_POST['nhaplaimatkhau'];
+
+    if ($verificationCode != '111') {
+        $message = 'Mã xác nhận không chính xác!';
+    } elseif ($newPassword != $confirmedPassword) {
+        $message = 'Mật khẩu không khớp!';
+    } else {
+        // Lấy thông tin khách hàng từ bảng 'khachhang' dựa trên số điện thoại
+        $phone = $_SESSION['maxacnhan'];
+        $customerQuery = "SELECT * FROM khachhang WHERE sdtkh = '$phone'";
+        $customerResult = mysqli_query($connect, $customerQuery);
+
+        if ($customerResult && mysqli_num_rows($customerResult) == 1) {
+            $customerData = mysqli_fetch_assoc($customerResult);
+            $madn = $customerData['madn'];
+
+            // Cập nhật mật khẩu trong bảng 'dangnhap'
+            $updatePasswordQuery = "UPDATE dangnhap SET matkhau='$newPassword' WHERE madn = '$madn'";
+
+            $updatePasswordResult = mysqli_query($connect, $updatePasswordQuery);
+
+            if ($updatePasswordResult) {
+                $message = 'Đổi mật khẩu thành công!';
+            } else {
+                $message = 'Đổi mật khẩu thất bại!';
+            }
+        } else {
+            $message = 'Số điện thoại không chính xác!';
+        }
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,10 +54,12 @@
             border: 1px solid #f5f5f5;
             color: #fff;
             text-transform: uppercase;
-            padding: 2% 30%;
+            padding: 10px 120px;
             transition: 0.25s ease-in-out;
             text-decoration: none;
             margin-top: 10px;
+            font-size: 14px;
+            font-family: initial;
         }
 
         body {
@@ -96,34 +139,49 @@
         #eye i {
             cursor: pointer;
         }
+
+        .messagee {
+            padding: 10px;
+            border: 1px solid black;
+            background: #7eaccb;
+            text-align: center;
+        }
     </style>
 </head>
 
 <body>
 
     <div id="wrapper2">
-        <form action="" id="form-resign" >
+        <form action="" id="form-resign" method="POST">
             <h1 class="form-heading">NHẬP MẬT KHẨU MỚI</h1>
+            <?php if (!empty($message)) : ?>
+                <div class="messagee"><?php echo $message; ?></div>
+            <?php endif; ?>
             <div class="form-group1">
-                <input type="password" class="form-input" placeholder="Tạo mật khẩu mới">
+                <input type="text" class="form-input" name="maxacnhan" placeholder="Nhập mã xác nhận">
+            </div>
+            <div class="form-group1">
+                <input type="password" class="form-input" name="matkhaumoi" placeholder="Tạo mật khẩu mới">
                 <div id="eye">
                     <i class="bi bi-eye"></i>
                 </div>
             </div>
             <div class="form-group1">
-                <input type="password" class="form-input" placeholder="Nhập lại mật khẩu">
+                <input type="password" class="form-input" name="nhaplaimatkhau" placeholder="Nhập lại mật khẩu">
                 <div id="eye2">
                     <i class="bi bi-eye"></i>
                 </div>
             </div>
-            <div><a href="../views/dangnhap.php" class="form-submit">XÁC NHẬN</a> </div>
+            <div>
+                <input type="submit" value="XÁC NHẬN" name="matkhau" class="form-submit"></input>
+            </div>
             <p>Quay lại trang <a href="../views/dangnhap.php" class="form-forgot">đăng nhập</a></p>
         </form>
     </div>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="../material/js/app.js"></script>
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
 </body>
-<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
-<script src="../material/js/app.js"></script>
-<script src="https://code.jquery.com/jquery-latest.js"></script>
 
 </html>

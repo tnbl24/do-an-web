@@ -1,3 +1,6 @@
+<?php
+require_once("../config/connect.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -95,6 +98,13 @@
             text-decoration: none;
             margin-top: 10px;
         }
+
+        .messagee {
+            padding: 10px;
+            border: 1px solid black;
+            background: #7eaccb;
+            text-align: center;
+        }
     </style>
 </head>
 
@@ -103,33 +113,38 @@
     <div id="wrapper">
         <?php
         session_start();
+        $message = "";
 
-        // Kiểm tra xem form đã được gửi đi hay chưa
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // Kiểm tra xem mã xác nhận có đúng không
-            $maXacNhanDuocNhap = $_POST['maXacNhan']; // Tên của trường nhập mã xác nhận trong form
-            $maXacNhanDung = "111"; // Mã xác nhận đúng
+        if (isset($_POST['maxacnhan'])) {
+            $phone = $_POST['sodienthoai'];
 
-            if ($maXacNhanDuocNhap == $maXacNhanDung) {
-                // Nếu mã xác nhận đúng, chuyển hướng đến trang matkhaumoi.php
-                header("Location: ../views/matkhaumoi.php");
-                exit;
+            if (empty($phone)) {
+                $message = 'Vui lòng nhập số điện thoại của bạn!';
             } else {
-                // Nếu mã xác nhận không đúng, hiển thị thông báo lỗi
-                $message = "Mã xác nhận không đúng. Vui lòng thử lại.";
+                $query = "SELECT * FROM khachhang WHERE sdtkh = '$phone'";
+                $result = mysqli_query($connect, $query);
+
+                if ($result && mysqli_num_rows($result) == 1) {
+                    $_SESSION['maxacnhan'] = $phone;
+                    header("location: matkhaumoi.php");
+                    exit;
+                } else {
+                    $message = 'Số điện thoại không chính xác!';
+                }
             }
         }
         ?>
-        <form action="" id="form-login" name="maXacNhan" method="POST">
-            <h1 class="form-heading">NHẬP MÃ XÁC NHẬN</h1>
+        <form action="" id="form-login" method="POST">
+            <h1 class="form-heading">NHẬP SỐ ĐIỆN THOẠI</h1>
+            <p>Hệ thống sẽ gửi mã xác nhận về số điện thoại của bạn</p>
             <?php if (!empty($message)) : ?>
                 <div class="messagee"><?php echo $message; ?></div>
             <?php endif; ?>
-            <p>Nhập mã xác nhận vừa được gửi về email của bạn</p>
+
             <div class="form-group1">
-                <input type="text" class="form-input" placeholder="Nhập mã xác nhận">
+                <input type="text" class="form-input" name="sodienthoai" placeholder="Nhập số điện thoại">
             </div>
-            <div> <a href="../views/matkhaumoi.php" class="form-submit">Gửi</a> </div>
+            <div> <input type="submit" value="Gửi " name="maxacnhan" class="form-submit"> </div>
             <p> Trở về trang <a href="../views/dangnhap.php" class="form-forgot">đăng nhập</a></p>
         </form>
     </div>
