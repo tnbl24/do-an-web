@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once("../config/connect.php");
 
 if (isset($_SESSION['dangnhap'])) {
@@ -13,7 +12,7 @@ if (isset($_SESSION['dangnhap'])) {
         $changePasswordMessage = "Vui lòng điền đầy đủ thông tin.";
     } else {
         // Kiểm tra mật khẩu cũ có đúng không
-        $checkPasswordQuery = "SELECT matkhau FROM dangnhap WHERE tendn = ?";
+        $checkPasswordQuery = "SELECT matkhau FROM dangnhap WHERE madn = ?";
         $stmt = mysqli_prepare($connect, $checkPasswordQuery);
         mysqli_stmt_bind_param($stmt, "s", $username);
         mysqli_stmt_execute($stmt);
@@ -27,7 +26,7 @@ if (isset($_SESSION['dangnhap'])) {
                 if ($newPassword === $confirmPassword) {
                     // Cập nhật mật khẩu mới vào cơ sở dữ liệu
                     $newHashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
-                    $updatePasswordQuery = "UPDATE dangnhap SET matkhau=? WHERE tendn = ?";
+                    $updatePasswordQuery = "UPDATE dangnhap SET matkhau=? WHERE madn = ?";
                     $stmt = mysqli_prepare($connect, $updatePasswordQuery);
                     mysqli_stmt_bind_param($stmt, "ss", $newHashedPassword, $username);
                     mysqli_stmt_execute($stmt);

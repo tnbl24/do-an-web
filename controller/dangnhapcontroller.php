@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 // Khai báo biến để lưu trữ thông điệp
 $message = "";
 

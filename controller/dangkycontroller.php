@@ -28,8 +28,7 @@ if (isset($_POST['dangky'])) {
         $message = 'Mật khẩu nhập lại không khớp!';
     } else {
         // Thực hiện INSERT vào bảng dangnhap
-        $hash = password_hash($password, PASSWORD_DEFAULT);
-        $sql1 = "INSERT INTO dangnhap(tendn, matkhau) VALUES ('$username','$hash')";
+        $sql1 = "INSERT INTO dangnhap(tendn, matkhau) VALUES ('$username','$password')";
         $result1 = mysqli_query($connect, $sql1);
 
         if ($result1) {

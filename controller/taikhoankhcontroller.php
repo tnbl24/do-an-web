@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("../config/connect.php");
-if(isset($_SESSION['dangnhap'])){
+if (isset($_SESSION['dangnhap'])) {
     $username = $_SESSION['dangnhap'];
     $query = "SELECT kh.* FROM `dangnhap` dn JOIN `khachhang` kh ON dn.madn = kh.madn WHERE dn.tendn = '$username'";
     $result = mysqli_query($connect, $query);
@@ -34,34 +34,72 @@ if(isset($_SESSION['dangnhap'])){
         $newaddress = $_POST['address'];
         $newbankName = $_POST['bankName'];
         $newaccountNumber = $_POST['accountNumber'];
+    
         // Xử lý tải lên ảnh đại diện
         if (isset($_FILES['profilePictureInput']) && $_FILES['profilePictureInput']['error'] == UPLOAD_ERR_OK) {
             $tmp_name = $_FILES["profilePictureInput"]["tmp_name"];
             $newProfilePicture = "uploads/" . basename($_FILES["profilePictureInput"]["name"]);
             move_uploaded_file($tmp_name, $newProfilePicture);
-
-            // Cập nhật đường dẫn mới vào cơ sở dữ liệu
-            $updatePictureQuery = "UPDATE `khachhang` SET `hinhanhkh`='$newProfilePicture' WHERE `madn` = (SELECT `madn` FROM `dangnhap` WHERE `tendn` = '$username')";
-            mysqli_query($connect, $updatePictureQuery);
         }
-        // Cập nhật thông tin trong cơ sở dữ liệu
-        $updateQuery = "UPDATE `khachhang` SET `hinhanhkh`='$newProfilePicture',`tenkh`='$newname',`ngaysinhkh`='$newbirthdate', `gioitinhkh`='$newgender',`sdtkh`='$newphone',`emailkh`='$newemail',`diachikh`='$newaddress',`tennganhang`='$newbankName',`sotaikhoan`='$newaccountNumber' WHERE `madn` = (SELECT `madn` FROM `dangnhap` WHERE `tendn` = '$username')";
-
-        if (mysqli_query($connect, $updateQuery)) {
-            // Cập nhật lại biến hiển thị
-            $name = $newname;
-            $birthdate = $newbirthdate;
-            $gender = $newgender;
-            $phone = $newphone;
-            $email = $newemail;
-            $address = $newaddress;
-            $bankName = $newbankName;
-            $accountNumber = $newaccountNumber;
-        } else {
-            echo "Lỗi khi cập nhật thông tin: " . mysqli_error($connect);
+    
+        // Tạo mảng để chứa các điều kiện cần cập nhật
+        $updateData = array();
+        
+        // Thêm điều kiện cập nhật nếu trường có giá trị
+        if (!empty($newname)) {
+            $updateData[] = "`tenkh`='$newname'";
+        }
+    
+        if (!empty($newbirthdate)) {
+            $updateData[] = "`ngaysinhkh`='$newbirthdate'";
+        }
+    
+        if (!empty($newgender)) {
+            $updateData[] = "`gioitinhkh`='$newgender'";
+        }
+    
+        if (!empty($newphone)) {
+            $updateData[] = "`sdtkh`='$newphone'";
+        }
+    
+        if (!empty($newemail)) {
+            $updateData[] = "`emailkh`='$newemail'";
+        }
+    
+        if (!empty($newaddress)) {
+            $updateData[] = "`diachikh`='$newaddress'";
+        }
+    
+        if (!empty($newbankName)) {
+            $updateData[] = "`tennganhang`='$newbankName'";
+        }
+    
+        if (!empty($newaccountNumber)) {
+            $updateData[] = "`sotaikhoan`='$newaccountNumber'";
+        }
+    
+        // Kiểm tra xem có dữ liệu cần cập nhật không
+        if (!empty($updateData)) {
+            // Tạo câu truy vấn UPDATE
+            $updateQuery = "UPDATE `khachhang` SET " . implode(', ', $updateData) . " WHERE `madn` = (SELECT `madn` FROM `dangnhap` WHERE `tendn` = '$username')";
+    
+            // Thực hiện truy vấn
+            if (mysqli_query($connect, $updateQuery)) {
+                // Cập nhật biến hiển thị
+                $name = $newname;
+                $birthdate = $newbirthdate;
+                $gender = $newgender;
+                $phone = $newphone;
+                $email = $newemail;
+                $address = $newaddress;
+                $bankName = $newbankName;
+                $accountNumber = $newaccountNumber;
+            } else {
+                echo "Lỗi khi cập nhật thông tin: " . mysqli_error($connect);
+            }
         }
     }
-
+    
     // xóa
     // Thêm một biểu mẫu xác nhận xóa tài khoản
     echo "<form method='post' id='deleteForm' action='" . $_SERVER['PHP_SELF'] . "'>";
@@ -90,7 +128,6 @@ if(isset($_SESSION['dangnhap'])){
             echo "Lỗi khi xóa tài khoản: " . mysqli_error($connect);
         }
     }
-    
 } else {
     header("location: ../views/dangnhap.php");
     exit;
