@@ -13,12 +13,12 @@ require_once("../controller/dathangcontroller.php");
             </div>
             <div class="dathang-content-left-field">
                 <label for="dt" class="dathang-content-left-dt">Điện thoại<span style="color: red;">*</span></label>
-                <input type="text" class="dathang-content-left-input" name="phone" value="(+84) <?php echo $phone; ?>">
+                <input type="text" class="dathang-content-left-input" name="phone" value="(+84) <?php echo $phone; ?>" readonly>
             </div>
 
             <div class="dathang-content-left-field">
                 <label for="dc" class="dathang-content-left-dc">Địa chỉ<span style="color: red;">*</span></label>
-                <input type="text" class="dathang-content-left-input" name="address" value="<?php echo $address; ?>">
+                <input type="text" class="dathang-content-left-input" name="address" value="<?php echo $address; ?>" readonly>
             </div>
             <?php
             include_once("../views/thanhtoan.php");
@@ -54,7 +54,8 @@ require_once("../controller/dathangcontroller.php");
                     </td>
                 </tr>
                 <tr>
-                    <td style="font-weight: bold;" colspan="2">Tổng tiền</td>
+                    <td style="font-weight: bold;" >Tổng: </td>
+                    <td style="font-weight: bold;">2</td>
                     <td style="font-weight: bold;">
                         <p>38.000.000<sup>đ</sup></p>
                     </td>

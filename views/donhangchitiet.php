@@ -88,7 +88,7 @@ require_once("../controller/chitietdonhangcontroller.php");
                         ?>
                                     <div class="donhang-imgsp">
                                         <div class="alaska-naudo-dh">
-                                            <img src="../material/img/ala nâu đỏ.jpg">
+                                            <img src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
                                             <span><a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                                         <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
                                                     </a></span>

@@ -41,7 +41,9 @@ mysqli_free_result($result);
 
 
 $bsqlcho = "SELECT cho.mac, cho.codec,cho.giatienc,cho.mausacc,cho.hinhanhc,danhmuc.tendm from 
-cho INNER join danhmuc on cho.madm = danhmuc.madm ORDER BY RAND() LIMIT 8 ";
+cho INNER join danhmuc on cho.madm = danhmuc.madm 
+where soluongc=1
+ORDER BY RAND() LIMIT 8 ";
 $bresultcho = mysqli_query($connect, $bsqlcho) or die('cant get record');
 $bdanhsachcho=[];
 
