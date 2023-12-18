@@ -1,3 +1,6 @@
+<?php
+require_once("../controller/dathangcontroller.php");
+?>
 <section class="thanhtoan">
     <div class="thanhtoan-content-left">
         <div class="phuongthucthanhtoan">
@@ -6,7 +9,7 @@
                 <div class="thanhtoanvnpay " >
                     <input checked name="method-payment" type="radio" id="payment-vnpay">
                     <label for="payment-vnpay">Thanh toán qua Vnpay</label> <img src="../material/img/vnpay.png" alt="" width="35px" height="35px"><br>
-                    <p style="padding-left:20px;">Số tài khoản: 0123456789</p>
+                    <p style="padding-left:20px;">Số tài khoản: <?=$payment?> </p>
                 </div>
                 <div class="thanhtoantienmat">
                     <input name="method-payment" type="radio" id="payment-tm">

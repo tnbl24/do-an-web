@@ -1,43 +1,54 @@
 <?php
 session_start();
-require_once("connect.php");
+require_once("../config/connect.php");
 
-if (isset($_POST['Doi_Mat_Khau'])) {
-    
-    $email = $_POST['email'];
-    $old_password = $_POST['password'];
-    $new_password = $_POST['password_new'];
+if (isset($_SESSION['dangnhap'])) {
+    $username = $_SESSION['dangnhap'];
+    $oldPassword = $_POST['password'];
+    $newPassword = $_POST['passwordnew'];
+    $confirmPassword = $_POST['confirmpassword'];
 
-    if (empty($email) || empty($old_password) || empty($new_password)) {
-        $_SESSION['Account_error'] = "Please fill in all fields.";
-        header("Location: taikhoankh.php"); 
-        exit();
-    }
-
-    $query = "SELECT * FROM khachhang WHERE emailkh = ? AND khachhang = ?";
-    $stmt = $conn->prepare($query);
-    $stmt->bind_param("ss", $email, $old_password);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    
-    if ($result->num_rows == 1) {
-       
-        $update_query = "UPDATE khachhang SET matkhau = ? WHERE emailkh = ?";
-        $update_stmt = $conn->prepare($update_query);
-        $update_stmt->bind_param("ss", $new_password, $email);
-        $update_stmt->execute();
-
-        $_SESSION['Account_error'] = "Password changed successfully!";
-        header("Location: taikhoankh.php"); 
-        exit();
+    // Kiểm tra xem có trường nào trống không
+    if (empty($oldPassword) || empty($newPassword) || empty($confirmPassword)) {
+        $changePasswordMessage = "Vui lòng điền đầy đủ thông tin.";
     } else {
-        $_SESSION['Account_error'] = "Invalid email or old password.";
-        header("Location: taikhoankh.php"); 
-        exit();
+        // Kiểm tra mật khẩu cũ có đúng không
+        $checkPasswordQuery = "SELECT matkhau FROM dangnhap WHERE tendn = ?";
+        $stmt = mysqli_prepare($connect, $checkPasswordQuery);
+        mysqli_stmt_bind_param($stmt, "s", $username);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+
+        if ($result && $row = mysqli_fetch_assoc($result)) {
+            $hashedPassword = $row['matkhau'];
+
+            if (password_verify($oldPassword, $hashedPassword)) {
+                // Mật khẩu cũ đúng, kiểm tra mật khẩu mới và xác nhận mật khẩu mới
+                if ($newPassword === $confirmPassword) {
+                    // Cập nhật mật khẩu mới vào cơ sở dữ liệu
+                    $newHashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+                    $updatePasswordQuery = "UPDATE dangnhap SET matkhau=? WHERE tendn = ?";
+                    $stmt = mysqli_prepare($connect, $updatePasswordQuery);
+                    mysqli_stmt_bind_param($stmt, "ss", $newHashedPassword, $username);
+                    mysqli_stmt_execute($stmt);
+
+                    $changePasswordMessage = "Đổi mật khẩu thành công.";
+
+                    // Chuyển hướng về trang taikhoankh.php sau khi đổi mật khẩu thành công
+                    header("Location: ../views/taikhoankh.php");
+                    exit();
+                } else {
+                    $changePasswordMessage = "Mật khẩu mới không khớp.";
+                }
+            } else {
+                $changePasswordMessage = "Mật khẩu cũ không đúng.";
+            }
+        } else {
+            $changePasswordMessage = "Đã xảy ra lỗi khi kiểm tra mật khẩu.";
+        }
     }
 } else {
-    
-    header("Location: taikhoankh.php"); 
-    exit();
+    header("location: ../views/dangnhap.php");
+    exit;
 }
 ?>
