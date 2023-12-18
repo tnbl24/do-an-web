@@ -25,8 +25,12 @@ require_once("../controller/giohangcontroller.php");
                 ?>
                         <tr>
                             <td><input type="checkbox" class="productCheckbox"></td>
-                            <td><img class="home-img" src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>"></td>
-                            <td><?=$bcode['mac']?></td>
+                            <td>
+                                <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                <img class="home-img" src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
+                                </a>
+                            </td>
+                            <td><?=$bcode['codec']?></td>
                             <td>
                                 <p><?=$bcode['tendm']?></p>
                             </td>

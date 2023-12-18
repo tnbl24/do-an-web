@@ -71,7 +71,7 @@ require_once("../controller/trangchucontroller.php");
                                 <div class="col home-col">
                                     <div class="hover01 column">
                                         <div>
-                                            <figure><a href="#"><img class="home-img" src="data:image/jpeg;base64, <?= base64_encode($bdanhsach['hinhanhc']) ?>" /></a></figure>
+                                            <figure><a href="./sanphamchitiet.php?mac=<?= $bdanhsach['mac'] ?>"><img class="home-img" src="data:image/jpeg;base64, <?= base64_encode($bdanhsach['hinhanhc']) ?>" /></a></figure>
                                         </div>
                                     </div>
                                     <div class="home-text">

@@ -81,28 +81,30 @@ require_once("../controller/chitietdonhangcontroller.php");
                         $tongtiendh = 0;
                         foreach ($bchodh as $bcode) {
                             foreach ($bcode as $bcho => $bvalue) {
-                                
-                                    $countdh++;
-                                    $bcode['giatienc'] = str_replace([".", "VND"], "", $bcode['giatienc']);
-                                    $tongtiendh += intval($bcode['giatienc']);
+
+                                $countdh++;
+                                $bcode['giatienc'] = str_replace([".", "VND"], "", $bcode['giatienc']);
+                                $tongtiendh += intval($bcode['giatienc']);
                         ?>
-                                    <div class="donhang-imgsp">
-                                        <div class="alaska-naudo-dh">
+                                <div class="donhang-imgsp">
+                                    <div class="alaska-naudo-dh">
+                                        <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                             <img src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
-                                            <span><a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
-                                                        <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
-                                                    </a></span>
-                                            <span class="small"> x1</span><br>
-                                        </div>
-                                        <div class="tienhang">
-                                            <span><?php
-                                                    $bcode['giatienc'] = number_format($bcode['giatienc'], 0, ',', '.');
-                                                    echo $bcode['giatienc'] ?><sup>đ</sup></span>
-                                        </div>
+                                        </a>
+                                        <span><a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                                <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
+                                            </a></span>
+                                        <span class="small"> x1</span><br>
                                     </div>
-                                    <hr>
+                                    <div class="tienhang">
+                                        <span><?php
+                                                $bcode['giatienc'] = number_format($bcode['giatienc'], 0, ',', '.');
+                                                echo $bcode['giatienc'] ?><sup>đ</sup></span>
+                                    </div>
+                                </div>
+                                <hr>
                         <?php
-                                
+
                                 break;
                             }
                         }

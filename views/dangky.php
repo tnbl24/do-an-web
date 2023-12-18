@@ -24,7 +24,7 @@ require_once("../controller/dangkycontroller.php");
                 <div class="messagee"><?php echo $message; ?></div>
             <?php endif; ?>
             <div class="form-group1">
-                <input type="text" class="form-input" placeholder="Nhập họ và tên của bạnz" name="name" minlength="3" maxlength="100">
+                <input type="text" class="form-input" placeholder="Nhập họ và tên của bạn" name="name" minlength="3" maxlength="100">
             </div>
             <div class="form-group1">
                 <input type="text" class="form-input" placeholder="Nhập số điện thoại của bạn" name="phone" />

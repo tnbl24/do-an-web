@@ -79,7 +79,7 @@ require_once("../controller/chitietchocontroller.php");
                                 <div class="col home-col">
                                     <div class="hover01 column">
                                         <div>
-                                            <figure><a href="#"> <?php echo '<img class="home-img" src="data:image/jpeg;base64,' . base64_encode($bcode['hinhanhc']) . '">' ?> </a></figure>
+                                            <figure><a href="./sanphamchitiet.php?mac= <?= $bcode['mac'] ?>"> <?php echo '<img class="home-img" src="data:image/jpeg;base64,' . base64_encode($bcode['hinhanhc']) . '">' ?> </a></figure>
                                         </div>
                                     </div>
                                     <div class="home-text">

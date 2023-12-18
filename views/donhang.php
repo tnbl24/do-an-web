@@ -82,7 +82,9 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
                             ?>
                                         <div class="donhang-imgsp order">
                                             <div class="alaska-naudo-order">
-                                                <img src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
+                                                <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                                    <img src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
+                                                </a>
                                                 <span>
                                                     <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                                         <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
