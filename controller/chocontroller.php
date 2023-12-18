@@ -24,7 +24,7 @@ if (isset($_REQUEST['danhmuc'])) {
 }
 $totalrowc=8;
 $sql3c = "SELECT cho.mac, cho.codec,cho.giatienc,cho.mausacc,cho.hinhanhc,danhmuc.tendm from 
-cho INNER join danhmuc on cho.madm = danhmuc.madm WHERE danhmuc.tendm='$bdanhmuccho'
+cho INNER join danhmuc on cho.madm = danhmuc.madm WHERE danhmuc.tendm='$bdanhmuccho' and soluongc=1
 ";
 $result3c = mysqli_query($connect,$sql3c);
 if(mysqli_num_rows($result3c)>0){
@@ -45,7 +45,9 @@ else{
 
 
 $bsqlcho = "SELECT cho.mac, cho.codec,cho.giatienc,cho.mausacc,cho.hinhanhc,danhmuc.tendm,cho.soluongc from 
-cho INNER join danhmuc on cho.madm = danhmuc.madm WHERE danhmuc.tendm='$bdanhmuccho' limit ". ($pagec -1)*$totalrowc .",$totalrowc";
+cho INNER join danhmuc on cho.madm = danhmuc.madm
+WHERE danhmuc.tendm='$bdanhmuccho' and soluongc=1
+limit ". ($pagec -1)*$totalrowc .",$totalrowc";
 $bresultcho = mysqli_query($connect, $bsqlcho) or die('cant get record');
 $bdanhsachcho=[];
 
