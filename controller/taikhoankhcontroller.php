@@ -1,15 +1,7 @@
 <?php
 session_start();
 include_once("../config/connect.php");
-
-// kiểm tra xem người dùng đã đăng nhập chưa
-function isUserLoggedIn()
-{
-    return isset($_SESSION['dangnhap']);
-}
-
-// Nếu người dùng đã đăng nhập, lấy thông tin người dùng từ bảng khachhang
-if (isUserLoggedIn()) {
+if(isset($_SESSION['dangnhap'])){
     $username = $_SESSION['dangnhap'];
     $query = "SELECT kh.* FROM `dangnhap` dn JOIN `khachhang` kh ON dn.madn = kh.madn WHERE dn.tendn = '$username'";
     $result = mysqli_query($connect, $query);
@@ -56,7 +48,6 @@ if (isUserLoggedIn()) {
         $updateQuery = "UPDATE `khachhang` SET `hinhanhkh`='$newProfilePicture',`tenkh`='$newname',`ngaysinhkh`='$newbirthdate', `gioitinhkh`='$newgender',`sdtkh`='$newphone',`emailkh`='$newemail',`diachikh`='$newaddress',`tennganhang`='$newbankName',`sotaikhoan`='$newaccountNumber' WHERE `madn` = (SELECT `madn` FROM `dangnhap` WHERE `tendn` = '$username')";
 
         if (mysqli_query($connect, $updateQuery)) {
-            echo "Cập nhật thông tin thành công.";
             // Cập nhật lại biến hiển thị
             $name = $newname;
             $birthdate = $newbirthdate;
@@ -103,5 +94,3 @@ if (isUserLoggedIn()) {
     header("location: ../views/dangnhap.php");
     exit;
 }
-
-mysqli_close($connect);

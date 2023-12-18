@@ -1,22 +1,24 @@
 <?php
-include_once("../layout/header.php");
+require_once("../layout/header.php");
+require_once("../controller/dathangcontroller.php");
+
 ?>
 <section class="dathang">
     <div class="dathang-content row">
-        <div class="dathang-content-left">
+        <form class="dathang-content-left">
             <p style="font-weight: bold;">THÔNG TIN ĐẶT HÀNG</p>
             <div class="dathang-content-left-field">
                 <label for="ten" class="dathang-content-left-ten">Họ tên<span style="color: red;">*</span></label><br>
-                <input type="text" class="dathang-content-left-input" value="" readonly>
+                <input type="text" class="dathang-content-left-input" name="name" value="<?php echo $name; ?>" readonly>
             </div>
             <div class="dathang-content-left-field">
                 <label for="dt" class="dathang-content-left-dt">Điện thoại<span style="color: red;">*</span></label>
-                <input type="text" class="dathang-content-left-input">
+                <input type="text" class="dathang-content-left-input" name="phone" value="(+84) <?php echo $phone; ?>">
             </div>
 
             <div class="dathang-content-left-field">
                 <label for="dc" class="dathang-content-left-dc">Địa chỉ<span style="color: red;">*</span></label>
-                <input type="text" class="dathang-content-left-input">
+                <input type="text" class="dathang-content-left-input" name="address" value="<?php echo $address; ?>">
             </div>
             <?php
             include_once("../views/thanhtoan.php");
@@ -25,7 +27,7 @@ include_once("../layout/header.php");
                 <label for="">Ghi chú</label><br>
                 <textarea name="ghichu" placeholder="Ghi chú về đơn hàng, ví dụ: thời gian hay chỉ dẫn địa điểm giao hàng chi tiết hơn."></textarea>
             </div>
-        </div>
+        </form>
         <div class="dathang-content-right">
             <h3 style="font-weight: bold;
             text-align:center;
@@ -72,5 +74,5 @@ include_once("../layout/header.php");
 
 </section>
 <?php
-include_once("../layout/footer.php");
+require_once("../layout/footer.php");
 ?>

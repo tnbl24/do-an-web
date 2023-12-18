@@ -24,7 +24,7 @@ require_once("../controller/dangnhapcontroller.php");
                 <?php endif; ?>
                 <div class="form-group">
                     <i class="bi bi-person-circle"></i>
-                    <input type="text" name="username" class="form-input" placeholder="Tên đăng nhậpzz">
+                    <input type="text" name="username" class="form-input" placeholder="Tên đăng nhập">
                 </div>
                 <div class="form-group">
                     <i class="bi bi-key-fill"></i>

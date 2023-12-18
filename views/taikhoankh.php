@@ -16,7 +16,7 @@ require_once("../layout/header.php");
                             <input type="file" id="profilePictureInput" name="profilePictureInput" accept="image/*" style="display: none;">
 
                         </div>
-                        <img src="data:image/jpeg;base64, <?= base64_encode($value['hinhanhkh']) ?>" alt="" id="profilePicture">
+                        <img src="data:image/jpeg;base64, <?= base64_encode($user['hinhanhkh']) ?>" alt="" id="profilePicture">
                     </div>
                 </div>
                 <label for="name">Tên:</label>
@@ -38,7 +38,7 @@ require_once("../layout/header.php");
                 </div>
 
                 <label for="phone">Số Điện Thoại:</label>
-                <input type="tel" id="phone" name="phone" value="<?php echo $phone; ?>" readonly>
+                <input type="tel" id="phone" name="phone" value="(+84) <?php echo $phone; ?>" readonly>
 
                 <label for="mail">Email:</label>
                 <input type="email" id="email" name="email" value="<?php echo $email; ?>" readonly>
