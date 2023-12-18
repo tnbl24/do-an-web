@@ -27,17 +27,17 @@ if (isset($_POST['dangky'])) {
     } elseif ($password !== $rpassword) {
         $message = 'Mật khẩu nhập lại không khớp!';
     } else {
-        // Thực hiện INSERT vào bảng khachhang
-        $sql1 = "INSERT INTO khachhang(tenkh, sdtkh) VALUES ('$name', '$phone')";
+        // Thực hiện INSERT vào bảng dangnhap
+        $hash = password_hash($password, PASSWORD_DEFAULT);
+        $sql1 = "INSERT INTO dangnhap(tendn, matkhau) VALUES ('$username','$hash')";
         $result1 = mysqli_query($connect, $sql1);
 
         if ($result1) {
-            // Lấy ID của bản ghi vừa được thêm vào bảng khachhang
-            $id_khachhang = mysqli_insert_id($connect);
+            // Lấy ID của bản ghi vừa được thêm vào bảng dangnhap
+            $madn = mysqli_insert_id($connect);
 
-            // Thực hiện INSERT vào bảng dangnhap với ID của bảng khachhang và matkhau
-            $hash = password_hash($password, PASSWORD_DEFAULT);
-            $sql2 = "INSERT INTO dangnhap(madn, tendn, matkhau) VALUES ($id_khachhang, '$username', '$hash')";
+            // Thực hiện INSERT vào bảng khachhang
+            $sql2 = "INSERT INTO khachhang(tenkh, sdtkh, madn) VALUES ('$name','$phone',$madn)";
             $result2 = mysqli_query($connect, $sql2);
 
             if ($result2) {
@@ -45,8 +45,6 @@ if (isset($_POST['dangky'])) {
                 header("location: dangnhap.php");
                 exit;
             } else {
-                // Nếu có lỗi khi thêm vào bảng dangnhap, có thể xóa bản ghi đã thêm vào bảng khachhang để tránh dữ liệu không nhất quán
-                mysqli_query($connect, "DELETE FROM khachhang WHERE id_khachhang = $id_khachhang");
                 $message = 'Đăng ký không thành công!';
             }
         } else {

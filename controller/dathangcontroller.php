@@ -1,5 +1,5 @@
 <?php
-include_once("../config/connect.php");
+require_once("../config/connect.php");
 if(isset($_SESSION['dangnhap'])){
     $username = $_SESSION['dangnhap'];
     $query = "SELECT kh.* FROM `dangnhap` dn JOIN `khachhang` kh ON dn.madn = kh.madn WHERE dn.tendn = '$username'";
@@ -8,6 +8,7 @@ if(isset($_SESSION['dangnhap'])){
         $name = $user['tenkh'];
         $phone = $user['sdtkh'];
         $address = $user['diachikh'];
+        $payment = $user['sotaikhoan'];
     } else {
         die("Lỗi khi lấy dữ liệu người dùng.");
     }

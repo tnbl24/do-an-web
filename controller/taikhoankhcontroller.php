@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once("../config/connect.php");
+require_once("../config/connect.php");
 if(isset($_SESSION['dangnhap'])){
     $username = $_SESSION['dangnhap'];
     $query = "SELECT kh.* FROM `dangnhap` dn JOIN `khachhang` kh ON dn.madn = kh.madn WHERE dn.tendn = '$username'";
@@ -90,6 +90,7 @@ if(isset($_SESSION['dangnhap'])){
             echo "Lỗi khi xóa tài khoản: " . mysqli_error($connect);
         }
     }
+    
 } else {
     header("location: ../views/dangnhap.php");
     exit;
