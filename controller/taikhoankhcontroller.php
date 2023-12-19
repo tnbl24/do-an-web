@@ -6,7 +6,6 @@ if (isset($_SESSION['dangnhap'])) {
     $query = "SELECT kh.* FROM `dangnhap` dn JOIN `khachhang` kh ON dn.madn = kh.madn WHERE dn.tendn = '$username'";
     $result = mysqli_query($connect, $query);
 
-    // Kiểm tra xem truy vấn và lấy dữ liệu người dùng
     if ($result && $user = mysqli_fetch_assoc($result)) {
         $profilePictureInput = $user['hinhanhkh'];
         $name = $user['tenkh'];
@@ -18,13 +17,11 @@ if (isset($_SESSION['dangnhap'])) {
         $bankName = $user['tennganhang'];
         $accountNumber = $user['sotaikhoan'];
     } else {
-        // Xử lý trường hợp không lấy được dữ liệu người dùng
         die("Lỗi khi lấy dữ liệu người dùng.");
     }
 
     // sửa
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["saveButton"])) {
-        // Lấy thông tin từ form
         $newProfilePicture = $_POST['profilePictureInput'];
         $newname = $_POST['name'];
         $newbirthdate = $_POST["birthdate"];
@@ -34,15 +31,14 @@ if (isset($_SESSION['dangnhap'])) {
         $newaddress = $_POST['address'];
         $newbankName = $_POST['bankName'];
         $newaccountNumber = $_POST['accountNumber'];
-    
-        // Xử lý tải lên ảnh đại diện
+
+        $newProfilePicture = $user['hinhanhkh']; // Giữ nguyên ảnh cũ nếu không có ảnh mới
         if (isset($_FILES['profilePictureInput']) && $_FILES['profilePictureInput']['error'] == UPLOAD_ERR_OK) {
             $tmp_name = $_FILES["profilePictureInput"]["tmp_name"];
-            $newProfilePicture = "uploads/" . basename($_FILES["profilePictureInput"]["name"]);
+            $newProfilePicture = "../material/img/" . basename($_FILES["profilePictureInput"]["name"]);
             move_uploaded_file($tmp_name, $newProfilePicture);
         }
     
-        // Tạo mảng để chứa các điều kiện cần cập nhật
         $updateData = array();
         
         // Thêm điều kiện cập nhật nếu trường có giá trị
@@ -78,14 +74,9 @@ if (isset($_SESSION['dangnhap'])) {
             $updateData[] = "`sotaikhoan`='$newaccountNumber'";
         }
     
-        // Kiểm tra xem có dữ liệu cần cập nhật không
         if (!empty($updateData)) {
-            // Tạo câu truy vấn UPDATE
             $updateQuery = "UPDATE `khachhang` SET " . implode(', ', $updateData) . " WHERE `madn` = (SELECT `madn` FROM `dangnhap` WHERE `tendn` = '$username')";
-    
-            // Thực hiện truy vấn
             if (mysqli_query($connect, $updateQuery)) {
-                // Cập nhật biến hiển thị
                 $name = $newname;
                 $birthdate = $newbirthdate;
                 $gender = $newgender;
@@ -116,11 +107,9 @@ if (isset($_SESSION['dangnhap'])) {
     }
 </script>";
 
-    // Thêm kiểm tra và xử lý xóa tài khoản trong PHP
     if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["deleteAccount"])) {
         $deleteQuery = "DELETE FROM `khachhang` WHERE `madn` = (SELECT `madn` FROM `dangnhap` WHERE `tendn` = '$username')";
         if (mysqli_query($connect, $deleteQuery)) {
-            // Xóa session và chuyển hướng người dùng về trang chủ
             session_destroy();
             header("location: ../views/trangchu.php");
             exit;

@@ -1,7 +1,7 @@
 <?php
 require_once("../config/connect.php");
 
-$message = ""; // Tạo biến để lưu thông điệp
+$message = ""; 
 
 if (isset($_POST['dangky'])) {
     $name = $_POST['name'];
@@ -10,11 +10,11 @@ if (isset($_POST['dangky'])) {
     $password = $_POST['password'];
     $rpassword = $_POST['rpassword'];
 
-    // Kiểm tra xem tên đăng nhập đã tồn tại trong bảng dangnhap hay chưa
+    // Kiểm tra xem tên đăng nhập 
     $checkUsernameQuery = "SELECT * FROM dangnhap WHERE tendn = '$username'";
     $checkUsernameResult = mysqli_query($connect, $checkUsernameQuery);
 
-    // Kiểm tra xem tên khách hàng và số điện thoại đã tồn tại trong bảng khachhang hay chưa
+    // Kiểm tra xem tên khách hàng và số điện thoại 
     $checkKhachHangQuery = "SELECT * FROM khachhang WHERE tenkh = '$name' AND sdtkh = '$phone'";
     $checkKhachHangResult = mysqli_query($connect, $checkKhachHangQuery);
 
@@ -27,7 +27,6 @@ if (isset($_POST['dangky'])) {
     } elseif ($password !== $rpassword) {
         $message = 'Mật khẩu nhập lại không khớp!';
     } else {
-        // Thực hiện INSERT vào bảng dangnhap
         $sql1 = "INSERT INTO dangnhap(tendn, matkhau) VALUES ('$username','$password')";
         $result1 = mysqli_query($connect, $sql1);
 
@@ -40,7 +39,6 @@ if (isset($_POST['dangky'])) {
             $result2 = mysqli_query($connect, $sql2);
 
             if ($result2) {
-                // Redirect đến trang đăng nhập
                 header("location: dangnhap.php");
                 exit;
             } else {
