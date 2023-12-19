@@ -76,7 +76,8 @@ require_once("../controller/giohangcontroller.php");
             </table>
             <div class="cart-content-right-button">
                 <a href="../views/trangchu.php"><button> Quay lại trang chủ</button></a>
-                <a href="../views/dathang.php"><button> Mua hàng</button></a>
+                <a href="../views/dathang.php?products=<?= base64_encode(json_encode($bchogh)) ?>"><button>Mua hàng</button></a>
+
             </div>
 
         </div>

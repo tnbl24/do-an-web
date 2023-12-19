@@ -39,28 +39,37 @@ require_once("../controller/dathangcontroller.php");
                     <th>Số lượng</th>
                     <th>Thành tiền</th>
                 </tr>
-                <tr>
-                    <td>Alaska hồng phấn</td>
-                    <td>1</td>
-                    <td>
-                        <p>20.000.000<sup>đ</sup></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Alaska nâu đỏ</td>
-                    <td>1</td>
-                    <td>
-                        <p>18.000.000<sup>đ</sup></p>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="font-weight: bold;" >Tổng: </td>
-                    <td style="font-weight: bold;">2</td>
-                    <td style="font-weight: bold;">
-                        <p>38.000.000<sup>đ</sup></p>
-                    </td>
-                </tr>
-            </table>
+                <?php
+                  $encodedProducts = $_GET['products'] ?? '';
+                  $decodedProducts = json_decode(base64_decode($encodedProducts), true);
+                  $tongsoluong = 0;
+                  $tongtien = 0;
+
+                  if (is_array($decodedProducts)) {
+                    foreach ($decodedProducts as $product) {
+                        echo "<tr>";
+                        echo "<td>{$product['tendm']} - {$product['gioitinhc']} - {$product['mausacc']}</td>";
+                        echo "<td>1</td>";
+                        echo "<td><p>{$product['giatienc']}</p></td>";
+                        echo "</tr>";
+                
+                        $tongsoluong += 1;
+                        $tongtien += floatval(str_replace(',', '', $product['giatienc']));
+                    }
+                } else {
+                    echo "<tr><td colspan='3'>Không có sản phẩm để hiển thị.</td></tr>";
+                }
+                
+           
+            ?>
+            <tr>
+                <td style="font-weight: bold;">Tổng: </td>
+                <td style="font-weight: bold;"><?php echo $tongsoluong; ?></td>
+                <td style="font-weight: bold;">
+                    <p><?php echo number_format($tongtien, 0, ',', '.') ?></p>
+                </td>
+            </tr>
+        </table>
             <div class="dathang-2">
                 <div class="dathang-content-right-button">
                     <a href="../views/giohang.php"><button>Quay lại</button></a>
