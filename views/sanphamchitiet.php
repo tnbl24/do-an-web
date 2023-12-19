@@ -41,7 +41,7 @@ require_once("../controller/chitietchocontroller.php");
                     padding:0;
                     margin:0;
                     font-size:26px;"><?= $bcho['codec'] . " " . $bcho['tendm'] . " " . $bcho['mausacc'] ?></h3>
-                    <h2 style="color:red;"><?= $bcho['giatienc'] ?></h2>
+                    <h2 style="color:red;"><?= $bcho['giatienc'] . "VND" ?></h2>
                     <div class="product-detail-button">
                         <h4>số lượng : <?= $bcho['soluongc'] ?></h4>
                         <?php
@@ -98,7 +98,7 @@ require_once("../controller/chitietchocontroller.php");
                                         <p><a href="./sanphamchitiet.php?mac= <?= $bcode['mac'] ?>" class="home-dog-name">
                                                 <?= $bcode['codec'] . " " . $bcode['danhmucc'] . " " . $bcode['mausacc'] ?>
                                             </a></p>
-                                        <p class="home-dog-price"><?= $bcode['giatienc'] ?></p>
+                                        <p class="home-dog-price"><?= $bcode['giatienc']."VND" ?></p>
                                     </div>
                                 </div>
                         <?php

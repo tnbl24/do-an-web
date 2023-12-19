@@ -9,11 +9,12 @@ if(isset($_SESSION['dangnhap'])){
         $phone = $user['sdtkh'];
         $address = $user['diachikh'];
         $payment = $user['sotaikhoan'];
+        $lmakh=$user['makh'];
     } else {
         die("Lỗi khi lấy dữ liệu người dùng.");
     }
+
+    
+        
 }
-
-
-
 ?>

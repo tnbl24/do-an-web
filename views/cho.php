@@ -67,7 +67,7 @@ require_once("../controller/chocontroller.php");
                                                 <p><a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>" class="home-dog-name">
                                                         <?= $bcode['codec'] . " " . $bcode['danhmucc'] . " " . $bcode['mausacc'] ?>
                                                     </a></p>
-                                                <p class="home-dog-price"><?= $bcode['giatienc'] ?></p>
+                                                <p class="home-dog-price"><?= $bcode['giatienc']."VND" ?></p>
                                             </div>
                                         </div>
                                 <?php

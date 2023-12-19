@@ -3,6 +3,7 @@ include_once("../layout/header.php");
 require_once("../controller/giohangcontroller.php");
 ?>
 <section class="cart">
+<form action="../views/dathang.php" method="post">
     <div class="cart-container">
         <div class="cart-content-left">
             <table>
@@ -20,11 +21,13 @@ require_once("../controller/giohangcontroller.php");
                 </tr>
                 <?php
                 $count =0;
+                $tong=0;
                 foreach ($bchogh as $bcode) {
                     foreach ($bcode as $bcho => $bvalue) {
+                        $tong=$tong+$bcode['giatienc'];
                 ?>
                         <tr>
-                            <td><input type="checkbox" class="productCheckbox"></td>
+                            <td><input type="checkbox" class="productCheckbox" name="selectedProducts[]" value="<?php echo $bcode['mac'] ?>"></td>
                             <td>
                                 <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                 <img class="home-img" src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
@@ -43,7 +46,7 @@ require_once("../controller/giohangcontroller.php");
                             <td>
                                 <p><?=$bcode['giatienc']?></p>
                             </td>
-                            <td> <span>X</span> </td>
+                            <td><a href="giohang.php?del=<?= $bcode['mac'] ?>"><span>X</span></a>  </td>
                         </tr>
                 <?php
                 $count ++;
@@ -63,21 +66,20 @@ require_once("../controller/giohangcontroller.php");
                 <tr>
                     <td style="color: black; font-weight: bold">Tổng sản phẩm</td>
                     <td>
-
+                    <?php echo $count ?>
                     </td>
                 </tr>
                 <tr>
                     <td style="color: black; font-weight: bold">Tổng thanh toán</td>
                     <td>
-                        <p></p>
+                        <p><?php echo $tong ?></p>
                     </td>
 
                 </tr>
             </table>
             <div class="cart-content-right-button">
                 <a href="../views/trangchu.php"><button> Quay lại trang chủ</button></a>
-                <a href="../views/dathang.php?products=<?= base64_encode(json_encode($bchogh)) ?>"><button>Mua hàng</button></a>
-
+                <button type="submit" name="checkout"> Mua hàng</button>
             </div>
 
         </div>
@@ -85,6 +87,7 @@ require_once("../controller/giohangcontroller.php");
         include_once("../views/messenger.php");
         ?>
     </div>
+    </form>
 </section>
 
 <script>

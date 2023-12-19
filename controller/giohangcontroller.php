@@ -8,6 +8,11 @@ if(isset($_SESSION['dangnhap'])){
     $lrow = mysqli_fetch_assoc($lresult1);
     $lmakh=$lrow['makh'];
 }
+if (isset($_GET['del'])) {
+    $id=$_GET['del'];
+    $sql2 = "DELETE giohang FROM giohang WHERE makh=$lmakh AND mac=$id";
+    $result2 = mysqli_query($connect, $sql2);
+}
 
 $sql = "SELECT cho.* ,danhmuc.tendm FROM giohang 
 INNER JOIN cho on giohang.mac=cho.mac
@@ -38,3 +43,4 @@ if(mysqli_num_rows($result)){
     }
 }
 mysqli_free_result($result);
+
