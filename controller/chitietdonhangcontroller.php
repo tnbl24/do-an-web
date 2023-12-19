@@ -29,7 +29,7 @@ if(mysqli_num_rows($result)>0){
 }
 mysqli_free_result($result);
 
-$sql1="SELECT donhang.* ,tinhtrangdonhang.tenttdh from donhang 
+$sql1="SELECT donhang.* ,tinhtrangdonhang.tenttdh,tinhtrangdonhang.mattdh from donhang 
 INNER JOIN donhangchitiet on donhang.madh = donhangchitiet.madh 
 INNER JOIN tinhtrangdonhang on donhang.mattdh = tinhtrangdonhang.mattdh
 WHERE donhang.madh=$madhct";
@@ -37,11 +37,13 @@ $result=mysqli_query($connect,$sql1);
 $dh1=[];
 if(mysqli_num_rows($result)>0){
     while($r=mysqli_fetch_assoc($result)){
+        $mattdh=$r['mattdh'];
         $tenttdh = $r['tenttdh'];
         $pttt = $r['ptthanhtoan'];
         $ghichu =$r['ghichu'];
 
         $dh1=[
+            'mattdh' => $mattdh,
             'tenttdh' => $tenttdh,
             'pttt' => $pttt,
             'ghichu'=> $ghichu
@@ -74,6 +76,19 @@ if(mysqli_num_rows($result)){
             'hinhanhc' => $hinhanhc
         ];
         $bchodh[$codec] = $bcho;
+    }
+}
+mysqli_free_result($result);
+
+$sql3="SELECT lichsucapnhatdonhang.ngaycapnhat,tinhtrangdonhang.tenttdh 
+FROM lichsucapnhatdonhang 
+INNER JOIN tinhtrangdonhang on tinhtrangdonhang.mattdh=lichsucapnhatdonhang.mattdh 
+WHERE lichsucapnhatdonhang.madh=$madhct;";
+$result=mysqli_query($connect,$sql3);
+$lichsucapnhat=[];
+if(mysqli_num_rows($result)){
+    while($r=mysqli_fetch_assoc($result)){
+        $lichsucapnhat[$r['tenttdh']] = $r['ngaycapnhat'];
     }
 }
 mysqli_free_result($result);

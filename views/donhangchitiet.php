@@ -13,30 +13,46 @@ require_once("../controller/chitietdonhangcontroller.php");
         </div>
         <div class="donhang-top-wrap">
             <div class="donhang-top">
+                <?php
+                $xacnhan = "xacnhan";
+                ?>
                 <div class="donhang-xacnhan donhang-item">
                     <i class="fa-solid fa-box-archive"></i>
-
                 </div>
-                <div class="xacnhan text-dh">
+                <div class="
+                <?php
+                if ($dh1['mattdh'] == 1 || $dh1['mattdh'] == 2 || $dh1['mattdh'] == 3)
+                    echo $xacnhan;
+                ?> 
+                text-dh">
                     <p>Đang chuẩn bị hàng</p>
-
                 </div>
+
                 <div class="donhang-vanchuyen donhang-item">
                     <i class="fa-solid fa-truck-fast"></i>
                 </div>
-                <div class=" vanchuyen text-dh">
+                <div class=" vanchuyen text-dh
+                <?php
+                if ($dh1['mattdh'] == 2 || $dh1['mattdh'] == 3)
+                    echo $xacnhan;
+                ?> ">
                     <p>Đang giao</p>
-
                 </div>
+
                 <div class="donhang-danggiao donhang-item">
                     <i class="fa-solid fa-boxes-packing"></i>
                 </div>
-                <div class="dagiao text-dh">
+                <div class="dagiao text-dh
+                <?php
+                if ($dh1['mattdh'] == 3)
+                    echo $xacnhan;
+                ?>">
                     <p>Đã giao</p>
                 </div>
                 <div class="donhang-danhgia donhang-item">
                     <i class="fa-solid fa-star"></i>
                 </div>
+
             </div>
         </div>
     </div>
@@ -60,14 +76,33 @@ require_once("../controller/chitietdonhangcontroller.php");
                                 <div class="rVemEI">
                                     <img class="AXDO-g" title="image" alt="Đặt hàng thành công" src="../material/img/chuanbihang.png">
                                 </div>
-                                <div class="B3MLEe">07:10 11-11-2023</div>
+                                <div class="B3MLEe"></div>
                                 <div class="u4VSsO">
                                     <p class="_0P1byN">Đặt hàng thành công</p>
-                                    <p>Đơn hàng đang được chuẩn bị</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php
+                    foreach ($lichsucapnhat as $tinhtrang => $ngaycapnhat) {
+                    ?>
+                        <div>
+                            <div class="rqUx-N">
+                                <div class="_4yfsbS"></div>
+                                <div class="JNurwA">
+                                    <div class="rVemEI">
+                                        <img class="AXDO-g" title="image" alt="Đặt hàng thành công" src="../material/img/chuanbihang.png">
+                                    </div>
+                                    <div class="B3MLEe"><?= $ngaycapnhat ?></div>
+                                    <div class="u4VSsO">
+                                        <p class="_0P1byN"><?= $tinhtrang ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    <?php
+                    }
+                    ?>
                 </div>
             </div>
             <div>

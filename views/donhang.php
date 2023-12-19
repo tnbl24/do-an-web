@@ -51,7 +51,7 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
             if (empty($tenvama)) {
             ?>
                 <!--  -->
-                <div class="tab-pane fade show active" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">
+                <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="list-messages-list">
                     <div class="donmua-chuacodonhang-img">
                         <img src="../material/img/donmua.png" width="100px" height="100px">
                     </div>
@@ -64,7 +64,7 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
             } else {
                 foreach ($tenvama as $ktenvama => $vtenvama) {
                 ?>
-                    <div class="tab-pane fade show active" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="list-settings-list">
                         <div class="donmua-donhang">
                             <div class="donmua-trangthai">
                                 <div class="donmua-mdh"><a href="../views/donhangchitiet.php?madhct=<?= $ktenvama ?>">Mã đơn hàng: <?= $ktenvama ?></a></div>

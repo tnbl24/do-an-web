@@ -38,7 +38,7 @@ if(isset($_REQUEST['ttdh']))
 {
     $ttdh =$_REQUEST['ttdh'];
 }else {
-    $ttdh = array_key_first($soluongdh);
+    $ttdh = $btinhtrangdonhang[0];
 }
 $sql3="SELECT donhang.madh,tinhtrangdonhang.tenttdh FROM donhang 
 INNER JOIN tinhtrangdonhang on donhang.mattdh=tinhtrangdonhang.mattdh

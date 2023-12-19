@@ -44,7 +44,18 @@ require_once("../controller/chitietchocontroller.php");
                     <h2 style="color:red;"><?= $bcho['giatienc'] ?></h2>
                     <div class="product-detail-button">
                         <h4>số lượng : <?= $bcho['soluongc'] ?></h4>
-                        <button class="submit" onclick="addToCart()"> + Thêm vào giỏ hàng</button>
+                        <?php
+                        if ($bcho['soluongc'] == 0) {
+                            echo '<button style="pointer-events: none;
+                        opacity: 0.7;"> Hết hàng </button>';
+                        } else {
+                            if (isset($_SESSION['dangnhap'])) {
+                                echo $themc;
+                            }else echo '<a  href="../views/dangnhap.php"><button class="submit">
+                            + Thêm vào giỏ hàng 
+                            </button>  </a>';
+                        }
+                        ?>
                     </div>
                     <h3 class="mt-4 mb-4" style="text-align:left;
                     padding:0;
@@ -108,7 +119,9 @@ require_once("../controller/chitietchocontroller.php");
         ?>
     </div>
 </div>
-
+<?php
+include('../views/modal.php')
+?>
 <?php
 include_once("../layout/footer.php");
 ?>
