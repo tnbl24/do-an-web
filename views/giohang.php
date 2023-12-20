@@ -64,13 +64,13 @@ require_once("../controller/giohangcontroller.php");
                 <table>
                     <tr>
                         <th colspan="2"> TẠO ĐƠN HÀNG</th>
-                        <p style ="color:red;">
-                        <?php
-                        if(isset($_SESSION['error']))
-                        {
-                            echo $_SESSION['error'];
-                        }
-                        ?>
+                        <p style="color:red;">
+                            <?php
+                            if (isset($_SESSION['error'])) {
+                                echo $_SESSION['error'];
+                                unset($_SESSION['error']);
+                            }
+                            ?>
                         </p>
                     </tr>
                     <tr>
@@ -81,8 +81,8 @@ require_once("../controller/giohangcontroller.php");
                     <tr>
                         <td style="color: black; font-weight: bold">Tổng thanh toán</td>
                         <td>
-                        <p>
-                        </p>
+                            <p>
+                            </p>
                         </td>
                     </tr>
                 </table>
@@ -110,12 +110,14 @@ require_once("../controller/giohangcontroller.php");
         document.getElementById('selectAll').addEventListener('change', function() {
             toggleAllCheckboxes(this.checked);
             calculateSelectedProducts();
+       
         });
 
         var productCheckboxes = document.querySelectorAll('.productCheckbox');
         productCheckboxes.forEach(function(checkbox) {
             checkbox.addEventListener('change', function() {
                 calculateSelectedProducts();
+              
             });
         });
 
@@ -129,7 +131,7 @@ require_once("../controller/giohangcontroller.php");
             });
         });
     });
-
+   
     function toggleAllCheckboxes(checked) {
         var productCheckboxes = document.querySelectorAll('.productCheckbox');
         productCheckboxes.forEach(function(checkbox) {
@@ -153,38 +155,36 @@ require_once("../controller/giohangcontroller.php");
 
         var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
         totalPrice = totalPrice.toLocaleString('vi-VN').replace(/,/g, '.');
-        totalPriceElement.innerHTML = formatCurrency(totalPrice) + '<sup>đ</sup>' ;
+        totalPriceElement.innerHTML = formatCurrency(totalPrice) + '<sup>đ</sup>';
 
         var tempTotalElement = document.querySelector('.cart-content-right table tr:nth-child(4) td p');
         tempTotalElement.innerText = formatCurrency(totalPrice) + 'VND';
     }
 
-    function calculateTotalPrice() {
-        var totalPrice = 0;
+    // function calculateTotalPrice() {
+    //     var totalPrice = 0;
 
-        var productRows = document.querySelectorAll('.cart-content-left table tr:not(:first-child)');
-        productRows.forEach(function(row) {
-            var checkbox = row.querySelector('.productCheckbox:checked');
-            if (checkbox) {
-                var priceElement = row.querySelector('td:nth-child(5) p');
-                var price = parseFloat(priceElement.innerText.replace('VND', '').replace('', '').replace('', ''));
-                totalPrice += price;
-            }
-        });
+    //     var productRows = document.querySelectorAll('.cart-content-left table tr:not(:first-child)');
+    //     productRows.forEach(function(row) {
+    //         var checkbox = row.querySelector('.productCheckbox:checked');
+    //         if (checkbox) {
+    //             var priceElement = row.querySelector('td:nth-child(5) p');
+    //             var price = parseFloat(priceElement.innerText.replace('VND', '').replace('', '').replace('', ''));
+    //             totalPrice += price;
+    //         }
+    //     });
 
-        var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
-        totalPriceElement.innerText = formatCurrency(totalPrice) + 'VND';
+    //     var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
+    //     totalPriceElement.innerText = formatCurrency(totalPrice) + 'VND';
 
-        var tempTotalElement = document.querySelector('.cart-content-right table tr:nth-child(4) td p');
-        tempTotalElement.innerText = formatCurrency(totalPrice) + 'VND';
-    }
+    //     var tempTotalElement = document.querySelector('.cart-content-right table tr:nth-child(4) td p');
+    //     tempTotalElement.innerText = formatCurrency(totalPrice) + 'VND';
+    // }
 
 
     function formatCurrency(amount) {
         return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "");
     }
-
-    
 </script>
 
 <?php

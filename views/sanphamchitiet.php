@@ -14,66 +14,58 @@ require_once("../controller/chitietchocontroller.php");
             </div>
 
             <div class="row mt-5">
-                <!-- <div class="col-sm-2 dog-content-category ">
-                    <h3 class="dog-category">Danh mục</h3>
-                    <div class="list-group" id="list-tab" role="tablist">
-                        <ul class="list-group list-category">
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a class="list-group-item list-group-item-action active " id="list-home-list" data-bs-toggle="list" href="#list-home" role="tab" aria-controls="list-home">alaska <span class="badge bg-primary rounded-pill">14</span></a>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a class="list-group-item list-group-item-action" id="list-profile-list" data-bs-toggle="list" href="#list-profile" role="tab" aria-controls="list-profile">husky<span class="badge bg-primary rounded-pill">2</span></a>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a class="list-group-item list-group-item-action" id="list-messages-list" data-bs-toggle="list" href="#list-messages" role="tab" aria-controls="list-messages">gâu đần<span class="badge bg-primary rounded-pill">1</span></a>
-                            </li>
-                            <li class="list-group-item d-flex justify-content-between align-items-center">
-                                <a class="list-group-item list-group-item-action" id="list-settings-list" data-bs-toggle="list" href="#list-settings" role="tab" aria-controls="list-settings">shiba <span class="badge bg-primary rounded-pill">1</span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div> -->
                 <div class="col-lg-5 col-md-12 col-12">
                     <img class="img-fluid w-100" src="data:image/jpeg;base64, <?= base64_encode($bcho['hinhanhc']) ?>">
                 </div>
-                <div class="col-lg-6 col-md-12 col-12">
-                    <h3 class="py-4" style="text-align:left;
+                <div class="product-detail-1" style="width: fit-content;">
+                    <div class="product-detail-name">
+                        <h1 class="py-4" style="text-align:left;
                     padding:0;
                     margin:0;
-                    font-size:26px;"><?= $bcho['codec'] . " " . $bcho['tendm'] . " " . $bcho['mausacc'] ?></h3>
-                    <h2 style="color:red;">
-                        <?php
-                        $bcho['giatienc'] = number_format($bcho['giatienc'], 0, ',', '.');
-                        echo $bcho['giatienc'] . '<sup>đ</sup>' ?>
+                    font-size:50px;
+                    margin-left: 45px;"><?= $bcho['codec'] . " " . $bcho['tendm'] . " " . $bcho['mausacc'] ?></h1>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-12">
 
-                    </h2>
-                    <div class="product-detail-button">
-                        <h4 style="color: #000000;text-align: left;">số lượng : <?= $bcho['soluongc'] ?></h4>
-                        <?php
-                        if ($bcho['soluongc'] == 0) {
-                            echo '<button style="pointer-events: none;
+                        <div class="product-detail-many" style="margin-left: 80px;align-items: baseline;margin-top: 25px;">
+                        <h4> Giá tiền: </h4>
+                            <h2 style="color:red;">
+                                <?php
+                                $bcho['giatienc'] = number_format($bcho['giatienc'], 0, ',', '.');
+                                echo $bcho['giatienc'] . '<sup>đ</sup>' ?>
+
+                            </h2>
+                            <div class="product-detail-button">
+                                <h4 style="color: #6c5d5d;text-align: left;">Số lượng : <?= $bcho['soluongc'] ?></h4>
+                                <?php
+                                if ($bcho['soluongc'] == 0) {
+                                    echo '<button style="pointer-events: none;
                         opacity: 0.7;"> Hết hàng </button>';
-                        } else {
-                            if (isset($_SESSION['dangnhap'])) {
-                                echo $themc;
-                            } else echo '<a  href="../views/dangnhap.php"><button class="submit">
+                                } else {
+                                    if (isset($_SESSION['dangnhap'])) {
+                                        echo $themc;
+                                    } else echo '<a  href="../views/dangnhap.php"><button class="submit">
                             + Thêm vào giỏ hàng 
                             </button>  </a>';
-                        }
-                        ?>
-                    </div>
-                    <h3 class="mt-4 mb-4" style="text-align:left;
+                                }
+                                ?>
+                            </div>
+                        </div>
+                        <div class="product-detail-infor" style= "width: 425px;">
+                            <h3 class="mt-4 mb-4" style="text-align:left;
                     padding:0;
                     margin:0;
-                    font-size:26px;">Thông tin chi tiết</h3>
-                    <h4> Ngày sinh: <?= $bcho['ngaysinhc'] ?><br>
-                        Giới tính: <?= $bcho['gioitinhc'] ?> <br>
-                        Màu sắc: <?= $bcho['mausacc'] ?> <br>
-                        Cân nặng: <?= $bcho['cannangc'] ?> <br>
-                        Đặc điểm: <?= $bcho['motac'] ?><br>
-                        <?= $bcho['tinhtrangtiemchungc'] ?> <br>
-                        Tình trạng sức khỏe:<?= $bcho['tinhtrangsuckhoec'] ?> <br>
-                    </h4>
+                    font-size:26px;">Thông tin chi tiết của chó</h3>
+                            <h4> Ngày sinh: <?= $bcho['ngaysinhc'] ?><br>
+                                Giới tính: <?= $bcho['gioitinhc'] ?> <br>
+                                Màu sắc: <?= $bcho['mausacc'] ?> <br>
+                                Cân nặng: <?= $bcho['cannangc'] ?> <br>
+                                Đặc điểm: <?= $bcho['motac'] ?><br>
+                                <?= $bcho['tinhtrangtiemchungc'] ?> <br>
+                                Tình trạng sức khỏe:<?= $bcho['tinhtrangsuckhoec'] ?> <br>
+                            </h4>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
