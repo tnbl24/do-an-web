@@ -91,7 +91,7 @@ if (isset($_SESSION['dangnhap'])) {
             </div>
         </div>
         <div>
-            <button type="submit" class="form-submit" style="width: 105px;"> XÁC NHẬN </button>
+            <button type="submit" class="form-submit xn">XÁC NHẬN </button>
         </div>
         <p style="margin-top:25px;">
             <a href="../views/taikhoankh.php" class="form-forgot" style="color: #5296c9;">Quay lại</a>

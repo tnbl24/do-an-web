@@ -113,6 +113,7 @@
 
 .donmua-mdh {
     color: #276eae;
+    text-decoration: none;
 }
 .alaska-naudo-order {
     margin-bottom: 10px;
@@ -125,4 +126,10 @@
 .dathang-2.order {
     margin-top: -4px;
     margin-bottom: 60px;
+}
+
+.new-a{
+    text-decoration: none;
+    color: black;
+    text-transform: capitalize;
 }

@@ -76,7 +76,7 @@ require_once("../controller/chitietdonhangcontroller.php");
                                 <div class="rVemEI">
                                     <img class="AXDO-g" title="image" alt="Đặt hàng thành công" src="../material/img/chuanbihang.png">
                                 </div>
-                                <div class="B3MLEe"></div>
+                                <div class="B3MLEe" style="width: 143px;"></div>
                                 <div class="u4VSsO">
                                     <p class="_0P1byN">Đặt hàng thành công</p>
                                 </div>
@@ -86,7 +86,7 @@ require_once("../controller/chitietdonhangcontroller.php");
                     <?php
                     foreach ($lichsucapnhat as $tinhtrang => $ngaycapnhat) {
                     ?>
-                        <div>
+                        <div class="JNurwA ">
                             <div class="rqUx-N">
                                 <div class="_4yfsbS"></div>
                                 <div class="JNurwA">
@@ -123,10 +123,10 @@ require_once("../controller/chitietdonhangcontroller.php");
                         ?>
                                 <div class="donhang-imgsp">
                                     <div class="alaska-naudo-dh">
-                                        <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
-                                            <img src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
+                                        <a class="new-a" href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                            <img  src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
                                         </a>
-                                        <span><a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                        <span><a class="new-a" href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                                 <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
                                             </a></span>
                                         <span class="small"> x1</span><br>

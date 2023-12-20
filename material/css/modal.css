@@ -1,5 +1,4 @@
 .form-submit {
-    /* display: flex; */
     background: transparent;
     border: 1px solid #f5f5f5;
     color: #fff;
@@ -9,6 +8,19 @@
     text-decoration: none;
     margin-top: 10px;
     font-size: 17px;
+    border-radius: 5px;
+}
+.form-submit.xn {
+    background: transparent;
+    border: 1px solid #f5f5f5;
+    color: #fff;
+    text-transform: uppercase;
+    padding: 2% 38%;
+    transition: 0.25s ease-in-out;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 17px;
+    border-radius: 5px;
 }
 #wrapper2 {
     background: rgba(0,0,0,0.3);

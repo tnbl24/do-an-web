@@ -9,9 +9,6 @@ if(isset($_SESSION['dangnhap'])){
     $lrow = mysqli_fetch_assoc($lresult1);
     $lmakh=$lrow['makh'];
 }
-// if(){
-
-// }
 
 $madhct=$_REQUEST['madhct'];
 $sql ="SELECT khachhang.tenkh,khachhang.diachikh,khachhang.sdtkh from khachhang WHERE khachhang.makh=$lmakh;";

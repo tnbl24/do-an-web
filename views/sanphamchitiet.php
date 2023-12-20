@@ -14,7 +14,7 @@ require_once("../controller/chitietchocontroller.php");
             </div>
 
             <div class="row mt-5">
-                <div class="col-sm-2 dog-content-category ">
+                <!-- <div class="col-sm-2 dog-content-category ">
                     <h3 class="dog-category">Danh mục</h3>
                     <div class="list-group" id="list-tab" role="tablist">
                         <ul class="list-group list-category">
@@ -32,7 +32,7 @@ require_once("../controller/chitietchocontroller.php");
                             </li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
                 <div class="col-lg-5 col-md-12 col-12">
                     <img class="img-fluid w-100" src="data:image/jpeg;base64, <?= base64_encode($bcho['hinhanhc']) ?>">
                 </div>
@@ -41,9 +41,14 @@ require_once("../controller/chitietchocontroller.php");
                     padding:0;
                     margin:0;
                     font-size:26px;"><?= $bcho['codec'] . " " . $bcho['tendm'] . " " . $bcho['mausacc'] ?></h3>
-                    <h2 style="color:red;"><?= $bcho['giatienc'] . "VND" ?></h2>
+                    <h2 style="color:red;">
+                        <?php
+                        $bcho['giatienc'] = number_format($bcho['giatienc'], 0, ',', '.');
+                        echo $bcho['giatienc'] . '<sup>đ</sup>' ?>
+
+                    </h2>
                     <div class="product-detail-button">
-                        <h4>số lượng : <?= $bcho['soluongc'] ?></h4>
+                        <h4 style="color: #000000;text-align: left;">số lượng : <?= $bcho['soluongc'] ?></h4>
                         <?php
                         if ($bcho['soluongc'] == 0) {
                             echo '<button style="pointer-events: none;
@@ -51,7 +56,7 @@ require_once("../controller/chitietchocontroller.php");
                         } else {
                             if (isset($_SESSION['dangnhap'])) {
                                 echo $themc;
-                            }else echo '<a  href="../views/dangnhap.php"><button class="submit">
+                            } else echo '<a  href="../views/dangnhap.php"><button class="submit">
                             + Thêm vào giỏ hàng 
                             </button>  </a>';
                         }
@@ -90,7 +95,10 @@ require_once("../controller/chitietchocontroller.php");
                                 <div class="col home-col">
                                     <div class="hover01 column">
                                         <div>
-                                            <figure><a href="./sanphamchitiet.php?mac= <?= $bcode['mac'] ?>"> <?php echo '<img class="home-img" src="data:image/jpeg;base64,' . base64_encode($bcode['hinhanhc']) . '">' ?> </a></figure>
+                                            <figure><a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                                    <?php echo '<img class="home-img" src="data:image/jpeg;base64,' . base64_encode($bcode['hinhanhc']) . '">' ?>
+                                                </a>
+                                            </figure>
                                         </div>
                                     </div>
                                     <div class="home-text">
@@ -98,7 +106,11 @@ require_once("../controller/chitietchocontroller.php");
                                         <p><a href="./sanphamchitiet.php?mac= <?= $bcode['mac'] ?>" class="home-dog-name">
                                                 <?= $bcode['codec'] . " " . $bcode['danhmucc'] . " " . $bcode['mausacc'] ?>
                                             </a></p>
-                                        <p class="home-dog-price"><?= $bcode['giatienc']."VND" ?></p>
+                                        <p class="home-dog-price">
+                                            <?php
+                                            $bcode['giatienc'] = number_format($bcode['giatienc'], 0, ',', '.');
+                                            echo $bcode['giatienc'] . '<sup>đ</sup>' ?>
+                                        </p>
                                     </div>
                                 </div>
                         <?php

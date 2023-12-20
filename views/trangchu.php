@@ -78,7 +78,11 @@ require_once("../controller/trangchucontroller.php");
                                         <p class="home-dog-category"><?= $bdanhsach['danhmucc'] ?></p>
                                         <p><a href="./sanphamchitiet.php?mac=<?= $bdanhsach['mac'] ?>" class="home-dog-name">
                                                 <?= $bdanhsach['codec'] . " " . $bdanhsach['danhmucc'] . " " . $bdanhsach['mausacc'] ?></a></p>
-                                        <p class="home-dog-price"><?= $bdanhsach['giatienc']."VND" ?></p>
+                                        <p class="home-dog-price">
+                                            <?php 
+                                            $bdanhsach['giatienc'] = number_format($bdanhsach['giatienc'], 0, ',', '.');
+                                            echo $bdanhsach['giatienc'].'<sup>đ</sup>'?>
+                                        </p>
                                     </div>
                                 </div>
                         <?php

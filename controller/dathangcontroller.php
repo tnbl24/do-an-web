@@ -13,8 +13,4 @@ if(isset($_SESSION['dangnhap'])){
     } else {
         die("Lỗi khi lấy dữ liệu người dùng.");
     }
-
-    
-        
 }
-?>

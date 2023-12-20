@@ -43,7 +43,6 @@ else{
     $pagec = 1;
 }
 
-
 $bsqlcho = "SELECT cho.mac, cho.codec,cho.giatienc,cho.mausacc,cho.hinhanhc,danhmuc.tendm,cho.soluongc from 
 cho INNER join danhmuc on cho.madm = danhmuc.madm
 WHERE danhmuc.tendm='$bdanhmuccho' and soluongc=1

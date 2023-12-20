@@ -60,16 +60,15 @@ require_once("../controller/dathangcontroller.php");
                                     $giatienc=$c['giatienc'];
                                     $hinhanhc=$c['hinhanhc'];
                                     $tong=$tong+$giatienc;
-                    echo'<input type="text" name="abc[]" value="'.$key.'" hidden>';
+                            echo'<input type="text" name="abc[]" value="'.$key.'" hidden>';
                             echo'
                             <tr>
-                    <td>'.$tendm.' '.$mausacc.'</td>
-                    <td>1</td>
-                    <td>
-                        <p>'.$giatienc.'<sup>đ</sup></p>
-                    </td>
-                </tr>
-                            ';
+                                <td>'.$tendm.' '.$mausacc.'</td>
+                                <td>1</td>
+                                <td>
+                                    <p>'.$giatienc.'<sup>đ</sup></p>
+                                </td>
+                            </tr>';
                                 }};
                                 $count++;
                         }
@@ -85,7 +84,7 @@ require_once("../controller/dathangcontroller.php");
             </table>
             <div class="dathang-2">
                 <div class="dathang-content-right-button">
-                <a href="../views/giohang.php"><button type="button"> Mua hàng</button></a>
+                <a href="../views/giohang.php"><button type="button"> Quay lại giỏ hàng</button></a>
                     <button type="submit" name="order">Đặt hàng</button>
                 </div>
             </div>

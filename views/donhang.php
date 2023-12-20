@@ -67,7 +67,7 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
                     <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="list-settings-list">
                         <div class="donmua-donhang">
                             <div class="donmua-trangthai">
-                                <div class="donmua-mdh"><a href="../views/donhangchitiet.php?madhct=<?= $ktenvama ?>">Mã đơn hàng: <?= $ktenvama ?></a></div>
+                                <div ><a class="donmua-mdh" href="../views/donhangchitiet.php?madhct=<?= $ktenvama ?>">Mã đơn hàng: <?= $ktenvama ?></a></div>
                                 <div class="donmua-trangthai-1"><a href=""><?= $vtenvama ?></a></div>
                             </div>
                             <?php
@@ -82,11 +82,11 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
                             ?>
                                         <div class="donhang-imgsp order">
                                             <div class="alaska-naudo-order">
-                                                <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                                <a class="new-a" href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                                     <img src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
                                                 </a>
                                                 <span>
-                                                    <a href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                                    <a class="new-a"  href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                                         <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
                                                     </a>
                                                 </span>
@@ -95,8 +95,8 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
                                             <div class="tienhang order dhtc"><span>
                                                     <?php
                                                     $bcode['giatienc'] = number_format($bcode['giatienc'], 0, ',', '.');
-                                                    echo $bcode['giatienc'] ?>
-                                                    <sup>đ</sup></span>
+                                                    echo $bcode['giatienc'] .'<sup>đ</sup>'?>
+                                                    </span>
                                                 <?php
                                                 if ($vtenvama == end($btinhtrangdonhang)) {
                                                 ?>
