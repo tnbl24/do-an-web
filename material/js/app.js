@@ -93,6 +93,7 @@ var btn = document.getElementsByClassName("danhgia-modal danhgia-dg");
         window.location.href = "../views/cho.php";
     }
 
+
 //modal success
 $('.dg-danhan').click(function(){
     $('.modal-success').addClass('open-modal')

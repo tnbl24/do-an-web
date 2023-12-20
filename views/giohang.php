@@ -44,7 +44,7 @@ require_once("../controller/giohangcontroller.php");
                                 <p><?=$bcode['mausacc']?></p>
                             </td>
                             <td>
-                                <p><?=$bcode['giatienc']?></p>
+                                <p><?=$bcode['giatienc']."VND"?></p>
                             </td>
                             <td><a href="giohang.php?del=<?= $bcode['mac'] ?>"><span>X</span></a>  </td>
                         </tr>
@@ -72,13 +72,13 @@ require_once("../controller/giohangcontroller.php");
                 <tr>
                     <td style="color: black; font-weight: bold">Tổng thanh toán</td>
                     <td>
-                        <p><?php echo $tong ?></p>
+                        <p><?php echo $tong."VND" ?></p>
                     </td>
 
                 </tr>
             </table>
             <div class="cart-content-right-button">
-                <a href="../views/trangchu.php"><button> Quay lại trang chủ</button></a>
+            <a href="../views/trangchu.php"><button type="button"> Quay lại trang chủ</button></a>
                 <button type="submit" name="checkout"> Mua hàng</button>
             </div>
 
@@ -136,7 +136,7 @@ require_once("../controller/giohangcontroller.php");
         selectedCheckboxes.forEach(function(checkbox) {
             var row = checkbox.closest('tr');
             var priceElement = row.querySelector('td:nth-child(7) p');
-            var price = parseFloat(priceElement.innerText.replace(' VND', '').replace('.', '').replace('.', ''));
+            var price = parseFloat(priceElement.innerText.replace('VND', '').replace('', '').replace('', ''));
             totalPrice += price;
         });
 
@@ -144,44 +144,41 @@ require_once("../controller/giohangcontroller.php");
         selectedProductsCountElement.innerText = selectedProductsCount;
 
         var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
-        totalPriceElement.innerText = formatCurrency(totalPrice) + ' VND';
+        totalPriceElement.innerText = formatCurrency(totalPrice) + 'VND';
 
         var tempTotalElement = document.querySelector('.cart-content-right table tr:nth-child(4) td p');
-        tempTotalElement.innerText = formatCurrency(totalPrice) + ' VND';
+        tempTotalElement.innerText = formatCurrency(totalPrice) + 'VND';
     }
 
 
     function calculateTotalPrice() {
         var totalPrice = 0;
 
-        // Iterate through all product rows
+      
         var productRows = document.querySelectorAll('.cart-content-left table tr:not(:first-child)');
         productRows.forEach(function(row) {
             var checkbox = row.querySelector('.productCheckbox:checked');
             if (checkbox) {
                 var priceElement = row.querySelector('td:nth-child(5) p');
-                var price = parseFloat(priceElement.innerText.replace(' VND', '').replace('.', '').replace('.', ''));
+                var price = parseFloat(priceElement.innerText.replace('VND', '').replace('', '').replace('', ''));
                 totalPrice += price;
             }
         });
 
         var totalPriceElement = document.querySelector('.cart-content-right table tr:nth-child(3) td p');
-        totalPriceElement.innerText = formatCurrency(totalPrice) + ' VND';
+        totalPriceElement.innerText = formatCurrency(totalPrice) + 'VND';
 
 
         var tempTotalElement = document.querySelector('.cart-content-right table tr:nth-child(4) td p');
-        tempTotalElement.innerText = formatCurrency(totalPrice) + ' VND';
+        tempTotalElement.innerText = formatCurrency(totalPrice) + 'VND';
     }
 
 
     function formatCurrency(amount) {
-        return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+        return amount.toString().replace(/\B(?=(\d{3})+(?!\d))/g, "");
     }
 
-    function sendMessage() {
-        // Add your logic for opening Facebook Messenger or sending a message here
-        alert('Sending a message...');
-    }
+  
 </script>
 
 <?php

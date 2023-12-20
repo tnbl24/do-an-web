@@ -85,7 +85,7 @@ require_once("../controller/dathangcontroller.php");
             </table>
             <div class="dathang-2">
                 <div class="dathang-content-right-button">
-                    <a href="../views/giohang.php"><button>Quay lại</button></a>
+                <a href="../views/giohang.php"><button type="button"> Mua hàng</button></a>
                     <button type="submit" name="order">Đặt hàng</button>
                 </div>
             </div>
