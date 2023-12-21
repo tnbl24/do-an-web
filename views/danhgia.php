@@ -1,3 +1,79 @@
+<?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+require_once("../config/connect.php");
+
+if (!$connect) {
+    die("Connection failed: " . mysqli_connect_error());
+}
+
+// Kiểm tra nếu có phiên đăng nhập
+if (isset($_SESSION['dangnhap'])) {
+    $username = $_SESSION['dangnhap'];
+
+    // Truy vấn để lấy mã khách hàng
+    $lquery1 = "SELECT khachhang.makh FROM khachhang INNER JOIN dangnhap ON khachhang.madn=dangnhap.madn
+    WHERE dangnhap.tendn='$username'";
+    $lresult1 = mysqli_query($connect, $lquery1);
+
+    // Kiểm tra xem truy vấn có thành công không trước khi lấy dữ liệu
+    if ($lresult1) {
+        $lrow = mysqli_fetch_assoc($lresult1);
+        $lmakh = $lrow['makh'];
+        if (isset($_POST['rate-dg'])) {
+            $noidungdg = $_POST['rate-dg'];
+            $hinhanhdg = ""; // Bạn cần xử lý upload ảnh và lưu đường dẫn ảnh vào đây
+            if (isset($_POST['product-dg'])) {
+                $productDGValue = $_POST['product-dg'];
+                echo "Giá trị của product-dg: $productDGValue";
+            } else {
+                echo "Không có giá trị product-dg được gửi lên.";
+            }
+            // Sử dụng regex để lấy mã sản phẩm từ chuỗi sản phẩm
+            $pattern = '/^([A-Z0-9]+)/';
+            if (preg_match($pattern, $_POST['product-dg'], $matches)) {
+                $productCode = $matches[1];
+
+                // Thực hiện truy vấn để lấy mã sản phẩm
+                $getProductQuery = "SELECT mac FROM cho WHERE codec = '$productCode'";
+                $getProductResult = mysqli_query($connect, $getProductQuery);
+
+                if ($getProductResult) {
+                    $productRow = mysqli_fetch_assoc($getProductResult);
+
+                    if ($productRow) {
+                        $mac = $productRow['mac'];
+                        // Chèn đánh giá vào bảng danhgia
+                        $insertQuery = "INSERT INTO danhgia (makh, ngaydg, hinhanhdg, noidungdg, mac) 
+                                        VALUES ($lmakh, NOW(), '$hinhanhdg', '$noidungdg', $mac)";
+
+                        $insertResult = mysqli_query($connect, $insertQuery);
+
+                        if ($insertResult) {
+                            echo "Đánh giá đã được thêm thành công.";
+                        } else {
+                            echo "Lỗi khi chèn đánh giá: " . mysqli_error($connect);
+                        }
+                    } else {
+                        echo "Không có sản phẩm để đánh giá.";
+                    }
+                } else {
+                    echo "Lỗi khi lấy mã sản phẩm: " . mysqli_error($connect);
+                }
+            } else {
+                echo "Không khớp với mẫu.";
+            }
+        }
+    } else {
+        echo "Lỗi khi lấy mã khách hàng: " . mysqli_error($connect);
+    }
+} else {
+    echo "Người dùng chưa đăng nhập.";
+}
+
+?>
+
 <div class="modal-dg">
     <div class="modal-container-dg">
         <div class="modal-close-dg">
@@ -13,14 +89,15 @@
                 <i class="bi bi-bag-heart" style="margin-right: 10px;"></i>
                 Sản phẩm bạn muốn đánh giá
             </label>
-            <input id="product-dg" type="text" class="modal-input-dg" placeholder="San pham cua ban" style="margin-bottom: 24px;">
+            <input name="product-dg" id="product-dg" type="text" class="modal-input-dg" placeholder="Sản phẩm của bạn" style="margin-bottom: 24px;    padding-left: 90px;" value="" readonly>
+
             <label for="rate-dg" class="modal-label-dg">
                 <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
                 Nhập đánh giá của bạn
             </label>
-            <textarea id="rate-dg" class="modal-input-dg" placeholder="Danh gia cua ban" rows="9"></textarea>
+            <textarea name="rate-dg" class="modal-input-dg" placeholder="Danh gia cua ban" rows="9"></textarea>
+            <form action="" method="POST">
 
-            <form action="" methor="">
                 <div class="mt-3 d-flex flex-row align-items-center p-3 form-color comment-1">
                     <div class="input-div">
                         <input class="input" name="file" type="file">
@@ -31,6 +108,7 @@
                     </div>
                 </div>
             </form>
+
             <div class="btn-feedback">
                 <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
                 <button id="submit-dg">
@@ -50,6 +128,26 @@
         </div>
     </div>
 </div>
+<script>
+    $(document).ready(function() {
+        // Gắn sự kiện nhấp vào nút đánh giá
+        $('.danhgia-modal').click(function(event) {
+            event.preventDefault(); // Ngăn chặn hành vi mặc định của nút submit
+
+            // Lấy thông tin sản phẩm từ phần tử cụ thể được nhấp
+            var productElement = $(this).closest('.donhang-imgsp');
+            var productTitle = productElement.find('a:last').text();
+
+            // In thông tin sản phẩm ra console hoặc làm gì đó khác
+            $('#product-dg').val(productTitle);
+
+            // Tiếp tục xử lý hoặc gửi dữ liệu đánh giá tới máy chủ
+            // ...
+        });
+    });
+</script>
+
+
 <script>
     function uploadImage() {
         // Lấy phần tử input chứa tệp ảnh
@@ -81,4 +179,8 @@
             console.log('Vui lòng chọn một tệp ảnh');
         }
     }
+    document.getElementById('submit-dg').addEventListener('click', function() {
+        // Gọi hàm uploadImage() để thực hiện tải lên
+        uploadImage();
+    });
 </script>

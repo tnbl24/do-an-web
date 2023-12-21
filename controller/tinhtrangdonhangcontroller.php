@@ -90,5 +90,4 @@ if(mysqli_num_rows($result)){
 }
 mysqli_free_result($result);
 
-mysqli_close($connect);
 ?>
