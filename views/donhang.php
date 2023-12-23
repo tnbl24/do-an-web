@@ -1,6 +1,7 @@
 <?php
 include_once("../layout/header.php");
 require_once("../controller/tinhtrangdonhangcontroller.php");
+// Kiểm tra xem có đánh giá đã submit hay chưa
 ?>
 <div class="row donmua-content">
     <div class="col-sm-2 donmua-content-category">
@@ -51,7 +52,7 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
             if (empty($tenvama)) {
             ?>
                 <!--  -->
-                <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="list-messages-list">
+                <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="list-messages-list">
                     <div class="donmua-chuacodonhang-img">
                         <img src="../material/img/donmua.png" width="100px" height="100px">
                     </div>
@@ -64,10 +65,10 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
             } else {
                 foreach ($tenvama as $ktenvama => $vtenvama) {
                 ?>
-                    <div class="tab-pane fade show active"  role="tabpanel" aria-labelledby="list-settings-list">
+                    <div class="tab-pane fade show active" role="tabpanel" aria-labelledby="list-settings-list">
                         <div class="donmua-donhang">
                             <div class="donmua-trangthai">
-                                <div ><a class="donmua-mdh" href="../views/donhangchitiet.php?madhct=<?= $ktenvama ?>">Mã đơn hàng: <?= $ktenvama ?></a></div>
+                                <div><a class="donmua-mdh" href="../views/donhangchitiet.php?madhct=<?= $ktenvama ?>">Mã đơn hàng: <?= $ktenvama ?></a></div>
                                 <div class="donmua-trangthai-1"><a href=""><?= $vtenvama ?></a></div>
                             </div>
                             <?php
@@ -86,7 +87,7 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
                                                     <img src="data:image/jpeg;base64, <?= base64_encode($bcode['hinhanhc']) ?>">
                                                 </a>
                                                 <span>
-                                                    <a class="new-a"  href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
+                                                    <a class="new-a" href="./sanphamchitiet.php?mac=<?= $bcode['mac'] ?>">
                                                         <?= $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>
                                                     </a>
                                                 </span>
@@ -95,12 +96,14 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
                                             <div class="tienhang order dhtc"><span>
                                                     <?php
                                                     $bcode['giatienc'] = number_format($bcode['giatienc'], 0, ',', '.');
-                                                    echo $bcode['giatienc'] .'<sup>đ</sup>'?>
-                                                    </span>
+                                                    echo $bcode['giatienc'] . '<sup>đ</sup>' ?>
+                                                </span>
                                                 <?php
                                                 if ($vtenvama == end($btinhtrangdonhang)) {
                                                 ?>
-                                                    <button class="danhgia-modal danhgia-dg">Đánh giá</button>
+                                                    <button class="danhgia-modal danhgia-dg btn-danh-gia reviewed" data-product-id="<?=
+                                                     $bcode['codec'] . " " . $bcode['tendm'] . " " . $bcode['mausacc'] ?>"
+                                                      onclick="openReviewModal('<?= $bcode['codec'] ?>')">Đánh giá</button>
                                                 <?php
                                                 }
                                                 ?>
@@ -138,12 +141,17 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
             }
             ?>
         </div>
+        
     </div>
     <?php
     include_once("../views/messenger.php");
     ?>
 </div>
 <script>
+        function openReviewModal(productCode) {
+    $('.modal-dg').addClass('open-account');
+    document.getElementById('product-code').value = productCode;
+}
     document.addEventListener("DOMContentLoaded", function() {
         // ktra donmua-donhang có rỗng hay ko
         function checkDonHangEmpty(tabId) {
@@ -174,6 +182,8 @@ require_once("../controller/tinhtrangdonhangcontroller.php");
         });
     });
 </script>
+
+
 <?php
 include_once("../views/danhgia.php")
 ?>

@@ -1,102 +1,56 @@
 <?php
-if (session_status() == PHP_SESSION_NONE) {
-    session_start();
-}
+
 require_once("../config/connect.php");
 
-if (!$connect) {
-    die("Connection failed: " . mysqli_connect_error());
-}
-
-// Kiểm tra nếu có phiên đăng nhập
 if (isset($_SESSION['dangnhap'])) {
     $username = $_SESSION['dangnhap'];
 
     // Truy vấn để lấy mã khách hàng
     $lquery1 = "SELECT khachhang.makh FROM khachhang INNER JOIN dangnhap ON khachhang.madn=dangnhap.madn
-    WHERE dangnhap.tendn='$username'";
+        WHERE dangnhap.tendn='$username'";
     $lresult1 = mysqli_query($connect, $lquery1);
 
-    // Kiểm tra xem truy vấn có thành công không trước khi lấy dữ liệu
-    if ($lresult1) {
-        $lrow = mysqli_fetch_assoc($lresult1);
-        $lmakh = $lrow['makh'];
-        if (isset($_POST['rate-dg'])) {
-            $noidungdg = $_POST['rate-dg'];
-            $hinhanhdg = ""; // Bạn cần xử lý upload ảnh và lưu đường dẫn ảnh vào đây
-            if (isset($_POST['product-dg'])) {
-                $productDGValue = $_POST['product-dg'];
-                echo "Giá trị của product-dg: $productDGValue";
-            } else {
-                echo "Không có giá trị product-dg được gửi lên.";
-            }
-            // Sử dụng regex để lấy mã sản phẩm từ chuỗi sản phẩm
-            $pattern = '/^([A-Z0-9]+)/';
-            if (preg_match($pattern, $_POST['product-dg'], $matches)) {
-                $productCode = $matches[1];
+    $productCode = isset($_POST['product-code']) ? $_POST['product-code'] : '';
+    $parts = explode(' ', $productCode);
+    $productCode = $parts[0];
 
-                // Thực hiện truy vấn để lấy mã sản phẩm
-                $getProductQuery = "SELECT mac FROM cho WHERE codec = '$productCode'";
-                $getProductResult = mysqli_query($connect, $getProductQuery);
+    $lquery2 = "SELECT cho.mac FROM cho 
+    WHERE cho.codec='$productCode'";
+    $lresult2 = mysqli_query($connect, $lquery2);
 
-                if ($getProductResult) {
-                    $productRow = mysqli_fetch_assoc($getProductResult);
-
-                    if ($productRow) {
-                        $mac = $productRow['mac'];
-                        // Chèn đánh giá vào bảng danhgia
-                        $insertQuery = "INSERT INTO danhgia (makh, ngaydg, hinhanhdg, noidungdg, mac) 
-                                        VALUES ($lmakh, NOW(), '$hinhanhdg', '$noidungdg', $mac)";
-
-                        $insertResult = mysqli_query($connect, $insertQuery);
-
-                        if ($insertResult) {
-                            echo "Đánh giá đã được thêm thành công.";
-                        } else {
-                            echo "Lỗi khi chèn đánh giá: " . mysqli_error($connect);
-                        }
-                    } else {
-                        echo "Không có sản phẩm để đánh giá.";
-                    }
-                } else {
-                    echo "Lỗi khi lấy mã sản phẩm: " . mysqli_error($connect);
-                }
-            } else {
-                echo "Không khớp với mẫu.";
-            }
-        }
-    } else {
-        echo "Lỗi khi lấy mã khách hàng: " . mysqli_error($connect);
     }
-} else {
-    echo "Người dùng chưa đăng nhập.";
-}
 
 ?>
 
-<div class="modal-dg">
-    <div class="modal-container-dg">
-        <div class="modal-close-dg">
-            <i class="bi bi-x-lg"></i>
-        </div>
 
-        <div class="modal-body-dg">
-            <div class="modal-header-dg">
-                <i class="bi bi-clipboard2-pulse-fill" style="margin-right: 16px;"></i>
-                Đánh giá sản phẩm
+<form action="" method="POST">
+
+    <div class="modal-dg">
+        <div class="modal-container-dg">
+            <div class="modal-close-dg">
+                <i class="bi bi-x-lg"></i>
             </div>
-            <label for="product-dg" class="modal-label-dg">
-                <i class="bi bi-bag-heart" style="margin-right: 10px;"></i>
-                Sản phẩm bạn muốn đánh giá
-            </label>
-            <input name="product-dg" id="product-dg" type="text" class="modal-input-dg" placeholder="Sản phẩm của bạn" style="margin-bottom: 24px;    padding-left: 90px;" value="" readonly>
 
-            <label for="rate-dg" class="modal-label-dg">
-                <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
-                Nhập đánh giá của bạn
-            </label>
-            <textarea name="rate-dg" class="modal-input-dg" placeholder="Danh gia cua ban" rows="9"></textarea>
-            <form action="" method="POST">
+            <div class="modal-body-dg">
+                <div class="modal-header-dg">
+                    <i class="bi bi-clipboard2-pulse-fill" style="margin-right: 16px;"></i>
+                    Đánh giá sản phẩm
+
+                </div>
+                <label for="product-dg" class="modal-label-dg">
+                    <i class="bi bi-bag-heart" style="margin-right: 10px;"></i>
+                    Sản phẩm bạn muốn đánh giá
+                </label>
+                
+                
+                <input id="product-dg" type="text" class="modal-input-dg" readonly name="product-code">
+                <!-- <input id="product-dg" type="text" class="modal-input-dg" value="" style="margin-bottom: 24px; text-align: center;" readonly> -->
+
+                <label for="rate-dg" class="modal-label-dg">
+                    <i class="bi bi-chat-dots" style="margin-right: 10px;"></i>
+                    Nhập đánh giá của bạn
+                </label>
+                <textarea name="rate-dg" class="modal-input-dg" placeholder="Đánh giá của bạn" rows="9"></textarea>
 
                 <div class="mt-3 d-flex flex-row align-items-center p-3 form-color comment-1">
                     <div class="input-div">
@@ -107,45 +61,31 @@ if (isset($_SESSION['dangnhap'])) {
                         </svg>
                     </div>
                 </div>
-            </form>
+                <div class="btn-feedback">
+                    <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
+                    <a href="../views/donhang.php" class="new-a">
+                        <button id="submit-dg-return">
+                            Return
+                            <i class="bi bi-arrow-counterclockwise" style="margin-left: 10px;"></i>
+                        </button>
+                    </a>
 
-            <div class="btn-feedback">
-                <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
-                <button id="submit-dg">
-                    Return
-                    <i class="bi bi-arrow-counterclockwise" style="margin-left: 10px;"></i>
-                </button>
-                <!-- </a> -->
-                <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
-                <button id="submit-dg" class="js-submit">
-                    submit
-                    <i class="bi bi-check" style="margin-left: 10px;"></i>
-                </button>
-                <!-- </a> -->
-                <!-- <footer class="modal-footer-dg">
+                    <!-- </a> -->
+                    <!-- <a href="../web/order.php" style="text-decoration:none;"> -->
+                    <button id="submit-dg" class="js-submit" name="themdg">
+                        submit
+                        <i class="bi bi-check" style="margin-left: 10px;"></i>
+                    </button>
+                    <!-- </a> -->
+                    <!-- <footer class="modal-footer-dg">
                 </footer> -->
+                </div>
             </div>
         </div>
     </div>
-</div>
-<script>
-    $(document).ready(function() {
-        // Gắn sự kiện nhấp vào nút đánh giá
-        $('.danhgia-modal').click(function(event) {
-            event.preventDefault(); // Ngăn chặn hành vi mặc định của nút submit
+</form>
 
-            // Lấy thông tin sản phẩm từ phần tử cụ thể được nhấp
-            var productElement = $(this).closest('.donhang-imgsp');
-            var productTitle = productElement.find('a:last').text();
 
-            // In thông tin sản phẩm ra console hoặc làm gì đó khác
-            $('#product-dg').val(productTitle);
-
-            // Tiếp tục xử lý hoặc gửi dữ liệu đánh giá tới máy chủ
-            // ...
-        });
-    });
-</script>
 
 
 <script>
@@ -183,4 +123,40 @@ if (isset($_SESSION['dangnhap'])) {
         // Gọi hàm uploadImage() để thực hiện tải lên
         uploadImage();
     });
+</script>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+    var btnDanhGia = document.querySelectorAll('.danhgia-modal.danhgia-dg');
+    var modalDg = document.querySelector('.modal-dg');
+
+    btnDanhGia.forEach(function (btn) {
+        btn.addEventListener("click", function () {
+            // Lấy ID sản phẩm từ nút được nhấp
+            var productId = this.getAttribute('data-product-id');
+
+            // Cập nhật trường nhập trên danhgia.php với ID sản phẩm
+            document.getElementById('product-dg').value = productId;
+
+            // Mở modal đánh giá
+            modalDg.classList.add('open-account');
+        });
+    });
+
+    // Đóng modal khi nhấn nút Đã nhận
+    var btnDaNhan = document.querySelector('.dg-danhan');
+    if (btnDaNhan) {
+        btnDaNhan.addEventListener('click', function () {
+            modalDg.classList.remove('open-account');
+        });
+    }
+
+    // Đóng modal khi nhấn nút Submit
+    var btnSubmitDg = document.getElementById('submit-dg');
+    if (btnSubmitDg) {
+        btnSubmitDg.addEventListener('click', function () {
+            modalDg.classList.remove('open-account');
+        });
+    }
+});
+
 </script>

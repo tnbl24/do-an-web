@@ -203,12 +203,13 @@ p.form-forgot{
     width: 150px;
     font-size: 15px;
     text-transform: uppercase;
-    padding: 12px;
+    padding: 20px;
     opacity: 1;
     cursor: pointer;
     margin-right: 10px;
     margin-left: 25px;
     padding-left: 40px;
+    
 }
 
 #submit-dg:hover {
