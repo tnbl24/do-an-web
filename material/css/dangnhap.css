@@ -20,7 +20,7 @@ body {
 #form-login {
     margin-top: 200px;
     max-width: 400px;
-    background: rgba(0,0,0,0.8);
+    background: #0d3450;
     flex-grow: 1;
     padding: 30px 30px 40px;
     box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.8);
@@ -29,7 +29,7 @@ body {
     margin-top: 200px;
     max-width: 450px;
     max-height: 600px;
-    background: rgba(0,0,0,0.8);
+    background: #0d3450;
     flex-grow: 1;
     padding: 30px 30px 40px;
     box-shadow: 0px 0px 17px 2px rgba(255, 255, 255, 0.8);
